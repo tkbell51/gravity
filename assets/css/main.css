@@ -1,0 +1,40 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+
+h1, h2, h3, h4, h5{
+  font-family: 'Nanum Myeongjo';
+}
+
+a {
+  cursor: pointer;
+}
+
+.page-enter-active, .page-leave-active{
+  transition: opacity .5s;
+}
+
+.page-enter, .page-leave-active{
+  opacity: 0;
+}
+
+.slick-prev {
+  left: 2rem !important;
+  z-index: 1;
+}
+
+.slick-next {
+  right: 2rem !important;
+  z-index: 1;
+}
+
+
+
+.section__hero .slick-dots {
+  bottom: 5px;
+}

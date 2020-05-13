@@ -1,0 +1,29 @@
+$primary-color:#0B4C9A;
+$accent-color:#FDB024;
+$tertiary-color:#BDCFE2;
+
+$dark-tertiary: #354151;
+
+$white: #fff;
+$black: #000;
+
+$dark-grey:#333;
+$light-grey:#ddd;
+
+$gradient:linear-gradient(19deg, $tertiary-color 0%, $primary-color 100%);
+$mobile-gradient:linear-gradient(19deg, $tertiary-color 0%, $primary-color 50%);
+
+$shadow: 
+  5px 5px 10px #d9d9d9, 
+  -5px -5px 10px $white;
+
+$hover-shadow: 
+  10px 10px 15px #a1b0c0, 
+  -10px -10px 15px $tertiary-color;
+
+
+$default-font-size: 1.6rem;
+
+
+
+
