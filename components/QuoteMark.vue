@@ -9,6 +9,7 @@
     viewBox="0 0 35 28"
     enable-background="new 0 0 35 28"
     xml:space="preserve"
+    class="quotemark"
   >
     <g>
       <path
@@ -33,4 +34,8 @@
 export default {}
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.quotemark g path {
+  fill: $primary-color;
+}
+</style>

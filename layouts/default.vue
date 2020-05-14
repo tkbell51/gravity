@@ -143,6 +143,26 @@ a {
     height: 35;
   }
 }
+.swiper {
+  &-button-next,
+  &-button-prev {
+    color: rgba($white, 0.5);
+    transition: all 0.1s ease-in;
+    &:hover {
+      color: $primary-color;
+      border-radius: 0;
+    }
+  }
+  &-pagination-bullet {
+    border-radius: 0;
+    width: 3rem;
+    height: 4px;
+    background: rgba($white, 0.8);
+    &-active {
+      background: $accent-color;
+    }
+  }
+}
 ::selection {
   background-color: $primary-color !important;
   color: $white;
@@ -171,28 +191,7 @@ footer {
     margin-top: 9rem;
   }
 }
-.slick-carousel {
-  height: inherit;
 
-  .slick-list {
-    height: inherit;
-
-    .slick-track {
-      height: inherit;
-
-      .slick-slide {
-        height: inherit;
-        & > div {
-          height: inherit;
-
-          .slide {
-            height: inherit;
-          }
-        }
-      }
-    }
-  }
-}
 section {
   padding: 7rem 0;
   @include respond(phone) {
@@ -201,8 +200,12 @@ section {
 }
 .section__testimonials {
   background: $gradient;
-  // display: flex;
-  // flex-flow: column;
+  padding: 0;
+  height: 35rem;
+  .container {
+    display: flex;
+    height: 100%;
+  }
 }
 .overlay {
   position: fixed;

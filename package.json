@@ -24,8 +24,9 @@
     "nuxt": "^2.0.0",
     "nuxt-fontawesome": "^0.4.0",
     "nuxt-webfontloader": "^1.1.0",
+    "swiper": "^5.3.8",
     "typescript": "^3.8.3",
-    "vue-slick-carousel": "^1.0.5"
+    "vue-awesome-swiper": "^4.1.1"
   },
   "devDependencies": {
     "@aceforth/nuxt-optimized-images": "^1.0.1",
@@ -43,6 +44,7 @@
     "imagemin-svgo": "^7.1.0",
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",
+    "vue-awesome-swiper": "4.1.1",
     "stylelint": "^13.3.3"
   }
 }

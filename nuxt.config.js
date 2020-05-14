@@ -21,7 +21,7 @@ export default {
    ** Global CSS
    */
   css: [
-    'vue-slick-carousel/dist/vue-slick-carousel.css',
+    'swiper/css/swiper.css',
     '@/assets/css/main.css'
   ],
   webfontloader: {
@@ -33,8 +33,9 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [{
-    src: './plugins/vue-slick-carousel.js'
-  }],
+    src: '@/plugins/vue-awesome-swiper',
+    mode: 'client'
+  }, ],
   /*
    ** Nuxt.js dev-modules
    */

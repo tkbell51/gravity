@@ -1,6 +1,7 @@
 <template>
-  <VueSlickCarousel class="slick-carousel" v-bind="settings">
-    <div id="slide-help" class="slide">
+  <!-- <client-only> -->
+  <swiper class="swiper" :options="settings">
+    <swiper-slide id="slide-help" class="slide">
       <div class="slide__text">
         <h2 class="heading-primary">Need Help?</h2>
         <hr class="gcg-border" />
@@ -12,8 +13,8 @@
 
         <SimplePractice />
       </div>
-    </div>
-    <div id="slide-lost" class="slide">
+    </swiper-slide>
+    <swiper-slide id="slide-lost" class="slide">
       <div class="slide__text">
         <h2 class="heading-primary">Lost?</h2>
         <hr class="gcg-border" />
@@ -25,8 +26,8 @@
 
         <SimplePractice />
       </div>
-    </div>
-    <div id="slide-think" class="slide">
+    </swiper-slide>
+    <swiper-slide id="slide-think" class="slide">
       <div class="slide__text">
         <h2 class="heading-primary">Overwhelmed?</h2>
         <hr class="gcg-border" />
@@ -37,27 +38,48 @@
 
         <SimplePractice />
       </div>
-    </div>
-  </VueSlickCarousel>
+    </swiper-slide>
+    <div slot="button-prev" class="swiper-button-prev"></div>
+    <div slot="button-next" class="swiper-button-next"></div>
+    <div
+      slot="pagination"
+      class="swiper-pagination swiper-pagination-bullets"
+    ></div>
+  </swiper>
+  <!-- </client-only> -->
 </template>
 
 <script>
-import VueSlickCarousel from 'vue-slick-carousel'
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+import 'swiper/css/swiper.css'
 import SimplePractice from './SimplePractice.vue'
 export default {
   components: {
     SimplePractice,
-    VueSlickCarousel
+    Swiper,
+    SwiperSlide
   },
   data() {
     return {
       settings: {
-        arrows: true,
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 10000,
-        fade: true
+        slidesPerView: 1,
+        loop: true,
+        effect: 'fade',
+        keyboard: {
+          enabled: true
+        },
+        autoplay: {
+          delay: 10000,
+          disableOnInteraction: false
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        }
       }
     }
   }
@@ -85,22 +107,19 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-  width: 100%;
+  // width: 100%;
   color: $white;
   // padding-left: 10%;
   // padding-right: 10%;
   position: relative;
   display: flex !important;
   align-items: center;
-  height: 100%;
-  padding: 0 10%;
-
-  @include respond(tab-mid) {
-    padding: 0 5%;
-  }
+  // height: 100%;
+  // padding: 0 10%;
 
   &__text {
     width: 50%;
+    padding: 0 10%;
     .heading-primary {
       font-size: 7rem;
       line-height: 8rem;
@@ -120,7 +139,7 @@ export default {
     @include respond(tab-mid) {
       width: 100%;
       text-align: center;
-      // padding: 0 10%;
+      padding: 0 10%;
 
       .gcg-border {
         margin-left: auto;

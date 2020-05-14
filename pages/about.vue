@@ -71,7 +71,7 @@
       </div>
     </section>
     <section class="section__testimonials">
-      <Testimonials />
+      <AboutTestimonials />
     </section>
     <section class="section__services">
       <div class="container">
@@ -90,13 +90,13 @@
 import ContactForm from '@/components/ContactForm'
 import PageHeader from '@/components/PageHeader'
 import ServicesGrid from '@/components/ServicesGrid'
-import Testimonials from '@/components/Testimonials'
+import AboutTestimonials from '@/components/Testimonials'
 export default {
   components: {
     ContactForm,
     PageHeader,
     ServicesGrid,
-    Testimonials
+    AboutTestimonials
   },
   head() {
     return {
