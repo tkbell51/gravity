@@ -1,13 +1,6 @@
 <template>
   <section class="section__hero">
-    <VueSlickCarousel
-      class="slick-carousel"
-      :arrows="true"
-      :dots="true"
-      :autoplay="true"
-      :autoplay-speed="10000"
-      :fade="true"
-    >
+    <VueSlickCarousel class="slick-carousel" v-bind="settings">
       <div id="slide-help" class="slide">
         <div class="container">
           <div class="slide__text">
@@ -66,6 +59,17 @@ export default {
   components: {
     SimplePractice,
     VueSlickCarousel
+  },
+  data() {
+    return {
+      settings: {
+        arrows: true,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 10000,
+        fade: true
+      }
+    }
   }
 }
 </script>

@@ -12,7 +12,16 @@
 
 <script>
 export default {
-  props: ['pageTitle', 'subPageTitle']
+  props: {
+    pageTitle: {
+      type: String,
+      default: 'Title'
+    },
+    subPageTitle: {
+      type: String,
+      default: 'Sub Title'
+    }
+  }
 }
 </script>
 

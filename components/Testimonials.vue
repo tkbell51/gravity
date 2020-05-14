@@ -1,7 +1,6 @@
 <template>
   <VueSlickCarousel
     class="slick-carousel"
-    :arrows="true"
     :dots="true"
     :autoplay="true"
     :autoplay-speed="10000"

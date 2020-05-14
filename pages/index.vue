@@ -106,35 +106,7 @@
         <Gallery />
       </div>
     </section>
-    <!-- <section class="section__blog-row">
-      <div class="container">
-        <h2 class="heading-secondary">Blog</h2>
-        <hr class="gcg-border" />
-        <div class="blog-row__grid">
-          <BlogCard
-            thumbnail="'../assets/img/gcc-happy.jpg'"
-            img-alt="Alternate text for image 1"
-            title="Blog Title"
-            preview-text="This is the preview text for blog card 1"
-            blog-link="/bug"
-          />
-          <BlogCard
-            thumbnail="http://localhost:3000/assets/img/gcc-help.jpg"
-            img-alt="Alternate text for image 2"
-            title="Blog Title"
-            preview-text="This is the preview text for blog card 2"
-            blog-link="/kerv"
-          />
-          <BlogCard
-            thumbnail="http://localhost:3000/assets/img/gcc-think.jpg"
-            img-alt="Alternate text for image 3"
-            title="Blog Title"
-            preview-text="This is the preview text for blog card 3"
-            blog-link="/anderson"
-          />
-        </div>
-      </div>
-    </section> -->
+
     <ContactForm />
   </div>
 </template>
@@ -143,7 +115,6 @@
 import HomeHero from '@/components/HomeHero'
 import Fas from '@/components/Fas'
 import SimplePractice from '@/components/SimplePractice'
-// import BlogCard from '@/components/BlogCard'
 import ContactForm from '@/components/ContactForm'
 import ServicesGrid from '@/components/ServicesGrid'
 import Gallery from '@/components/Gallery'
@@ -154,7 +125,6 @@ export default {
     HomeHero,
     Fas,
     SimplePractice,
-    // BlogCard,
     ContactForm,
     ServicesGrid,
     Gallery,

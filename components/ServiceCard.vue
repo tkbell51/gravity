@@ -21,7 +21,24 @@ export default {
   components: {
     Fas
   },
-  props: ['serviceLink', 'serviceIcon', 'serviceTitle', 'serviceDescription']
+  props: {
+    serviceLink: {
+      type: String,
+      default: '/services'
+    },
+    serviceIcon: {
+      type: String,
+      default: 'user-friends'
+    },
+    serviceTitle: {
+      type: String,
+      default: 'Service Title'
+    },
+    serviceDescription: {
+      type: String,
+      default: 'Service Description'
+    }
+  }
 }
 </script>
 

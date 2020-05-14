@@ -96,11 +96,14 @@ export default {
       width: 100%;
     }
   }
-  &__logo #logo_icon {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    margin-bottom: 2rem;
+  &__logo {
+    width: 30rem;
+    #logo_icon {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
 
   &__menu {

@@ -43,10 +43,15 @@ export default {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
+    '@aceforth/nuxt-optimized-images'
   ],
+   optimizedImages: {
+     optimizeImages: true
+   },
   eslint: {
     fix: true
   },
+
   /*
    ** Nuxt.js modules
    */
@@ -58,7 +63,7 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/style-resources',
     'nuxt-fontawesome',
-    'nuxt-webfontloader',
+    'nuxt-webfontloader'
   ],
   styleResources: {
     scss: [
@@ -92,9 +97,7 @@ export default {
       }
     ]
   },
-  optimizedImages: {
-    optimizeImages: true
-  },
+
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
