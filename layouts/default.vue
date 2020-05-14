@@ -7,8 +7,8 @@
   </div>
 </template>
 <script>
-import Header from './partials/header'
-import Footer from './partials/footer'
+import Header from './header'
+import Footer from './footer'
 
 export default {
   components: {
@@ -16,46 +16,17 @@ export default {
     Footer
   },
   mounted() {
-    // eslint-disable-next-line no-undef
-    // $(window).scroll(function() {
-    //   const header = $(document).scrollTop()
-    //   const headerHeight = $('.header').outerHeight()
-    //   if (header > headerHeight) {
-    //     $('.header').addClass('fixed')
-    //   } else {
-    //     $('.header').removeClass('fixed')
-    //   }
-    // })
-    // $('.nav__mobile, .overlay').click(function() {
-    //   $('.nav__mobile').toggleClass('clicked')
-    //   $('.overlay').toggleClass('show')
-    //   $('.nav__menu').toggleClass('show')
-    //   $('body').toggleClass('overflow')
-    // })
-    // $('.nav__menu .nav__link, .nav__menu .dropdown__link').click(function(){
-    //   console.log("link clicked");
-    //   $('.nav__mobile').removeClass('clicked')
-    //   $('.overlay').removeClass('show')
-    //   $('.nav__menu').removeClass('show')
-    //   $('body').removeClass('overflow')
-    // })
-    // $(window).scroll(function() {
-    //   const header = $(document).scrollTop()
-    //   const headerHeight = $('.header').outerHeight()
-    //   const firstSection = $(
-    //     '.main-content section:nth-of-type(1)'
-    //   ).outerHeight()
-    //   if (header > headerHeight) {
-    //     $('.header').addClass('fixed')
-    //   } else {
-    //     $('.header').removeClass('fixed')
-    //   }
-    //   if (header > firstSection) {
-    //     $('.header').addClass('in-view')
-    //   } else {
-    //     $('.header').removeClass('in-view')
-    //   }
-    // })
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.header')
+      header.classList.toggle('fixed', window.scrollY > header.scrollHeight)
+      const firstSection = document.querySelector(
+        '.main-content section:nth-of-type(1)'
+      )
+      header.classList.toggle(
+        'in-view',
+        window.scrollY > firstSection.scrollHeight
+      )
+    })
   }
 }
 </script>
@@ -137,11 +108,11 @@ a {
 .btn {
   display: inline-flex;
   align-items: center;
-  background: $accent-color;
+  background: darken($accent-color, 5%);
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1);
   border-radius: 50px;
-  height: 45px;
-  padding: 0 30px;
+  height: 4rem;
+  padding: 0 2.5rem;
   color: #fff;
   font-family: 'Open Sans';
   text-transform: uppercase;
@@ -150,7 +121,7 @@ a {
   will-change: transform;
 
   &:hover {
-    background: darken($accent-color, 5%);
+    background: darken($accent-color, 10%);
     box-shadow: 0 4px 17px rgba(0, 0, 0, 0.2);
     transform: translate3d(0, -2px, 0);
   }
@@ -166,6 +137,10 @@ a {
       background: darken($accent-color, 5%);
       border: 1px solid darken($accent-color, 5%);
     }
+  }
+
+  @include respond(tab-port) {
+    height: 35;
   }
 }
 ::selection {
@@ -192,8 +167,32 @@ footer {
 
 .main-content {
   flex: 1 0 auto;
+  @include respond(tab-port) {
+    margin-top: 9rem;
+  }
 }
+.slick-carousel {
+  height: inherit;
 
+  .slick-list {
+    height: inherit;
+
+    .slick-track {
+      height: inherit;
+
+      .slick-slide {
+        height: inherit;
+        & > div {
+          height: inherit;
+
+          .slide {
+            height: inherit;
+          }
+        }
+      }
+    }
+  }
+}
 section {
   padding: 7rem 0;
   @include respond(phone) {
@@ -202,8 +201,8 @@ section {
 }
 .section__testimonials {
   background: $gradient;
-  display: flex;
-  flex-flow: column;
+  // display: flex;
+  // flex-flow: column;
 }
 .overlay {
   position: fixed;

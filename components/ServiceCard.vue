@@ -8,9 +8,9 @@
         {{ serviceTitle }}
       </h3>
 
-      <p class="services__description">
+      <!-- <p class="services__description">
         {{ serviceDescription }}
-      </p>
+      </p> -->
     </div>
   </nuxt-link>
 </template>
@@ -45,7 +45,7 @@ export default {
 <style lang="scss">
 .services {
   border-radius: 6px;
-  box-shadow: 0px 10px 24px rgba($tertiary-color, 0.8);
+  box-shadow: 0px 5px 10px rgba($tertiary-color, 0.8);
   display: flex;
   flex-direction: column;
   align-items: center;

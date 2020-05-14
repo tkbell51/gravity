@@ -1,6 +1,8 @@
 <template>
   <div>
-    <HomeHero />
+    <section class="section__hero">
+      <HomeHero />
+    </section>
     <section class="section__help">
       <div class="container">
         <div class="section__help--text">
@@ -146,6 +148,17 @@ export default {
 
 <style lang="scss">
 .section {
+  &__hero {
+    padding: 0;
+    height: 95vh;
+    & > div {
+      height: inherit;
+    }
+
+    @include respond(phone) {
+      height: 70vh;
+    }
+  }
   &__help {
     &--text {
       text-align: center;

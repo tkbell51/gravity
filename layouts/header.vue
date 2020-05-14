@@ -93,6 +93,7 @@ export default {
       showDropdown: false
     }
   },
+
   methods: {
     showMenu() {
       const navMobile = document.querySelector('.nav__mobile')
@@ -127,7 +128,8 @@ export default {
   width: 100%;
 
   @include respond(tab-port) {
-    position: relative;
+    position: fixed;
+    background: white;
   }
 
   // background: $tertiary-color;
@@ -143,8 +145,10 @@ export default {
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
     transform: translate(0, -200px);
     @include respond(tab-port) {
-      position: relative;
+      position: fixed;
       opacity: 1;
+      visibility: visible;
+      transform: translate(0, 0);
     }
   }
   &.in-view {
@@ -152,6 +156,9 @@ export default {
     visibility: visible;
     transition: all 0.3s ease;
     transform: translate(0, 0);
+    @include respond(tab-port) {
+      transition: none;
+    }
     .nav .logo {
       width: 8rem;
     }
