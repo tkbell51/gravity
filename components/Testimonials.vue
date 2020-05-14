@@ -8,7 +8,7 @@
     :fade="true"
   >
     <div id="testimonial1" class="testimonial slide">
-      <div class="container">
+
         <QuoteMark />
         <p class="testimonial__quote">
           Kervin has been and still is an AWESOME counselor that I am so very
@@ -17,9 +17,9 @@
         </p>
         <span class="testimonial__name">Tera H.</span>
       </div>
-    </div>
+
     <div id="testimonial2" class="testimonial slide">
-      <div class="container">
+
         <QuoteMark />
 
         <p class="testimonial__quote">
@@ -30,9 +30,8 @@
         </p>
         <span class="testimonial__name">Jeana S.</span>
       </div>
-    </div>
+
     <div id="testimonial3" class="testimonial slide">
-      <div class="container">
         <QuoteMark />
 
         <p class="testimonial__quote">
@@ -41,10 +40,8 @@
           was given.
         </p>
         <span class="testimonial__name">Laura L.</span>
-      </div>
     </div>
     <div id="testimonial4" class="testimonial slide">
-      <div class="container">
         <QuoteMark />
 
         <p class="testimonial__quote">
@@ -55,7 +52,6 @@
         </p>
         <span class="testimonial__name">Pace D.</span>
       </div>
-    </div>
   </VueSlickCarousel>
 </template>
 

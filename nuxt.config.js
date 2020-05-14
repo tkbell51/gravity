@@ -65,8 +65,14 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/style-resources',
     'nuxt-fontawesome',
-    'nuxt-webfontloader'
+    'nuxt-webfontloader',
+    'bootstrap-vue/nuxt'
   ],
+   bootstrapVue: {
+    bootstrapCSS: false, // Or `css: false`
+    bootstrapVueCSS: false, // Or `bvCSS: false`
+    components: ['BCarousel'],
+   },
   styleResources: {
     scss: [
       '~assets/scss/_breakpoints.scss',
@@ -98,6 +104,9 @@ export default {
         icons: ['faDev', 'faFacebook', 'faTwitter', 'faInstagram', 'faYoutube']
       }
     ]
+  },
+  optimizedImages: {
+    optimizeImages: true
   },
   /*
    ** Axios module configuration

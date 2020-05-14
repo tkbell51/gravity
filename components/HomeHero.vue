@@ -152,9 +152,6 @@ export default {
   .slick-carousel {
     height: 100%;
 
-    .slick-dots {
-      bottom: 5px;
-    }
   }
   &--text {
     width: 75%;

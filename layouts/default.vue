@@ -224,27 +224,6 @@ section {
     visibility: visible;
   }
 }
-// .slick-prev::before {
-//   content: '<' !important;
-//   font-size: 4rem !important;
-// }
-// .slick-next::before {
-//   content: '>' !important;
-//   font-size: 4rem !important;
-// }
-// .slick-dots li button:before {
-
-//  color: $white !important;
-
-// }
-
-// .slick-dots li.slick-active button:before {
-//   color: $accent-color !important;
-// }
-
-.section__hero .slick-dots {
-  bottom: 5px;
-}
 
 .container {
   margin-left: auto;

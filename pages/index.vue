@@ -175,42 +175,7 @@ export default {
 </script>
 
 <style lang="scss">
-.slick-prev:before,
-.slick-next:before {
-  color: $white !important;
-@include respond(phone) {
-  display: none;
-}
-}
-.slick-prev,
-.slick-next {
-  top: 50%;
-  &:hover,
-  &:focus {
-    color: $accent-color !important;
-  }
-}
-.slick-prev::before {
-  content: '<';
-  font-size: 4rem;
-}
-.slick-next::before {
-  content: '>';
-  font-size: 4rem;
-}
 
-.slick-dots li button:before {
-
- color: $white;
-
-}
-
-.slick-dots li.slick-active button:before {
-  color: $accent-color;
-}
-.section__hero .slick-dots {
-  bottom: 5px;
-}
 
 .section {
   &__help {

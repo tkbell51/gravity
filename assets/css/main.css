@@ -23,18 +23,3 @@ a {
   opacity: 0;
 }
 
-.slick-prev {
-  left: 2rem !important;
-  z-index: 1;
-}
-
-.slick-next {
-  right: 2rem !important;
-  z-index: 1;
-}
-
-
-
-.section__hero .slick-dots {
-  bottom: 5px;
-}
