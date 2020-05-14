@@ -14,7 +14,7 @@
             <h2 class="heading-primary">Need Help?</h2>
             <hr class="gcg-border" />
             <p>
-              Having difficulty accepting mistakes and staying committed? Want
+              Having difficulty accepting mistakes and staying committed? Want
               to strengthen your connection? Let's do the work to create the
               relationship that is perfect for you.
             </p>
@@ -151,7 +151,6 @@ export default {
   }
   .slick-carousel {
     height: 100%;
-
   }
   &--text {
     width: 75%;

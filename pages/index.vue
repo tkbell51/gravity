@@ -54,10 +54,10 @@
           </div>
           <div class="about__text">
             <h3 class="heading-tertiary">Welcome Note</h3>
-            <h2 class="heading-secondary">Kervin K. Searles, LPC-A</h2>
+            <h2 class="heading-secondary">Kervin K. Searles, LPC-A</h2>
             <hr class="gcg-border" />
             <p>
-              It is estimated that only about 17% of US adults are considered to
+              It is estimated that only about 17% of US adults are considered to
               be in a state of optimal mental health. Therapy happens when we
               address what is preventing us from reaching our goals. If you want
               to live your best life, sit with a therapist...the conversation is
@@ -175,8 +175,6 @@ export default {
 </script>
 
 <style lang="scss">
-
-
 .section {
   &__help {
     &--text {
@@ -285,7 +283,7 @@ export default {
           color: $primary-color;
           font-weight: bold;
         }
-        @include respond (phone) {
+        @include respond(phone) {
           font-size: $default-font-size;
         }
       }

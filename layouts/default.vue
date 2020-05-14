@@ -33,29 +33,28 @@ export default {
     // })
     // $('.nav__menu .nav__link, .nav__menu .dropdown__link').click(function(){
     //   console.log("link clicked");
-
     //   $('.nav__mobile').removeClass('clicked')
     //   $('.overlay').removeClass('show')
     //   $('.nav__menu').removeClass('show')
     //   $('body').removeClass('overflow')
     // })
-    $(window).scroll(function() {
-      const header = $(document).scrollTop()
-      const headerHeight = $('.header').outerHeight()
-      const firstSection = $(
-        '.main-content section:nth-of-type(1)'
-      ).outerHeight()
-      if (header > headerHeight) {
-        $('.header').addClass('fixed')
-      } else {
-        $('.header').removeClass('fixed')
-      }
-      if (header > firstSection) {
-        $('.header').addClass('in-view')
-      } else {
-        $('.header').removeClass('in-view')
-      }
-    })
+    // $(window).scroll(function() {
+    //   const header = $(document).scrollTop()
+    //   const headerHeight = $('.header').outerHeight()
+    //   const firstSection = $(
+    //     '.main-content section:nth-of-type(1)'
+    //   ).outerHeight()
+    //   if (header > headerHeight) {
+    //     $('.header').addClass('fixed')
+    //   } else {
+    //     $('.header').removeClass('fixed')
+    //   }
+    //   if (header > firstSection) {
+    //     $('.header').addClass('in-view')
+    //   } else {
+    //     $('.header').removeClass('in-view')
+    //   }
+    // })
   }
 }
 </script>

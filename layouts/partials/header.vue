@@ -1,11 +1,9 @@
 <template>
   <header class="header">
-    <!-- <SocialRow /> -->
-
     <nav class="nav">
       <nuxt-link to="/" class="logo"><Logo /></nuxt-link>
       <ul class="nav__menu">
-        <li class="nav__item"  @click="closeMenu">
+        <li class="nav__item" @click="closeMenu">
           <nuxt-link class="nav__link" to="/">Home</nuxt-link>
         </li>
         <li class="nav__item" @click="closeMenu">
@@ -16,7 +14,8 @@
             :class="'dropdown ' + active"
             @mouseover="active = 'active'"
             @mouseleave="active = ''"
-            @click="showDropdown = !showDropdown">
+            @click="showDropdown = !showDropdown"
+          >
             <button class="nav__btn">
               Services <Fas class="nav__icon" i="caret-down" />
             </button>
@@ -24,24 +23,38 @@
               <li class="dropdown__item" @click="closeMenu">
                 <nuxt-link
                   class="dropdown__link"
-                  to="/services/individual-therapy">Individual Therapy</nuxt-link>
+                  to="/services/individual-therapy"
+                  >Individual Therapy</nuxt-link
+                >
               </li>
               <li class="dropdown__item" @click="closeMenu">
-                <nuxt-link class="dropdown__link" to="/services/couples-therapy">Couples Therapy</nuxt-link>
+                <nuxt-link class="dropdown__link" to="/services/couples-therapy"
+                  >Couples Therapy</nuxt-link
+                >
               </li>
               <li class="dropdown__item" @click="closeMenu">
-                <nuxt-link class="dropdown__link" to="/services/teletherapy">Teletherapy</nuxt-link>
+                <nuxt-link class="dropdown__link" to="/services/teletherapy"
+                  >Teletherapy</nuxt-link
+                >
               </li>
               <li class="dropdown__item" @click="closeMenu">
                 <nuxt-link
                   class="dropdown__link"
-                  to="/services/anger-management">Anger Management</nuxt-link>
+                  to="/services/anger-management"
+                  >Anger Management</nuxt-link
+                >
               </li>
               <li class="dropdown__item" @click="closeMenu">
-                <nuxt-link class="dropdown__link" to="/services/support-groups">Support Groups</nuxt-link>
+                <nuxt-link class="dropdown__link" to="/services/support-groups"
+                  >Support Groups</nuxt-link
+                >
               </li>
               <li class="dropdown__item" @click="closeMenu">
-                <nuxt-link class="dropdown__link" to="/services/workshops-presentations">Workshops &amp; Presentations</nuxt-link>
+                <nuxt-link
+                  class="dropdown__link"
+                  to="/services/workshops-presentations"
+                  >Workshops &amp; Presentations</nuxt-link
+                >
               </li>
             </ul>
           </div>
@@ -57,7 +70,7 @@
           <SimplePractice class="nav__cta" />
         </li>
       </ul>
-      <div class="nav__mobile" @click='showMenu'>
+      <div class="nav__mobile" @click="showMenu">
         <span></span>
       </div>
     </nav>
@@ -67,44 +80,40 @@
 <script>
 import SimplePractice from '~/components/SimplePractice'
 import Logo from '~/components/Logo'
-import SocialRow from '~/components/SocialRow'
 import Fas from '@/components/Fas'
 export default {
   components: {
     Logo,
-    SocialRow,
     SimplePractice,
     Fas
   },
   data() {
     return {
       active: '',
-      showDropdown: false,
-
+      showDropdown: false
     }
   },
   methods: {
     showMenu() {
-      var navMobile = document.querySelector('.nav__mobile');
-      var hamMenu = document.querySelector('.nav__menu');
-      var overlay = document.querySelector('.overlay');
-      var body = document.querySelector('body');
-        hamMenu.classList.toggle('show');
-      overlay.classList.toggle('show');
-      navMobile.classList.toggle('clicked');
-      body.classList.toggle('overflow');
+      const navMobile = document.querySelector('.nav__mobile')
+      const hamMenu = document.querySelector('.nav__menu')
+      const overlay = document.querySelector('.overlay')
+      const body = document.querySelector('body')
+      hamMenu.classList.toggle('show')
+      overlay.classList.toggle('show')
+      navMobile.classList.toggle('clicked')
+      body.classList.toggle('overflow')
     },
     closeMenu() {
-      var navMobile = document.querySelector('.nav__mobile');
-      var hamMenu = document.querySelector('.nav__menu');
-      var overlay = document.querySelector('.overlay');
-      var body = document.querySelector('body');
-        hamMenu.classList.remove('show');
-      overlay.classList.remove('show');
-      navMobile.classList.remove('clicked');
-      body.classList.remove('overflow');
-      }
-
+      const navMobile = document.querySelector('.nav__mobile')
+      const hamMenu = document.querySelector('.nav__menu')
+      const overlay = document.querySelector('.overlay')
+      const body = document.querySelector('body')
+      hamMenu.classList.remove('show')
+      overlay.classList.remove('show')
+      navMobile.classList.remove('clicked')
+      body.classList.remove('overflow')
+    }
   }
 }
 </script>
@@ -328,7 +337,6 @@ export default {
             font-size: $default-font-size;
             color: $black;
             display: block;
-            padding: 1.5rem 0;
           }
           &:hover,
           &:focus {
@@ -344,7 +352,6 @@ export default {
       &,
       &:link,
       &:visited {
-
         padding: 0.5em;
         text-transform: uppercase;
         text-decoration: none;

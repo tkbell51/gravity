@@ -8,7 +8,7 @@
               Words can hurt, help, or heal. At Gravity Counseling Group we aim
               to create a safe space for every individual to grow through the
               strength of words shared in the confines of this space. Making
-              changes in your life requires time and energy. We look forward to
+              changes in your life requires time and energy. We look forward to
               investing our time and linking our efforts with yours to help you
               reach the goals you so desire.
             </p>

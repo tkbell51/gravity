@@ -12,15 +12,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: [
-      {
-        src:
-          'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js',
-        type: 'text/javascript',
-        body: true
-      }
-    ]
-  },
+    },
   /*
    ** Customize the progress-bar color
    */
@@ -40,20 +32,19 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    {
-      src: './plugins/vue-slick-carousel.js'
-    }
-  ],
+  plugins: [],
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    // '@nuxtjs/eslint-module',
+    '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
-    '@nuxtjs/stylelint-module'
+    '@nuxtjs/stylelint-module',
   ],
+  eslint: {
+    fix: true
+  },
   /*
    ** Nuxt.js modules
    */
@@ -66,13 +57,7 @@ export default {
     '@nuxtjs/style-resources',
     'nuxt-fontawesome',
     'nuxt-webfontloader',
-    'bootstrap-vue/nuxt'
   ],
-   bootstrapVue: {
-    bootstrapCSS: false, // Or `css: false`
-    bootstrapVueCSS: false, // Or `bvCSS: false`
-    components: ['BCarousel'],
-   },
   styleResources: {
     scss: [
       '~assets/scss/_breakpoints.scss',
@@ -120,13 +105,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    plugins: [
-      new webpack.ProvidePlugin({
-        // global modules
-        $: 'jquery',
-        _: 'lodash'
-      })
-    ],
+    plugins: [],
     extend(config, ctx) { }
   }
 }
