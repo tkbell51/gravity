@@ -33,7 +33,7 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [{
-    src: '~/plugins/vue-slick-carousel.js'
+    src: './plugins/vue-slick-carousel.js'
   }],
   /*
    ** Nuxt.js dev-modules
@@ -107,19 +107,8 @@ export default {
    ** Build configuration
    */
   build: {
-    analyze: true,
     extend(config, ctx) {},
-    babel: {
-      presets: [
-        [
-          '@babel/preset-env',
-          {
-            useBuiltIns: 'entry',
-            corejs: 3
-          }
-        ]
-      ],
-      plugins: ['@babel/transform-runtime']
-    }
-  }
+
+  },
+
 }

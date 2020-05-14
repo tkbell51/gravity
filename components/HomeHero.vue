@@ -1,52 +1,50 @@
 <template>
-  <div>
-    <VueSlickCarousel class="slick-carousel" v-bind="settings">
-      <div id="slide-help" class="slide">
-        <div class="slide__text">
-          <h2 class="heading-primary">Need Help?</h2>
-          <hr class="gcg-border" />
-          <p>
-            Having difficulty accepting mistakes and staying committed? Want to
-            strengthen your connection? Let's do the work to create the
-            relationship that is perfect for you.
-          </p>
+  <VueSlickCarousel class="slick-carousel" v-bind="settings">
+    <div id="slide-help" class="slide">
+      <div class="slide__text">
+        <h2 class="heading-primary">Need Help?</h2>
+        <hr class="gcg-border" />
+        <p>
+          Having difficulty accepting mistakes and staying committed? Want to
+          strengthen your connection? Let's do the work to create the
+          relationship that is perfect for you.
+        </p>
 
-          <SimplePractice />
-        </div>
+        <SimplePractice />
       </div>
-      <div id="slide-lost" class="slide">
-        <div class="slide__text">
-          <h2 class="heading-primary">Lost?</h2>
-          <hr class="gcg-border" />
-          <p>
-            Mental health is complex. Become more self aware of your thoughts,
-            feelings, and actions. Learn how they connect to create the life you
-            are currently living.
-          </p>
+    </div>
+    <div id="slide-lost" class="slide">
+      <div class="slide__text">
+        <h2 class="heading-primary">Lost?</h2>
+        <hr class="gcg-border" />
+        <p>
+          Mental health is complex. Become more self aware of your thoughts,
+          feelings, and actions. Learn how they connect to create the life you
+          are currently living.
+        </p>
 
-          <SimplePractice />
-        </div>
+        <SimplePractice />
       </div>
-      <div id="slide-think" class="slide">
-        <div class="slide__text">
-          <h2 class="heading-primary">Overwhelmed?</h2>
-          <hr class="gcg-border" />
-          <p>
-            I am constantly thinking and analyzing every situation even if it
-            seems all good. Capture greater peace as you l gain perspective.
-          </p>
+    </div>
+    <div id="slide-think" class="slide">
+      <div class="slide__text">
+        <h2 class="heading-primary">Overwhelmed?</h2>
+        <hr class="gcg-border" />
+        <p>
+          I am constantly thinking and analyzing every situation even if it
+          seems all good. Capture greater peace as you l gain perspective.
+        </p>
 
-          <SimplePractice />
-        </div>
+        <SimplePractice />
       </div>
-    </VueSlickCarousel>
-  </div>
+    </div>
+  </VueSlickCarousel>
 </template>
 
 <script>
 import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import SimplePractice from './SimplePractice.vue'
-// optional style for arrows & dots
 export default {
   components: {
     SimplePractice,
