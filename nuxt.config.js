@@ -32,7 +32,9 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [{
+    src: '~/plugins/vue-slick-carousel.js'
+  }],
   /*
    ** Nuxt.js dev-modules
    */
@@ -102,10 +104,19 @@ export default {
    ** Build configuration
    */
   build: {
-    /*
-     ** You can extend webpack config here
-     */
-    plugins: [],
-    extend(config, ctx) { }
+    analyze: true,
+    extend(config, ctx) {},
+    babel: {
+      presets: [
+        [
+          '@babel/preset-env',
+          {
+            useBuiltIns: 'entry',
+            corejs: 3
+          }
+        ]
+      ],
+      plugins: ['@babel/transform-runtime']
+    }
   }
 }

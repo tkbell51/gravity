@@ -60,8 +60,8 @@
 <script>
 import VueSlickCarousel from 'vue-slick-carousel'
 import SimplePractice from './SimplePractice.vue'
-// optional style for arrows & dots
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+// optional style for arrows & dots
 export default {
   components: {
     SimplePractice,
