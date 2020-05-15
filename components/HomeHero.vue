@@ -1,52 +1,52 @@
 <template>
-  <!-- <client-only> -->
-  <swiper class="swiper" :options="settings">
-    <swiper-slide id="slide-help" class="slide">
-      <div class="slide__text">
-        <h2 class="heading-primary">Need Help?</h2>
-        <hr class="gcg-border" />
-        <p>
-          Having difficulty accepting mistakes and staying committed? Want to
-          strengthen your connection? Let's do the work to create the
-          relationship that is perfect for you.
-        </p>
+  <client-only>
+    <swiper class="swiper" :options="settings">
+      <swiper-slide id="slide-help" class="slide">
+        <div class="slide__text">
+          <h2 class="heading-primary">Need Help?</h2>
+          <hr class="gcg-border" />
+          <p>
+            Having difficulty accepting mistakes and staying committed? Want to
+            strengthen your connection? Let's do the work to create the
+            relationship that is perfect for you.
+          </p>
 
-        <SimplePractice />
-      </div>
-    </swiper-slide>
-    <swiper-slide id="slide-lost" class="slide">
-      <div class="slide__text">
-        <h2 class="heading-primary">Lost?</h2>
-        <hr class="gcg-border" />
-        <p>
-          Mental health is complex. Become more self aware of your thoughts,
-          feelings, and actions. Learn how they connect to create the life you
-          are currently living.
-        </p>
+          <SimplePractice />
+        </div>
+      </swiper-slide>
+      <swiper-slide id="slide-lost" class="slide">
+        <div class="slide__text">
+          <h2 class="heading-primary">Lost?</h2>
+          <hr class="gcg-border" />
+          <p>
+            Mental health is complex. Become more self aware of your thoughts,
+            feelings, and actions. Learn how they connect to create the life you
+            are currently living.
+          </p>
 
-        <SimplePractice />
-      </div>
-    </swiper-slide>
-    <swiper-slide id="slide-think" class="slide">
-      <div class="slide__text">
-        <h2 class="heading-primary">Overwhelmed?</h2>
-        <hr class="gcg-border" />
-        <p>
-          I am constantly thinking and analyzing every situation even if it
-          seems all good. Capture greater peace as you l gain perspective.
-        </p>
+          <SimplePractice />
+        </div>
+      </swiper-slide>
+      <swiper-slide id="slide-think" class="slide">
+        <div class="slide__text">
+          <h2 class="heading-primary">Overwhelmed?</h2>
+          <hr class="gcg-border" />
+          <p>
+            I am constantly thinking and analyzing every situation even if it
+            seems all good. Capture greater peace as you l gain perspective.
+          </p>
 
-        <SimplePractice />
-      </div>
-    </swiper-slide>
-    <div slot="button-prev" class="swiper-button-prev"></div>
-    <div slot="button-next" class="swiper-button-next"></div>
-    <div
-      slot="pagination"
-      class="swiper-pagination swiper-pagination-bullets"
-    ></div>
-  </swiper>
-  <!-- </client-only> -->
+          <SimplePractice />
+        </div>
+      </swiper-slide>
+      <div slot="button-prev" class="swiper-button-prev"></div>
+      <div slot="button-next" class="swiper-button-next"></div>
+      <div
+        slot="pagination"
+        class="swiper-pagination swiper-pagination-bullets"
+      ></div>
+    </swiper>
+  </client-only>
 </template>
 
 <script>

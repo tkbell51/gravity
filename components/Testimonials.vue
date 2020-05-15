@@ -1,29 +1,31 @@
 <template>
-  <div class="container">
-    <swiper class="swiper testimonial-swiper" :options="settings">
-      <swiper-slide
-        v-for="testimony in testimonialSlide"
-        :key="testimony.id"
-        class="testimonial"
-      >
-        <div class="testimonial__card">
-          <QuoteMark />
-          <p class="testimonial__quote">
-            {{ testimony.quote }}
-          </p>
-          <QuoteMark />
-          <p class="testimonial__name">{{ testimony.name }}</p>
-        </div>
-      </swiper-slide>
+  <client-only>
+    <div class="container">
+      <swiper class="swiper testimonial-swiper" :options="settings">
+        <swiper-slide
+          v-for="testimony in testimonialSlide"
+          :key="testimony.id"
+          class="testimonial"
+        >
+          <div class="testimonial__card">
+            <QuoteMark />
+            <p class="testimonial__quote">
+              {{ testimony.quote }}
+            </p>
+            <QuoteMark />
+            <p class="testimonial__name">{{ testimony.name }}</p>
+          </div>
+        </swiper-slide>
 
-      <div slot="button-prev" class="swiper-button-prev"></div>
-      <div slot="button-next" class="swiper-button-next"></div>
-      <div
-        slot="pagination"
-        class="swiper-pagination swiper-pagination-bullets"
-      ></div>
-    </swiper>
-  </div>
+        <div slot="button-prev" class="swiper-button-prev"></div>
+        <div slot="button-next" class="swiper-button-next"></div>
+        <div
+          slot="pagination"
+          class="swiper-pagination swiper-pagination-bullets"
+        ></div>
+      </swiper>
+    </div>
+  </client-only>
 </template>
 
 <script>
