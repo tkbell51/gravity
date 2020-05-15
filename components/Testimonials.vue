@@ -1,5 +1,4 @@
 <template>
-  <client-only>
     <div class="container">
       <swiper class="swiper testimonial-swiper" :options="settings">
         <swiper-slide
@@ -25,7 +24,6 @@
         ></div>
       </swiper>
     </div>
-  </client-only>
 </template>
 
 <script>

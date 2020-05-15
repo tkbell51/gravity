@@ -1,5 +1,4 @@
 <template>
-  <client-only>
     <swiper class="swiper" :options="settings">
       <swiper-slide id="slide-help" class="slide">
         <div class="slide__text">
@@ -46,7 +45,6 @@
         class="swiper-pagination swiper-pagination-bullets"
       ></div>
     </swiper>
-  </client-only>
 </template>
 
 <script>
