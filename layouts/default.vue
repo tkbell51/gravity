@@ -14,6 +14,19 @@ export default {
   components: {
     Header,
     Footer
+  },
+  mounted() {
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.header')
+      header.classList.toggle('fixed', window.scrollY > header.scrollHeight)
+      const firstSection = document.querySelector(
+        '.main-content section:nth-of-type(1)'
+      )
+      header.classList.toggle(
+        'in-view',
+        window.scrollY > firstSection.scrollHeight
+      )
+    })
   }
 }
 </script>

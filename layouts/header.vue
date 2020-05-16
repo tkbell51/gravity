@@ -1,5 +1,5 @@
 <template>
-  <header class="header" @scroll="handelScroll">
+  <header class="header">
     <nav class="nav">
       <nuxt-link to="/" class="logo"><Logo /></nuxt-link>
       <ul class="nav__menu">
@@ -93,29 +93,7 @@ export default {
       showDropdown: false
     }
   },
-  beforeMount() {
-    document.body.addEventListener('scroll', this.handleScroll)
-  },
-  beforeDestroy() {
-    document.body.removeEventListener('scroll', this.handleScroll)
-  },
   methods: {
-    handleScroll() {
-      document.body.addEventListener('scroll', function() {
-        const header = document.querySelector('.header')
-        header.classList.toggle(
-          'fixed',
-          document.body.scrollY > header.scrollHeight
-        )
-        const firstSection = document.querySelector(
-          '.main-content section:nth-of-type(1)'
-        )
-        header.classList.toggle(
-          'in-view',
-          document.body.scrollY > firstSection.scrollHeight
-        )
-      })
-    },
     showMenu() {
       const navMobile = document.querySelector('.nav__mobile')
       const hamMenu = document.querySelector('.nav__menu')
