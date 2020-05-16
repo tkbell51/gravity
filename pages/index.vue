@@ -57,12 +57,6 @@
             alt="Logo"
             class="logo-cta__logo"
           />
-          <!-- <div class="logo-cta__text">
-            <h2 class="heading-tertiary">Gravity Counseling Group</h2>
-            <h3 class="heading-secondary">
-              Your perception dictate your options
-            </h3>
-          </div> -->
         </div>
       </div>
     </section>
@@ -142,7 +136,10 @@ import ContactForm from '@/components/ContactForm'
 import ServicesGrid from '@/components/ServicesGrid'
 import Gallery from '@/components/Gallery'
 import Testimonials from '@/components/Testimonials'
-
+let vueAwesomeSwiper
+if (process.client) {
+  vueAwesomeSwiper = require('vue-awesome-swiper').default
+}
 export default {
   components: {
     Fas,
@@ -198,6 +195,9 @@ export default {
         }
       ]
     }
+  },
+  mounted() {
+    vueAwesomeSwiper.init()
   },
   head() {
     return {
