@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <swiper class="swiper testimonial-swiper" :options="settings">
+    <swiper class="swiper testimonial-swiper" :options="testimonySettings">
       <swiper-slide
         v-for="testimony in testimonialSlide"
         :key="testimony.id"
@@ -38,7 +38,7 @@ export default {
   },
   data() {
     return {
-      settings: {
+      testimonySettings: {
         slidesPerView: 1,
         loop: true,
         // autoHeight: true,
