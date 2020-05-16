@@ -1,29 +1,27 @@
 <template>
   <div>
     <section class="section__hero">
-      <div v-swiper:myDirectiveSwiper="settings" class="swiper">
-        <div class="swiper-wrapper">
-          <div
-            v-for="slide in homeSlides"
-            :id="`${slide.css}`"
-            :key="slide.id"
-            class="swiper-slide slide"
-          >
-            <div class="slide__text">
-              <h2 class="heading-primary">{{ slide.title }}</h2>
-              <hr class="gcg-border" />
-              <p>{{ slide.text }}</p>
-              <SimplePractice />
-            </div>
+      <swiper ref="heroSlider" :options="settings" class="swiper">
+        <swiper-slide
+          v-for="slide in homeSlides"
+          :id="`${slide.css}`"
+          :key="slide.id"
+          class="swiper-slide slide"
+        >
+          <div class="slide__text">
+            <h2 class="heading-primary">{{ slide.title }}</h2>
+            <hr class="gcg-border" />
+            <p>{{ slide.text }}</p>
+            <SimplePractice />
           </div>
-        </div>
+        </swiper-slide>
         <div slot="button-prev" class="swiper-button-prev"></div>
         <div slot="button-next" class="swiper-button-next"></div>
         <div
           slot="pagination"
           class="swiper-pagination swiper-pagination-bullets"
         ></div>
-      </div>
+      </swiper>
     </section>
     <section class="section__help">
       <div class="container">
@@ -136,10 +134,7 @@ import ContactForm from '@/components/ContactForm'
 import ServicesGrid from '@/components/ServicesGrid'
 import Gallery from '@/components/Gallery'
 import Testimonials from '@/components/Testimonials'
-let vueAwesomeSwiper
-if (process.client) {
-  vueAwesomeSwiper = require('vue-awesome-swiper').default
-}
+
 export default {
   components: {
     Fas,
@@ -196,9 +191,12 @@ export default {
       ]
     }
   },
-  mounted() {
-    vueAwesomeSwiper.init()
+  computed: {
+    swiper() {
+      return this.$refs.heroSlider.$swiper
+    }
   },
+
   head() {
     return {
       title: 'Gravity Counseling Group Home',
