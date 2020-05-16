@@ -32,9 +32,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{
-    src: '@/plugins/vue-awesome-swiper'
-  } ],
+  plugins: [ ],
   /*
    ** Nuxt.js dev-modules
    */

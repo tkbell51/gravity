@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" @scroll="handelScroll">
     <nav class="nav">
       <nuxt-link to="/" class="logo"><Logo /></nuxt-link>
       <ul class="nav__menu">
@@ -93,22 +93,29 @@ export default {
       showDropdown: false
     }
   },
-  mounted: {
-    mounted() {
-      window.addEventListener('scroll', function() {
+  beforeMount() {
+    document.body.addEventListener('scroll', this.handleScroll)
+  },
+  beforeDestroy() {
+    document.body.removeEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    handleScroll() {
+      document.body.addEventListener('scroll', function() {
         const header = document.querySelector('.header')
-        header.classList.toggle('fixed', window.scrollY > header.scrollHeight)
+        header.classList.toggle(
+          'fixed',
+          document.body.scrollY > header.scrollHeight
+        )
         const firstSection = document.querySelector(
           '.main-content section:nth-of-type(1)'
         )
         header.classList.toggle(
           'in-view',
-          window.scrollY > firstSection.scrollHeight
+          document.body.scrollY > firstSection.scrollHeight
         )
       })
-    }
-  },
-  methods: {
+    },
     showMenu() {
       const navMobile = document.querySelector('.nav__mobile')
       const hamMenu = document.querySelector('.nav__menu')
@@ -348,8 +355,7 @@ export default {
           box-shadow: 0px 3px 6px rgba($black, 0.5);
           width: 24rem;
         }
-        &__item {
-        }
+
         &__link {
           &,
           &:link,
