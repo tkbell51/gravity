@@ -105,7 +105,6 @@
           <div class="online__text">
             <h2 class="heading-secondary">Online Mental Health Resources</h2>
             <MentalResourceGrid />
-            <SimplePractice />
           </div>
         </div>
       </div>
