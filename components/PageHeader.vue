@@ -18,8 +18,8 @@ export default {
       default: 'Title'
     },
     subPageTitle: {
-      type: String,
-      default: 'Sub Title'
+      type: String
+      // default: 'Sub Title'
     }
   }
 }

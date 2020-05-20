@@ -133,43 +133,43 @@ export default {
 
   // background: $tertiary-color;
   // background: $white;
-  &.fixed {
-    background: $white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-    visibility: hidden;
-    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
-    transform: translate(0, -200px);
-    @include respond(tab-port) {
-      position: fixed;
-      opacity: 1;
-      visibility: visible;
-      transform: translate(0, 0);
-    }
-  }
-  &.in-view {
-    opacity: 1;
-    visibility: visible;
-    transition: all 0.3s ease;
-    transform: translate(0, 0);
-    @include respond(tab-port) {
-      transition: none;
-    }
-    .nav .logo {
-      width: 8rem;
-    }
-    .nav__link,
-    .nav__btn {
-      &,
-      &:link,
-      &:visited {
-        color: $primary-color;
-      }
-    }
-  }
+  // &.fixed {
+  //   background: $white;
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   opacity: 0;
+  //   visibility: hidden;
+  //   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+  //   transform: translate(0, -200px);
+  //   @include respond(tab-port) {
+  //     position: fixed;
+  //     opacity: 1;
+  //     visibility: visible;
+  //     transform: translate(0, 0);
+  //   }
+  // }
+  // &.in-view {
+  //   opacity: 1;
+  //   visibility: visible;
+  //   transition: all 0.3s ease;
+  //   transform: translate(0, 0);
+  //   @include respond(tab-port) {
+  //     transition: none;
+  //   }
+  //   .nav .logo {
+  //     width: 8rem;
+  //   }
+  //   .nav__link,
+  //   .nav__btn {
+  //     &,
+  //     &:link,
+  //     &:visited {
+  //       color: $primary-color;
+  //     }
+  //   }
+  // }
 
   .nav {
     width: 100%;

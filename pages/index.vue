@@ -86,9 +86,9 @@
         </div>
       </div>
     </section>
-    <section class="section__testimonials">
+    <!-- <section class="section__testimonials">
       <Testimonials />
-    </section>
+    </section> -->
     <section class="section__services">
       <div class="container">
         <h2 class="heading-secondary">Services</h2>
@@ -104,14 +104,7 @@
         <div class="online__box">
           <div class="online__text">
             <h2 class="heading-secondary">Online Mental Health Resources</h2>
-            <hr class="gcg-border" />
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
-              aperiam quia quos fugit corrupti est, possimus perspiciatis ex,
-              reprehenderit dolor officiis quod distinctio animi natus, omnis id
-              sequi ipsum architecto unde. Corporis distinctio officiis
-              quisquam.
-            </p>
+            <MentalResourceGrid />
             <SimplePractice />
           </div>
         </div>
@@ -133,7 +126,8 @@ import SimplePractice from '@/components/SimplePractice'
 import ContactForm from '@/components/ContactForm'
 import ServicesGrid from '@/components/ServicesGrid'
 import Gallery from '@/components/Gallery'
-import Testimonials from '@/components/Testimonials'
+// import Testimonials from '@/components/Testimonials'
+import MentalResourceGrid from '@/components/MentalResourceGrid'
 
 export default {
   components: {
@@ -142,7 +136,8 @@ export default {
     ContactForm,
     ServicesGrid,
     Gallery,
-    Testimonials
+    // Testimonials,
+    MentalResourceGrid
   },
   data() {
     return {
@@ -412,41 +407,26 @@ export default {
   }
 
   &__online-cta {
-    background-image: url('../assets/img/gcg-online2.jpg');
+    background: #efefef;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
-    height: 47rem;
+    // height: 47rem;
     // padding-left: 10%;
     // padding-right: 10%;
-    display: flex;
-    align-items: center;
+    // display: flex;
+    // align-items: center;
+    text-align: center;
 
-    @include respond(phone) {
-      background-image: linear-gradient(rgba($black, 0.4), rgba($black, 0.4)),
-        url('../assets/img/gcg-online2.jpg');
-
-      .gcg-border {
-        margin: 1rem auto;
-      }
-    }
     .online__text {
       color: $white;
-      width: 50%;
-
-      @include respond(small-tab) {
-        width: 65%;
-      }
-      @include respond(phone) {
-        width: 100%;
-        text-align: center;
-      }
 
       .heading-secondary {
-        color: $white;
+        // color: $white;
+        margin-bottom: 2rem;
       }
-      .btn-primary-wrapper {
-        text-align: left;
+      .btn {
+        margin-top: 2rem;
       }
     }
   }

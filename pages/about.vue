@@ -70,9 +70,6 @@
         </div>
       </div>
     </section>
-    <section class="section__testimonials">
-      <AboutTestimonials />
-    </section>
     <section class="section__services">
       <div class="container">
         <h2 class="heading-secondary">Services</h2>
@@ -90,13 +87,11 @@
 import ContactForm from '@/components/ContactForm'
 import PageHeader from '@/components/PageHeader'
 import ServicesGrid from '@/components/ServicesGrid'
-import AboutTestimonials from '@/components/Testimonials'
 export default {
   components: {
     ContactForm,
     PageHeader,
-    ServicesGrid,
-    AboutTestimonials
+    ServicesGrid
   },
   head() {
     return {
