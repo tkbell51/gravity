@@ -20,8 +20,13 @@
 </template>
 
 <script>
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+
 export default {
-  components: {},
+  components: {
+    Swiper,
+    SwiperSlide
+  },
   data() {
     return {
       testimonySettings: {

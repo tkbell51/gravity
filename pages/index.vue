@@ -120,6 +120,7 @@
 </template>
 
 <script>
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import Fas from '@/components/Fas'
 import SimplePractice from '@/components/SimplePractice'
 import ContactForm from '@/components/ContactForm'
@@ -127,6 +128,7 @@ import ServicesGrid from '@/components/ServicesGrid'
 import Gallery from '@/components/Gallery'
 import Testimonials from '@/components/Testimonials'
 import MentalResourceGrid from '@/components/MentalResourceGrid'
+import 'swiper/css/swiper.css'
 
 export default {
   components: {
@@ -136,7 +138,9 @@ export default {
     ServicesGrid,
     Gallery,
     Testimonials,
-    MentalResourceGrid
+    MentalResourceGrid,
+    Swiper,
+    SwiperSlide
   },
   data() {
     return {
