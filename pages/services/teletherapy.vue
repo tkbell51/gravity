@@ -10,10 +10,7 @@
         <div class="container">
           <div class="teletherapy__box">
             <div class="teletherapy__img">
-              <img
-                src="../../assets/img/teletherapy-photo.jpg"
-                alt="Woman sitting on couch looking at laptop"
-              />
+              <img src="../../assets/img/gcg-online.jpg" alt="" />
             </div>
             <div>
               <p>
@@ -61,9 +58,11 @@ export default {
 <style lang="scss">
 .teletherapy {
   &__box {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
-    grid-gap: 3rem;
+    text-align: center;
+
+    p {
+      margin-top: 2rem;
+    }
   }
   &__img {
     img {

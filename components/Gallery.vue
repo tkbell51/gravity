@@ -1,131 +1,13 @@
 <template>
   <div class="gallery">
-    <figure class="gallery__item gallery__item--3">
+    <figure
+      v-for="(image, index) in gallery"
+      :key="index"
+      :class="`gallery__item gallery__item--${image.num}`"
+    >
       <img
-        src="../assets/img/gallery/gallery-3.jpg"
-        alt=""
-        class="gallery__img"
-      />
-    </figure>
-    <figure class="gallery__item gallery__item--4">
-      <img
-        src="../assets/img/gallery/gallery-4.jpg"
-        alt=""
-        class="gallery__img"
-      />
-    </figure>
-    <figure class="gallery__item gallery__item--17">
-      <img
-        src="../assets/img/gallery/gallery-17.jpg"
-        alt=""
-        class="gallery__img"
-      />
-    </figure>
-
-    <figure class="gallery__item gallery__item--5">
-      <img
-        src="../assets/img/gallery/gallery-5.jpg"
-        alt=""
-        class="gallery__img"
-      />
-    </figure>
-    <figure class="gallery__item gallery__item--15">
-      <img
-        src="../assets/img/gallery/gallery-15.jpg"
-        alt=""
-        class="gallery__img"
-      />
-    </figure>
-    <figure class="gallery__item gallery__item--18">
-      <img
-        src="../assets/img/gallery/gallery-18.jpg"
-        alt=""
-        class="gallery__img"
-      />
-    </figure>
-    <figure class="gallery__item gallery__item--7">
-      <img
-        src="../assets/img/gallery/gallery-7.jpg"
-        alt=""
-        class="gallery__img"
-      />
-    </figure>
-    <figure class="gallery__item gallery__item--6">
-      <img
-        src="../assets/img/gallery/gallery-6.jpg"
-        alt=""
-        class="gallery__img"
-      />
-    </figure>
-
-    <figure class="gallery__item gallery__item--8">
-      <img
-        src="../assets/img/gallery/gallery-8.jpg"
-        alt=""
-        class="gallery__img"
-      />
-    </figure>
-    <figure class="gallery__item gallery__item--2">
-      <img
-        src="../assets/img/gallery/gallery-2.png"
-        alt=""
-        class="gallery__img"
-      />
-    </figure>
-    <figure class="gallery__item gallery__item--11">
-      <img
-        src="../assets/img/gallery/gallery-11.jpg"
-        alt=""
-        class="gallery__img"
-      />
-    </figure>
-    <figure class="gallery__item gallery__item--10">
-      <img
-        src="../assets/img/gallery/gallery-10.jpg"
-        alt=""
-        class="gallery__img"
-      />
-    </figure>
-    <figure class="gallery__item gallery__item--9">
-      <img
-        src="../assets/img/gallery/gallery-9.jpg"
-        alt=""
-        class="gallery__img"
-      />
-    </figure>
-    <figure class="gallery__item gallery__item--1">
-      <img
-        src="../assets/img/gallery/gallery-1.jpg"
-        alt=""
-        class="gallery__img"
-      />
-    </figure>
-    <figure class="gallery__item gallery__item--12">
-      <img
-        src="../assets/img/gallery/gallery-12.jpg"
-        alt=""
-        class="gallery__img"
-      />
-    </figure>
-    <figure class="gallery__item gallery__item--13">
-      <img
-        src="../assets/img/gallery/gallery-13.jpg"
-        alt=""
-        class="gallery__img"
-      />
-    </figure>
-    <figure class="gallery__item gallery__item--14">
-      <img
-        src="../assets/img/gallery/gallery-14.jpg"
-        alt=""
-        class="gallery__img"
-      />
-    </figure>
-
-    <figure class="gallery__item gallery__item--16">
-      <img
-        src="../assets/img/gallery/gallery-16.jpg"
-        alt=""
+        :src="require(`~/assets/img/gallery/gallery-${image.num}.jpg`)"
+        :alt="`${image.alt}`"
         class="gallery__img"
       />
     </figure>
@@ -133,7 +15,71 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      gallery: [
+        {
+          num: '3',
+          alt:
+            'You never asked me how I was doing. And for your information I was doing terribly.'
+        },
+        { num: '4', alt: "If it doesn't evolve me, it doesnt't involve me." },
+        { num: '17', alt: 'There is no health without mental health.' },
+        { num: '5', alt: 'Things that help with depression days' },
+        { num: '15', alt: 'On average it takes 66 days to form a habit' },
+        {
+          num: '18',
+          alt:
+            'The one thing you are always responsible for is how you act, no matter how you feel.'
+        },
+        { num: '7', alt: 'You are only as needy as your unmet needs' },
+        {
+          num: '6',
+          alt:
+            "If we don't change, we don't grow. If we don't grow, we aren't really living."
+        },
+        {
+          num: '8',
+          alt:
+            "20 things that women should stop wearing after the age of 30: 1-20 The weight of other people's expectations & judgements."
+        },
+        { num: '2', alt: 'You are enough' },
+        {
+          num: '11',
+          alt:
+            "You don't have to have all the answers. You don't have to fix it all by yourself. You don't have to pretend to be ok."
+        },
+        { num: '10', alt: 'you need to start somewhere' },
+        {
+          num: '9',
+          alt:
+            "Seeing a therapist doesn't mean there's something wrong with you."
+        },
+        {
+          num: '1',
+          alt:
+            'You can develop any habit or thought or behavior that you consider desirable or necessary.'
+        },
+        { num: '12', alt: "Q's to check-in with yourself" },
+        {
+          num: '13',
+          alt: 'No everybody is built like you. Not everyone is built for you.'
+        },
+        {
+          num: '14',
+          alt:
+            'Follow your calling. Trust your talent. Chase your dream. Believe in yourself.'
+        },
+        {
+          num: '16',
+          alt:
+            'When we open up enough to share the darkest parts of ourselves with someone else, we let a little light in.'
+        }
+      ]
+    }
+  }
+}
 </script>
 
 <style lang="scss">

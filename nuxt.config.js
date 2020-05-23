@@ -1,5 +1,3 @@
-import webpack from 'webpack'
-
 export default {
   mode: 'universal',
   /*
@@ -11,8 +9,8 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    },
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+  },
   /*
    ** Customize the progress-bar color
    */
@@ -20,10 +18,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [
-    'swiper/css/swiper.css',
-    '@/assets/css/main.css'
-  ],
+  css: ['swiper/css/swiper.css', '@/assets/css/main.css'],
   webfontloader: {
     google: {
       families: ['Nanum+Myeongjo', 'Open+Sans']
@@ -43,9 +38,9 @@ export default {
     '@nuxtjs/stylelint-module',
     '@aceforth/nuxt-optimized-images'
   ],
-   optimizedImages: {
-     optimizeImages: true
-   },
+  optimizedImages: {
+    optimizeImages: true
+  },
   eslint: {
     fix: true
   },
@@ -104,8 +99,6 @@ export default {
    ** Build configuration
    */
   build: {
-    extend(config, ctx) {},
-
-  },
-
+    extend(config, ctx) {}
+  }
 }

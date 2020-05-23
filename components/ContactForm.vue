@@ -48,7 +48,7 @@
               class="form"
             >
               <h2 class="heading-secondary">
-                Book Appointment
+                Connect with Gravity
               </h2>
               <hr class="gcg-border" />
 
@@ -56,6 +56,7 @@
                 <input
                   id="name"
                   type="text"
+                  name="name"
                   class="form__input"
                   placeholder="Full Name"
                   required
@@ -66,6 +67,7 @@
                 <input
                   id="email"
                   type="email"
+                  name="email"
                   class="form__input"
                   placeholder="Email Address"
                   required
@@ -145,11 +147,11 @@ export default {
   // }
 
   &__form {
-    width: 50%;
+    width: 45%;
     padding: 6rem;
 
     @include respond(tab-land) {
-      width: 65%;
+      width: 55%;
     }
 
     @include respond(tab-port) {
@@ -162,9 +164,11 @@ export default {
   &__info {
     &--box {
       background: $primary-color;
-      width: 100%;
+      width: 55%;
       padding: 6rem;
-
+      @include respond(tab-port) {
+        width: 100%;
+      }
       @include respond(phone) {
         padding: 2rem;
       }

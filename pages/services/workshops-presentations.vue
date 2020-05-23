@@ -2,7 +2,7 @@
   <div>
     <PageHeader
       page-title="Services"
-      sub-page-title="Workshops &amp; Presentations "
+      sub-page-title="Workshops &amp; Presentations"
       header-text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, reiciendis?"
     />
     <section class="section__content">
@@ -19,7 +19,6 @@
           Relationships), The Dos and Don’ts of Breakup, Positively Parenting,
           Parenting Teens with Anxiety, and more.
         </p>
-        <SimplePractice />
       </div>
     </section>
     <section class="section__services">
@@ -38,14 +37,12 @@
 <script>
 import PageHeader from '@/components/PageHeader'
 import ContactForm from '@/components/ContactForm'
-import SimplePractice from '@/components/SimplePractice'
 import ServicesGrid from '@/components/ServicesGrid'
 export default {
   components: {
     PageHeader,
     ContactForm,
-    ServicesGrid,
-    SimplePractice
+    ServicesGrid
   }
 }
 </script>

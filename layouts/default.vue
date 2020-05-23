@@ -14,7 +14,21 @@ export default {
   components: {
     Header,
     Footer
-  }
+  },
+  mounted() {
+    // window.addEventListener('scroll', function() {
+    //   const header = document.querySelector('.header')
+    //   header.classList.toggle('fixed', window.scrollY > header.scrollHeight)
+    //   const firstSection = document.querySelector(
+    //     '.main-content section:nth-of-type(1)'
+    //   )
+    //   header.classList.toggle(
+    //     'in-view',
+    //     window.scrollY > firstSection.scrollHeight
+    //   )
+    // })
+  },
+  methods: {}
 }
 </script>
 <style lang="scss">
@@ -95,7 +109,9 @@ a {
 .btn {
   display: inline-flex;
   align-items: center;
-  background: darken($accent-color, 5%);
+  // background: darken($accent-color, 5%);
+  background-image: $btn-gradient;
+
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1);
   border-radius: 50px;
   height: 4rem;
@@ -108,7 +124,8 @@ a {
   will-change: transform;
 
   &:hover {
-    background: darken($accent-color, 10%);
+    // background: darken($accent-color, 10%);
+    background-position: 100px;
     box-shadow: 0 4px 17px rgba(0, 0, 0, 0.2);
     transform: translate3d(0, -2px, 0);
   }
@@ -175,7 +192,7 @@ footer {
 .main-content {
   flex: 1 0 auto;
   @include respond(tab-port) {
-    margin-top: 9rem;
+    margin-top: 5rem;
   }
 }
 

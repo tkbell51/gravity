@@ -3,9 +3,9 @@
     <section class="section__hero">
       <swiper ref="heroSlider" :options="settings" class="swiper">
         <swiper-slide
-          v-for="slide in homeSlides"
+          v-for="(slide, index) in homeSlides"
           :id="`${slide.css}`"
-          :key="slide.id"
+          :key="index"
           class="swiper-slide slide"
         >
           <div class="slide__text">
@@ -86,9 +86,9 @@
         </div>
       </div>
     </section>
-    <!-- <section class="section__testimonials">
+    <section class="section__testimonials">
       <Testimonials />
-    </section> -->
+    </section>
     <section class="section__services">
       <div class="container">
         <h2 class="heading-secondary">Services</h2>
@@ -125,7 +125,7 @@ import SimplePractice from '@/components/SimplePractice'
 import ContactForm from '@/components/ContactForm'
 import ServicesGrid from '@/components/ServicesGrid'
 import Gallery from '@/components/Gallery'
-// import Testimonials from '@/components/Testimonials'
+import Testimonials from '@/components/Testimonials'
 import MentalResourceGrid from '@/components/MentalResourceGrid'
 
 export default {
@@ -135,7 +135,7 @@ export default {
     ContactForm,
     ServicesGrid,
     Gallery,
-    // Testimonials,
+    Testimonials,
     MentalResourceGrid
   },
   data() {
@@ -162,21 +162,18 @@ export default {
       },
       homeSlides: [
         {
-          id: 1,
           css: 'slide-help',
           title: 'Need Help?',
           text:
             "Having difficulty accepting mistakes and staying committed? Want to strengthen your connection? Let's do the work to create the relationship that is perfect for you."
         },
         {
-          id: 2,
           css: 'slide-lost',
           title: 'Lost?',
           text:
             'Mental health is complex. Become more self aware of your thoughts, feelings, and actions. Learn how they connect to create the life you are currently living.'
         },
         {
-          id: 3,
           css: 'slide-think',
           title: 'Overwhelmed?',
           text:
@@ -245,10 +242,16 @@ export default {
           font-size: 7rem;
           line-height: 8rem;
           margin-bottom: 2rem;
+          @include respond(phone) {
+            font-size: 5rem;
+          }
         }
         p {
           font-size: 2rem;
           margin-bottom: 2rem;
+          @include respond(phone) {
+            font-size: $default-font-size;
+          }
         }
 
         @include respond(tab-mid) {

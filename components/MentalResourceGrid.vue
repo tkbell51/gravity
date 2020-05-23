@@ -1,8 +1,8 @@
 <template>
   <div class="resource__grid">
     <a
-      v-for="item in items"
-      :key="item.id"
+      v-for="(item, index) in items"
+      :key="index"
       :href="`${item.link}`"
       class="resource__link"
       target="_blanky"
@@ -21,25 +21,21 @@ export default {
     return {
       items: [
         {
-          id: 1,
           link: 'https://mhanational.org/',
           imgSrc: 'may-mental-health.png',
           imgAlt: 'May Mental Health'
         },
         {
-          id: 2,
           link: 'https://suicidepreventionlifeline.org/',
           imgSrc: 'NSPL_Logo.jpg',
           imgAlt: 'National Suicide Prevention Logo'
         },
         {
-          id: 3,
           link: 'https://www.veteranscrisisline.net/',
           imgSrc: 'veteranscrisisline-badge-phone-1.gif',
           imgAlt: 'Veterans Crisis Line'
         },
         {
-          id: 4,
           link: 'https://www.veteranscrisisline.net/',
           imgSrc: 'veteranscrisisline-badge-text-1.gif',
           imgAlt: 'Veterans Crisis Line'

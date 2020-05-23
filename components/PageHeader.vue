@@ -18,8 +18,8 @@ export default {
       default: 'Title'
     },
     subPageTitle: {
-      type: String
-      // default: 'Sub Title'
+      type: String,
+      default: ''
     }
   }
 }
@@ -27,13 +27,20 @@ export default {
 
 <style lang="scss">
 .page__header {
-  background: $gradient;
+  background-image: linear-gradient(
+      to right,
+      rgba($black, 0.3) 0%,
+      rgba($black, 0.3) 100%
+    ),
+    url('../assets/img/bridge-on-the-lake.jpg');
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  height: 40vh;
+  height: 60vh;
   &--content {
     width: 90%;
     text-align: center;
