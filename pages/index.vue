@@ -247,7 +247,9 @@ export default {
           line-height: 8rem;
           margin-bottom: 2rem;
           @include respond(phone) {
-            font-size: 5rem;
+            font-size: 4rem;
+            line-height: 4rem;
+            margin-bottom: 1rem;
           }
         }
         p {

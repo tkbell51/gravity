@@ -183,6 +183,10 @@ a {
   border: 3px solid $accent-color;
   width: 10rem;
   margin-bottom: 2rem;
+  @include respond(phone) {
+    border: 2px solid $accent-color;
+    margin-bottom: 1rem;
+  }
 }
 
 footer {
