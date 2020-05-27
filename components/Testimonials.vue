@@ -1,31 +1,32 @@
 <template>
   <div class="container">
-    <swiper class="swiper testimonial-swiper" :options="testimonySettings">
-      <swiper-slide
-        v-for="(testimony, index) in testimonialSlide"
-        :key="index"
-        class="testimonial swiper-slide slide"
-      >
-        <div class="testimonial__card">
-          <!-- <QuoteMark class="begin" /> -->
-          <p class="testimonial__quote">
-            {{ testimony.quote }}
-          </p>
-          <!-- <QuoteMark class="end" /> -->
-          <p class="testimonial__name">{{ testimony.name }}</p>
+    <div v-swiper="testimonySettings" class="swiper testimonial-swiper">
+      <div class="swiper-wrapper">
+        <div
+          v-for="(testimony, index) in testimonialSlide"
+          :key="index"
+          class="testimonial swiper-slide slide"
+        >
+          <div class="testimonial__card">
+            <!-- <QuoteMark class="begin" /> -->
+            <p class="testimonial__quote">
+              {{ testimony.quote }}
+            </p>
+            <!-- <QuoteMark class="end" /> -->
+            <p class="testimonial__name">{{ testimony.name }}</p>
+          </div>
         </div>
-      </swiper-slide>
-    </swiper>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+import { directive } from 'vue-awesome-swiper'
 
 export default {
-  components: {
-    Swiper,
-    SwiperSlide
+  directives: {
+    swiper: directive
   },
   data() {
     return {

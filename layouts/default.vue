@@ -16,19 +16,18 @@ export default {
     Footer
   },
   mounted() {
-    // window.addEventListener('scroll', function() {
-    //   const header = document.querySelector('.header')
-    //   header.classList.toggle('fixed', window.scrollY > header.scrollHeight)
-    //   const firstSection = document.querySelector(
-    //     '.main-content section:nth-of-type(1)'
-    //   )
-    //   header.classList.toggle(
-    //     'in-view',
-    //     window.scrollY > firstSection.scrollHeight
-    //   )
-    // })
-  },
-  methods: {}
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.header')
+      header.classList.toggle('fixed', window.scrollY > header.scrollHeight)
+      const firstSection = document.querySelector(
+        '.main-content section:nth-of-type(1)'
+      )
+      header.classList.toggle(
+        'in-view',
+        window.scrollY > firstSection.scrollHeight
+      )
+    })
+  }
 }
 </script>
 <style lang="scss">
@@ -109,9 +108,7 @@ a {
 .btn {
   display: inline-flex;
   align-items: center;
-  // background: darken($accent-color, 5%);
-  background-image: $btn-gradient;
-
+  background: darken($accent-color, 5%);
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1);
   border-radius: 50px;
   height: 4rem;
@@ -124,8 +121,7 @@ a {
   will-change: transform;
 
   &:hover {
-    // background: darken($accent-color, 10%);
-    background-position: 100px;
+    background: darken($accent-color, 10%);
     box-shadow: 0 4px 17px rgba(0, 0, 0, 0.2);
     transform: translate3d(0, -2px, 0);
   }
@@ -183,10 +179,6 @@ a {
   border: 3px solid $accent-color;
   width: 10rem;
   margin-bottom: 2rem;
-  @include respond(phone) {
-    border: 2px solid $accent-color;
-    margin-bottom: 1rem;
-  }
 }
 
 footer {
@@ -196,7 +188,7 @@ footer {
 .main-content {
   flex: 1 0 auto;
   @include respond(tab-port) {
-    margin-top: 5rem;
+    margin-top: 9rem;
   }
 }
 

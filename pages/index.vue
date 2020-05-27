@@ -1,27 +1,29 @@
 <template>
   <div>
     <section class="section__hero">
-      <swiper ref="heroSlider" :options="settings" class="swiper">
-        <swiper-slide
-          v-for="(slide, index) in homeSlides"
-          :id="`${slide.css}`"
-          :key="index"
-          class="swiper-slide slide"
-        >
-          <div class="slide__text">
-            <h2 class="heading-primary">{{ slide.title }}</h2>
-            <hr class="gcg-border" />
-            <p>{{ slide.text }}</p>
-            <SimplePractice />
+      <div ref="heroSlider" v-swiper="settings" class="swiper">
+        <div class="swiper-wrapper">
+          <div
+            v-for="(slide, index) in homeSlides"
+            :id="`${slide.css}`"
+            :key="index"
+            class="swiper-slide slide"
+          >
+            <div class="slide__text">
+              <h2 class="heading-primary">{{ slide.title }}</h2>
+              <hr class="gcg-border" />
+              <p>{{ slide.text }}</p>
+              <SimplePractice />
+            </div>
           </div>
-        </swiper-slide>
+        </div>
         <div slot="button-prev" class="swiper-button-prev"></div>
         <div slot="button-next" class="swiper-button-next"></div>
         <div
           slot="pagination"
           class="swiper-pagination swiper-pagination-bullets"
         ></div>
-      </swiper>
+      </div>
     </section>
     <section class="section__help">
       <div class="container">
@@ -120,7 +122,7 @@
 </template>
 
 <script>
-import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+import { directive } from 'vue-awesome-swiper'
 import Fas from '@/components/Fas'
 import SimplePractice from '@/components/SimplePractice'
 import ContactForm from '@/components/ContactForm'
@@ -138,9 +140,10 @@ export default {
     ServicesGrid,
     Gallery,
     Testimonials,
-    MentalResourceGrid,
-    Swiper,
-    SwiperSlide
+    MentalResourceGrid
+  },
+  directives: {
+    swiper: directive
   },
   data() {
     return {
@@ -184,11 +187,6 @@ export default {
             'I am constantly thinking and analyzing every situation even if it seems all good. Capture greater peace as you l gain perspective.'
         }
       ]
-    }
-  },
-  computed: {
-    swiper() {
-      return this.$refs.heroSlider.$swiper
     }
   },
 
