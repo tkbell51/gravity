@@ -1,6 +1,10 @@
 <template>
   <div class="container">
-    <div v-swiper="testimonySettings" class="swiper testimonial-swiper">
+    <div
+      ref="testSlider"
+      v-swiper="testimonySettings"
+      class="swiper testimonial-swiper"
+    >
       <div class="swiper-wrapper">
         <div
           v-for="(testimony, index) in testimonialSlide"
@@ -22,12 +26,7 @@
 </template>
 
 <script>
-import { directive } from 'vue-awesome-swiper'
-
 export default {
-  directives: {
-    swiper: directive
-  },
   data() {
     return {
       testimonySettings: {
@@ -41,6 +40,7 @@ export default {
           disableOnInteraction: false
         }
       },
+
       testimonialSlide: [
         {
           quote:
@@ -62,6 +62,11 @@ export default {
           name: 'Ellen J. Langer'
         }
       ]
+    }
+  },
+  computed: {
+    swiper() {
+      return this.$refs.testSlider.$swiper
     }
   }
 }

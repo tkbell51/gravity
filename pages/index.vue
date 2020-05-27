@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="section__hero">
-      <div ref="heroSlider" v-swiper="settings" class="swiper">
+      <div ref="heroSlider" v-swiper="settings">
         <div class="swiper-wrapper">
           <div
             v-for="(slide, index) in homeSlides"
@@ -122,7 +122,6 @@
 </template>
 
 <script>
-import { directive } from 'vue-awesome-swiper'
 import Fas from '@/components/Fas'
 import SimplePractice from '@/components/SimplePractice'
 import ContactForm from '@/components/ContactForm'
@@ -130,7 +129,6 @@ import ServicesGrid from '@/components/ServicesGrid'
 import Gallery from '@/components/Gallery'
 import Testimonials from '@/components/Testimonials'
 import MentalResourceGrid from '@/components/MentalResourceGrid'
-import 'swiper/css/swiper.css'
 
 export default {
   components: {
@@ -141,9 +139,6 @@ export default {
     Gallery,
     Testimonials,
     MentalResourceGrid
-  },
-  directives: {
-    swiper: directive
   },
   data() {
     return {
@@ -187,6 +182,11 @@ export default {
             'I am constantly thinking and analyzing every situation even if it seems all good. Capture greater peace as you l gain perspective.'
         }
       ]
+    }
+  },
+  computed: {
+    swiper() {
+      return this.$refs.heroSlider.$swiper
     }
   },
 
