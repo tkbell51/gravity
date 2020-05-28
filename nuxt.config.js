@@ -9,7 +9,23 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        red: 'stylesheet',
+        href: "https://cdn.jsdelivr.net/npm/swiper@5.3.6/css/swiper.min.css"
+      }],
+      script: [
+        {
+          src: 'https://cdn.jsdelivr.net/npm/swiper@5.3.6/js/swiper.min.js'
+        },
+        {
+          src: 'https://cdn.jsdelivr.net/npm/vue'
+        },
+        {
+          src: 'https://cdn.jsdelivr.net/npm/vue-awesome-swiper'
+        }
+      ]
   },
   /*
    ** Customize the progress-bar color
