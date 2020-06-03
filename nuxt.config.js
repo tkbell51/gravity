@@ -1,3 +1,4 @@
+import webpack from 'webpack'
 export default {
   mode: 'universal',
   /*
@@ -102,6 +103,12 @@ export default {
    ** Build configuration
    */
   build: {
+    plugins: [
+      new webpack.ProvidePlugin({
+        '$':'jquery',
+        '_':'lodash'
+      })
+    ],
     extend(config, ctx) {}
   }
 }
