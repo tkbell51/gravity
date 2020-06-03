@@ -109,6 +109,7 @@ export default {
         '_':'lodash'
       })
     ],
-    extend(config, ctx) {}
+    extend(config, ctx) {},
+    transpile: ['vue-awesome-swiper']
   }
 }
