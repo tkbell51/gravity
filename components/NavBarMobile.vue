@@ -60,6 +60,7 @@ export default {
     Logo,
     Fab
   },
+  // eslint-disable-next-line
   props: ['showNav'],
 
   methods: {
