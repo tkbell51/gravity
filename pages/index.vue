@@ -1,30 +1,32 @@
 <template>
   <div>
-    <section class="section__hero">
-      <div ref="heroSlider" v-swiper="settings">
-        <div class="swiper-wrapper">
-          <div
-            v-for="(slide, index) in homeSlides"
-            :id="`${slide.css}`"
-            :key="index"
-            class="swiper-slide slide"
-          >
-            <div class="slide__text">
-              <h2 class="heading-primary">{{ slide.title }}</h2>
-              <hr class="gcg-border" />
-              <p>{{ slide.text }}</p>
-              <SimplePractice />
+    <client-only>
+      <section class="section__hero">
+        <div ref="heroSlider" v-swiper="settings">
+          <div class="swiper-wrapper">
+            <div
+              v-for="(slide, index) in homeSlides"
+              :id="`${slide.css}`"
+              :key="index"
+              class="swiper-slide slide"
+            >
+              <div class="slide__text">
+                <h2 class="heading-primary">{{ slide.title }}</h2>
+                <hr class="gcg-border" />
+                <p>{{ slide.text }}</p>
+                <SimplePractice />
+              </div>
             </div>
           </div>
+          <div slot="button-prev" class="swiper-button-prev"></div>
+          <div slot="button-next" class="swiper-button-next"></div>
+          <div
+            slot="pagination"
+            class="swiper-pagination swiper-pagination-bullets"
+          ></div>
         </div>
-        <div slot="button-prev" class="swiper-button-prev"></div>
-        <div slot="button-next" class="swiper-button-next"></div>
-        <div
-          slot="pagination"
-          class="swiper-pagination swiper-pagination-bullets"
-        ></div>
-      </div>
-    </section>
+      </section>
+    </client-only>
     <section class="section__help">
       <div class="container">
         <div class="section__help--text">

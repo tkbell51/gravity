@@ -1,27 +1,29 @@
 <template>
   <div class="container">
-    <div
-      ref="testSlider"
-      v-swiper="testimonySettings"
-      class="swiper testimonial-swiper"
-    >
-      <div class="swiper-wrapper">
-        <div
-          v-for="(testimony, index) in testimonialSlide"
-          :key="index"
-          class="testimonial swiper-slide slide"
-        >
-          <div class="testimonial__card">
-            <!-- <QuoteMark class="begin" /> -->
-            <p class="testimonial__quote">
-              {{ testimony.quote }}
-            </p>
-            <!-- <QuoteMark class="end" /> -->
-            <p class="testimonial__name">{{ testimony.name }}</p>
+    <client-only>
+      <div
+        ref="testSlider"
+        v-swiper="testimonySettings"
+        class="swiper testimonial-swiper"
+      >
+        <div class="swiper-wrapper">
+          <div
+            v-for="(testimony, index) in testimonialSlide"
+            :key="index"
+            class="testimonial swiper-slide slide"
+          >
+            <div class="testimonial__card">
+              <!-- <QuoteMark class="begin" /> -->
+              <p class="testimonial__quote">
+                {{ testimony.quote }}
+              </p>
+              <!-- <QuoteMark class="end" /> -->
+              <p class="testimonial__name">{{ testimony.name }}</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </client-only>
   </div>
 </template>
 
