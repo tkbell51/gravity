@@ -16,17 +16,23 @@
 
 <script>
 export default {
+  asyncData(context) {
+    return {
+      selectedIndex: 0, // the index of the selected tab,
+      tabs: [] // all of the tabs
+    }
+  },
   data() {
     return {
       selectedIndex: 0, // the index of the selected tab,
       tabs: [] // all of the tabs
     }
   },
-  computed() {
-    this.selectTab(0)
-  },
   created() {
     this.tabs = this.$children
+  },
+  mounted() {
+    this.selectTab(0)
   },
   methods: {
     selectTab(i) {
