@@ -1,30 +1,5 @@
 <template>
   <div>
-    <!--<section class="section__hero">
-       <div ref="heroSlider" v-swiper="settings">
-        <div class="swiper-wrapper">
-          <div
-            v-for="(slide, index) in homeSlides"
-            :id="`${slide.css}`"
-            :key="index"
-            class="swiper-slide slide"
-          >
-            <div class="slide__text">
-              <h2 class="heading-primary">{{ slide.title }}</h2>
-              <hr class="gcg-border" />
-              <p>{{ slide.text }}</p>
-              <SimplePractice />
-            </div>
-          </div>
-        </div>
-        <div slot="button-prev" class="swiper-button-prev"></div>
-        <div slot="button-next" class="swiper-button-next"></div>
-        <div
-          slot="pagination"
-          class="swiper-pagination swiper-pagination-bullets"
-        ></div>
-      </div>
-    </section>-->
     <HeroTabs />
     <section class="section__help">
       <div class="container">
@@ -141,56 +116,6 @@ export default {
     MentalResourceGrid,
     HeroTabs
   },
-  data() {
-    return {
-      settings: {
-        slidesPerView: 1,
-        loop: true,
-        effect: 'fade',
-        keyboard: {
-          enabled: true
-        },
-        autoplay: {
-          delay: 10000,
-          disableOnInteraction: false
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true
-        }
-      },
-      homeSlides: [
-        {
-          css: 'slide-help',
-          title: 'Need Help?',
-          text:
-            "Having difficulty accepting mistakes and staying committed? Want to strengthen your connection? Let's do the work to create the relationship that is perfect for you."
-        },
-        {
-          css: 'slide-lost',
-          title: 'Lost?',
-          text:
-            'Mental health is complex. Become more self aware of your thoughts, feelings, and actions. Learn how they connect to create the life you are currently living.'
-        },
-        {
-          css: 'slide-think',
-          title: 'Overwhelmed?',
-          text:
-            'I am constantly thinking and analyzing every situation even if it seems all good. Capture greater peace as you l gain perspective.'
-        }
-      ]
-    }
-  },
-  computed: {
-    swiper() {
-      return this.$refs.heroSlider.$swiper
-    }
-  },
-
   head() {
     return {
       title: 'Gravity Counseling Group Home',
@@ -355,8 +280,7 @@ export default {
       }
     }
   }
-  &__gallery {
-  }
+
   &__blog-row {
     .blog-row__grid {
       display: grid;

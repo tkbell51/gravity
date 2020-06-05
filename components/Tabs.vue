@@ -22,11 +22,11 @@ export default {
       tabs: [] // all of the tabs
     }
   },
+  computed() {
+    this.selectTab(0)
+  },
   created() {
     this.tabs = this.$children
-  },
-  mounted() {
-    this.selectTab(0)
   },
   methods: {
     selectTab(i) {

@@ -16,8 +16,7 @@ export default {
     return {
       isActive: false
     }
-  },
-  transition: 'fade'
+  }
 }
 </script>
 

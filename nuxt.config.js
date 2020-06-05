@@ -19,7 +19,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['swiper/css/swiper.css', '@/assets/css/main.css'],
+  css: ['@/assets/css/main.css'],
   webfontloader: {
     google: {
       families: ['Nanum+Myeongjo', 'Open+Sans']
