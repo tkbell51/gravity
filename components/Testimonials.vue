@@ -1,46 +1,32 @@
 <template>
-  <div class="container">
-    <div
-      ref="testSlider"
-      v-swiper="testimonySettings"
-      class="swiper testimonial-swiper"
-    >
-      <div class="swiper-wrapper">
-        <div
-          v-for="(testimony, index) in testimonialSlide"
-          :key="index"
-          class="testimonial swiper-slide slide"
-        >
-          <div class="testimonial__card">
-            <!-- <QuoteMark class="begin" /> -->
-            <p class="testimonial__quote">
-              {{ testimony.quote }}
-            </p>
-            <!-- <QuoteMark class="end" /> -->
-            <p class="testimonial__name">{{ testimony.name }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <section class="section__testimonials">
+    <tabs>
+      <tab
+        v-for="(item, index) in testimonialSlide"
+        :key="index"
+        class="testimonial"
+      >
+        <!-- <QuoteMark class="begin" /> -->
+        <p class="testimonial__quote">
+          {{ item.quote }}
+        </p>
+        <!-- <QuoteMark class="end" /> -->
+        <p class="testimonial__name">{{ item.name }}</p>
+      </tab>
+    </tabs>
+  </section>
 </template>
 
 <script>
+import Tab from '@/components/Tab'
+import Tabs from '@/components/Tabs'
 export default {
+  components: {
+    Tab,
+    Tabs
+  },
   data() {
     return {
-      testimonySettings: {
-        slidesPerView: 1,
-        loop: true,
-        keyboard: {
-          enabled: true
-        },
-        autoplay: {
-          delay: 10000,
-          disableOnInteraction: false
-        }
-      },
-
       testimonialSlide: [
         {
           quote:
@@ -63,35 +49,96 @@ export default {
         }
       ]
     }
-  },
-  computed: {
-    swiper() {
-      return this.$refs.testSlider.$swiper
-    }
   }
 }
 </script>
 
 <style lang="scss">
+.section__testimonials {
+  background: $gradient;
+  padding: 0;
+  height: 35rem;
+  & > div {
+    height: inherit;
+    position: relative;
+  }
+  .tabs__header {
+    position: absolute;
+    display: flex;
+    list-style: none;
+    transform: translateX(-50%);
+    font-size: $default-font-size;
+    bottom: 10px;
+    left: 50%;
+    z-index: 10;
+
+    cursor: pointer;
+    li {
+      cursor: pointer;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      white-space: nowrap;
+      transition: all 0.2s ease-in;
+      color: transparent;
+      &:before {
+        content: '';
+        height: 10px;
+        width: 10px;
+        background-color: $white;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+      &:hover {
+        background: rgba($white, 0.2);
+      }
+      &.tab__selected:before {
+        background-color: $accent-color;
+      }
+    }
+  }
+
+  .tab {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: inherit;
+    transition: all 0.2s ease-in;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
 .testimonial {
   display: flex;
+  flex-direction: column;
+
   justify-content: center;
   align-items: center;
+  padding: 0 15%;
   &:before,
   &:after {
     position: absolute;
     font-family: sans-serif;
     font-size: calc(40rem + 1vw);
-    color: rgba($white, 0.3);
+    color: rgba($white, 0.2);
   }
   &:before {
     content: '\201c';
-    left: 1rem;
+    left: 15%;
     top: -13rem;
   }
   &:after {
     content: '\201d';
-    right: 1rem;
+    right: 15%;
     top: -1rem;
   }
 

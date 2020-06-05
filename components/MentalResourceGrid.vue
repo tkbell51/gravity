@@ -21,11 +21,6 @@ export default {
     return {
       items: [
         {
-          link: 'https://mhanational.org/',
-          imgSrc: 'may-mental-health.png',
-          imgAlt: 'May Mental Health'
-        },
-        {
           link: 'https://suicidepreventionlifeline.org/',
           imgSrc: 'NSPL_Logo.jpg',
           imgAlt: 'National Suicide Prevention Logo'

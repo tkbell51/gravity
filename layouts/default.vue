@@ -14,19 +14,6 @@ export default {
   components: {
     Header,
     Footer
-  },
-  mounted() {
-    window.addEventListener('scroll', function() {
-      const header = document.querySelector('.header')
-      header.classList.toggle('fixed', window.scrollY > header.scrollHeight)
-      const firstSection = document.querySelector(
-        '.main-content section:nth-of-type(1)'
-      )
-      header.classList.toggle(
-        'in-view',
-        window.scrollY > firstSection.scrollHeight
-      )
-    })
   }
 }
 </script>
@@ -143,26 +130,7 @@ a {
     height: 35;
   }
 }
-.swiper {
-  &-button-next,
-  &-button-prev {
-    color: rgba($white, 0.5);
-    transition: all 0.1s ease-in;
-    &:hover {
-      color: $primary-color;
-      border-radius: 0;
-    }
-  }
-  &-pagination-bullet {
-    border-radius: 0;
-    width: 3rem;
-    height: 4px;
-    background: rgba($white, 0.8);
-    &-active {
-      background: $accent-color;
-    }
-  }
-}
+
 ::selection {
   background-color: $primary-color !important;
   color: $white;
@@ -188,7 +156,7 @@ footer {
 .main-content {
   flex: 1 0 auto;
   @include respond(tab-port) {
-    margin-top: 9rem;
+    margin-top: 5rem;
   }
 }
 
@@ -198,15 +166,7 @@ section {
     padding: 3rem 0;
   }
 }
-.section__testimonials {
-  background: $gradient;
-  padding: 0;
-  height: 35rem;
-  .container {
-    display: flex;
-    height: 100%;
-  }
-}
+
 .overlay {
   position: fixed;
   top: 0;

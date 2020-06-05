@@ -1,7 +1,7 @@
 <template>
   <div>
-    <section class="section__hero">
-      <div ref="heroSlider" v-swiper="settings">
+    <!--<section class="section__hero">
+       <div ref="heroSlider" v-swiper="settings">
         <div class="swiper-wrapper">
           <div
             v-for="(slide, index) in homeSlides"
@@ -24,7 +24,8 @@
           class="swiper-pagination swiper-pagination-bullets"
         ></div>
       </div>
-    </section>
+    </section>-->
+    <HeroTabs />
     <section class="section__help">
       <div class="container">
         <div class="section__help--text">
@@ -88,9 +89,7 @@
         </div>
       </div>
     </section>
-    <section class="section__testimonials">
-      <Testimonials />
-    </section>
+    <Testimonials />
     <section class="section__services">
       <div class="container">
         <h2 class="heading-secondary">Services</h2>
@@ -129,6 +128,7 @@ import ServicesGrid from '@/components/ServicesGrid'
 import Gallery from '@/components/Gallery'
 import Testimonials from '@/components/Testimonials'
 import MentalResourceGrid from '@/components/MentalResourceGrid'
+import HeroTabs from '@/components/HeroTabs'
 
 export default {
   components: {
@@ -138,7 +138,8 @@ export default {
     ServicesGrid,
     Gallery,
     Testimonials,
-    MentalResourceGrid
+    MentalResourceGrid,
+    HeroTabs
   },
   data() {
     return {
@@ -206,88 +207,6 @@ export default {
 
 <style lang="scss">
 .section {
-  &__hero {
-    padding: 0;
-    height: 95vh;
-    & > div {
-      height: inherit;
-    }
-
-    @include respond(phone) {
-      height: 70vh;
-    }
-    #slide-lost {
-      background-image: linear-gradient(rgba($black, 0.4), rgba($black, 0.4)),
-        url('../assets/img/gcc-happy.jpg');
-    }
-    #slide-think {
-      background-image: linear-gradient(rgba($black, 0.4), rgba($black, 0.4)),
-        url('../assets/img/gcc-think.jpg');
-    }
-    #slide-help {
-      background-image: linear-gradient(rgba($black, 0.4), rgba($black, 0.4)),
-        url('../assets/img/gcc-help.jpg');
-    }
-    .slide {
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: 50% 50%;
-      color: $white;
-      position: relative;
-      display: flex !important;
-      align-items: center;
-
-      &__text {
-        width: 50%;
-        padding: 0 10%;
-        .heading-primary {
-          font-size: 7rem;
-          line-height: 8rem;
-          margin-bottom: 2rem;
-          @include respond(phone) {
-            font-size: 4rem;
-            line-height: 4rem;
-            margin-bottom: 1rem;
-          }
-        }
-        p {
-          font-size: 2rem;
-          margin-bottom: 2rem;
-          @include respond(phone) {
-            font-size: $default-font-size;
-          }
-        }
-
-        @include respond(tab-mid) {
-          width: 100%;
-          text-align: center;
-          padding: 0 10%;
-
-          .gcg-border {
-            margin-left: auto;
-            margin-right: auto;
-          }
-        }
-      }
-      &__learn-more {
-        margin-right: 1rem;
-      }
-    }
-
-    .hero-question {
-      font-family: 'Cormorant Garamond';
-      font-size: 7rem;
-      text-transform: uppercase;
-      font-weight: bold;
-      color: $white;
-      line-height: 1;
-      margin-bottom: 1rem;
-
-      @include respond(phone) {
-        font-size: 5rem;
-      }
-    }
-  }
   &__help {
     &--text {
       text-align: center;
