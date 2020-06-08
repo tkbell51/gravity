@@ -1,33 +1,56 @@
 <template>
   <section class="section__testimonials">
-    <tabs>
+    <!-- <tabs>
       <tab
         v-for="(item, index) in slides"
         :key="index"
         :title="item.name"
         class="testimonial"
       >
-        <!-- <QuoteMark class="begin" /> -->
+
         <p class="testimonial__quote">
           {{ item.quote }}
         </p>
-        <!-- <QuoteMark class="end" /> -->
+
         <p class="testimonial__name">{{ item.name }}</p>
       </tab>
-    </tabs>
+    </tabs> -->
+
+    <swiper ref="quoteSwiper" :options="quoteOptions">
+      <swiper-slide
+        v-for="(item, index) in slides"
+        :key="index"
+        :title="item.name"
+        class="testimonial"
+      >
+        <div class="container">
+          <p class="testimonial__quote">
+            {{ item.quote }}
+          </p>
+          <p class="testimonial__name">{{ item.name }}</p>
+        </div>
+      </swiper-slide>
+      <div slot="pagination" class="swiper-pagination"></div>
+    </swiper>
   </section>
 </template>
 
 <script>
-import Tab from '@/components/Tab'
-import Tabs from '@/components/Tabs'
+// import Tab from '@/components/Tab'
+// import Tabs from '@/components/Tabs'
 export default {
   components: {
-    Tab,
-    Tabs
+    // Tab,
+    // Tabs
   },
   data() {
     return {
+      quoteOptions: {
+        effect: 'fade',
+        autoplay: {
+          delay: 15000
+        }
+      },
       slides: [
         {
           quote:
@@ -50,15 +73,17 @@ export default {
         }
       ]
     }
+  },
+  computed: {
+    swiper() {
+      return this.$refs.quoteSwiper.$swiper
+    }
   }
 }
 </script>
 
 <style lang="scss">
 .section__testimonials {
-  background: $gradient;
-  padding: 0;
-  height: 35rem;
   & > div {
     height: inherit;
     position: relative;
@@ -104,14 +129,18 @@ export default {
     }
   }
 
-  .tab {
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .tab,
+  .swiper-slide {
+    // opacity: 0;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    background: $gradient;
+    padding: 0;
+    height: 35rem;
     width: 100%;
-    height: inherit;
+    // height: inherit;
     transition: all 0.2s ease-in;
 
     &.active {
@@ -124,7 +153,7 @@ export default {
 
     justify-content: center;
     align-items: center;
-    padding: 0 15%;
+    // padding: 0 15%;
     &:before,
     &:after {
       position: absolute;
@@ -134,19 +163,19 @@ export default {
     }
     &:before {
       content: '\201c';
-      left: 15%;
+      left: 1%;
       top: -13rem;
     }
     &:after {
       content: '\201d';
-      right: 15%;
+      right: 1%;
       top: -1rem;
     }
 
     &__quote {
       text-align: center;
       font-family: 'Nanum Myeongjo';
-      width: 90%;
+      // width: 90%;
       font-size: calc(2rem + 1vw);
       margin: 0 auto;
       color: $white;

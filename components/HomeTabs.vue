@@ -1,8 +1,7 @@
 <template>
   <section class="section__hero">
-      <client-only>
-    <tabs>
-      <tab
+    <swiper ref="heroSwiper" :options="heroOptions">
+      <swiper-slide
         v-for="(item, index) in homeSlides"
         :id="item.css"
         :key="index"
@@ -14,25 +13,38 @@
           <p>{{ item.text }}</p>
           <SimplePractice />
         </div>
-      </tab>
-    </tabs>
-      </client-only>
+      </swiper-slide>
+      <div slot="pagination" class="swiper-pagination"></div>
+      <div
+        slot="pagination"
+        class="swiper-pagination swiper-pagination-bullets"
+      ></div>
+    </swiper>
   </section>
 </template>
 
 <script>
 import SimplePractice from '@/components/SimplePractice'
-import Tab from '@/components/Tab'
-import Tabs from '@/components/Tabs'
+// import Tab from '@/components/Tab'
+// import Tabs from '@/components/Tabs'
 export default {
   components: {
-    SimplePractice,
-    Tab,
-    Tabs
+    SimplePractice
+    // Tab,
+    // Tabs
   },
   data() {
     return {
-
+      heroOptions: {
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        effect: 'fade',
+        autoplay: {
+          delay: 15000
+        }
+      },
       homeSlides: [
         {
           css: 'slide-help',
@@ -53,6 +65,11 @@ export default {
             'I am constantly thinking and analyzing every situation even if it seems all good. Capture greater peace as you l gain perspective.'
         }
       ]
+    }
+  },
+  computed: {
+    swiper() {
+      return this.$refs.heroSwiper.$swiper
     }
   }
 }
@@ -125,7 +142,8 @@ export default {
         url('../assets/img/gcc-help.jpg');
     }
   }
-  .tab {
+  .tab,
+  .swiper-slide {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
@@ -188,6 +206,16 @@ export default {
 
     @include respond(phone) {
       font-size: 5rem;
+    }
+  }
+  .swiper-pagination-bullet {
+    width: 25px;
+    height: 2px;
+    border-radius: 0;
+    background: $white;
+    border: none;
+    &-active {
+      background: $accent-color;
     }
   }
 }
