@@ -28,7 +28,12 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/vue-awesome-swiper.js'],
+  plugins: [
+    {
+      src: '@/plugins/vue-awesome-swiper',
+      mode: 'client'
+    }
+  ],
   /*
    ** Nuxt.js dev-modules
    */
