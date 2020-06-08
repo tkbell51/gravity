@@ -23,6 +23,13 @@ export default {
 <style lang="scss">
 .tab {
   height: inherit;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+
+  &.active {
+    opacity: 1;
+  }
 }
 
 .fade-enter-active,
