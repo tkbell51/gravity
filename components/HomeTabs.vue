@@ -1,5 +1,6 @@
 <template>
   <section class="section__hero">
+      <client-only>
     <tabs>
       <tab
         v-for="(item, index) in homeSlides"
@@ -15,6 +16,7 @@
         </div>
       </tab>
     </tabs>
+      </client-only>
   </section>
 </template>
 
@@ -30,6 +32,7 @@ export default {
   },
   data() {
     return {
+
       homeSlides: [
         {
           css: 'slide-help',
