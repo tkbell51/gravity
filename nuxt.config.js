@@ -28,12 +28,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    {
-      src: '@/plugins/vue-awesome-swiper',
-      mode: 'client'
-    }
-  ],
+  plugins: ['@/plugins/vue-awesome-swiper.js'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -111,6 +106,11 @@ export default {
         _: 'lodash'
       })
     ],
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      const vueLoader = config.module.rules.find(
+        (rule) => rule.loader === `vue-loader`
+      )
+      vueLoader.options.preserveWhitespace = true
+    }
   }
 }

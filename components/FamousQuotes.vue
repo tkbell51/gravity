@@ -1,21 +1,5 @@
 <template>
   <section class="section__testimonials">
-    <!-- <tabs>
-      <tab
-        v-for="(item, index) in slides"
-        :key="index"
-        :title="item.name"
-        class="testimonial"
-      >
-
-        <p class="testimonial__quote">
-          {{ item.quote }}
-        </p>
-
-        <p class="testimonial__name">{{ item.name }}</p>
-      </tab>
-    </tabs> -->
-
     <swiper ref="quoteSwiper" :options="quoteOptions">
       <swiper-slide
         v-for="(item, index) in slides"

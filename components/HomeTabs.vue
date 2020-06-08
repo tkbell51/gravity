@@ -1,29 +1,25 @@
 <template>
   <section class="section__hero">
-    <div v-swiper="heroOptions">
-      <div class="swiper-wrapper">
-        <div
-          v-for="(item, index) in homeSlides"
-          :id="item.css"
-          :key="index"
-          class="swiper-slide"
-          :title="item.title"
-          @ready="onSwiperRedied"
-        >
-          <div class="tab__text">
-            <h2 class="heading-primary">{{ item.title }}</h2>
-            <hr class="gcg-border" />
-            <p>{{ item.text }}</p>
-            <SimplePractice />
-          </div>
+    <swiper ref="heroSwiper" :options="heroOptions">
+      <swiper-slide
+        v-for="(item, index) in homeSlides"
+        :id="item.css"
+        :key="index"
+        :title="item.title"
+      >
+        <div class="tab__text">
+          <h2 class="heading-primary">{{ item.title }}</h2>
+          <hr class="gcg-border" />
+          <p>{{ item.text }}</p>
+          <SimplePractice />
         </div>
-      </div>
+      </swiper-slide>
       <div slot="pagination" class="swiper-pagination"></div>
       <div
         slot="pagination"
         class="swiper-pagination swiper-pagination-bullets"
       ></div>
-    </div>
+    </swiper>
   </section>
 </template>
 
@@ -71,9 +67,9 @@ export default {
       ]
     }
   },
-  methods: {
-    onSwiperRedied(swiper) {
-      console.log('Swiper redied!', swiper)
+  computed: {
+    swiper() {
+      return this.$refs.heroSwiper.$swiper
     }
   }
 }
