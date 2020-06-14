@@ -26,7 +26,8 @@
     "swiper": "^5.4.2",
     "typescript": "^3.8.3",
     "vue-awesome-swiper": "^4.1.1",
-    "vue-clickaway": "^2.2.2"
+    "vue-clickaway": "^2.2.2",
+    "vue-slick-carousel": "^1.0.5"
   },
   "devDependencies": {
     "@aceforth/nuxt-optimized-images": "^1.0.1",

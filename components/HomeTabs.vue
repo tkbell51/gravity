@@ -1,40 +1,16 @@
 <template>
   <section class="section__hero">
-    <swiper ref="heroSwiper" :options="options">
-      <swiper-slide id="slide-help" title="Need Help?">
+    <!-- <swiper ref="heroSwiper" :options="options">
+      <swiper-slide
+        v-for="(item, index) in slides"
+        :id="item.css"
+        :key="index"
+        :title="item.title"
+      >
         <div class="tab__text">
-          <h2 class="heading-primary">Need Help?</h2>
+          <h2 class="heading-primary">{{ item.title }}</h2>
           <hr class="gcg-border" />
-          <p>
-            Having difficulty accepting mistakes and staying committed? Want to
-            strengthen your connection? Let's do the work to create the
-            relationship that is perfect for you.
-          </p>
-          <SimplePractice />
-        </div>
-      </swiper-slide>
-
-      <swiper-slide id="slide-lost" title="Lost?">
-        <div class="tab__text">
-          <h2 class="heading-primary">Lost?</h2>
-          <hr class="gcg-border" />
-          <p>
-            Mental health is complex. Become more self aware of your thoughts,
-            feelings, and actions. Learn how they connect to create the life you
-            are currently living.
-          </p>
-          <SimplePractice />
-        </div>
-      </swiper-slide>
-
-      <swiper-slide id="slide-think" title="Overwhelmed?">
-        <div class="tab__text">
-          <h2 class="heading-primary">Overwhelmed?</h2>
-          <hr class="gcg-border" />
-          <p>
-            I am constantly thinking and analyzing every situation even if it
-            seems all good. Capture greater peace as you l gain perspective.
-          </p>
+          <p>{{ item.text }}</p>
           <SimplePractice />
         </div>
       </swiper-slide>
@@ -43,19 +19,70 @@
         slot="pagination"
         class="swiper-pagination swiper-pagination-bullets"
       ></div>
-    </swiper>
+    </swiper> -->
+    <VueSlickCarousel v-bind="settings">
+      <div
+        v-for="(item, index) in slides"
+        :id="item.css"
+        :key="index"
+        :title="item.title"
+        class="slide"
+      >
+        <div class="tab__text">
+          <h2 class="heading-primary">{{ item.title }}</h2>
+          <hr class="gcg-border" />
+          <p>{{ item.text }}</p>
+          <SimplePractice />
+        </div>
+      </div>
+    </VueSlickCarousel>
   </section>
 </template>
 
 <script>
+import VueSlickCarousel from 'vue-slick-carousel'
 import SimplePractice from '@/components/SimplePractice'
+// import Tab from '@/components/Tab'
+// import Tabs from '@/components/Tabs'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+// optional style for arrows & dots
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 export default {
   components: {
-    SimplePractice
+    SimplePractice,
+    VueSlickCarousel
+    // Tab,
+    // Tabs
   },
   data() {
     return {
-      tabs: ['Need Help?', 'Lost?', 'Overwhelmed?'],
+      settings: {
+        arrows: true,
+        dots: true,
+        autoplay: true,
+        fade: true,
+        autoplaySpeed: 15000
+      },
+      slides: [
+        {
+          css: 'slide-help',
+          title: 'Need Help?',
+          text:
+            "Having difficulty accepting mistakes and staying committed? Want to strengthen your connection? Let's do the work to create the relationship that is perfect for you."
+        },
+        {
+          css: 'slide-lost',
+          title: 'Lost?',
+          text:
+            'Mental health is complex. Become more self aware of your thoughts, feelings, and actions. Learn how they connect to create the life you are currently living.'
+        },
+        {
+          css: 'slide-think',
+          title: 'Overwhelmed?',
+          text:
+            'I am constantly thinking and analyzing every situation even if it seems all good. Capture greater peace as you l gain perspective.'
+        }
+      ],
       options: {
         pagination: {
           el: '.swiper-pagination',
@@ -110,7 +137,32 @@ export default {
       }
     }
   }
+  .slick {
+    &-slider {
+    }
+    &-list {
+      height: inherit;
+    }
+    &-track {
+      height: inherit;
+    }
+    &-slide {
+      height: inherit;
+      & > div {
+        height: inherit;
+      }
+    }
+    &-dots {
+      bottom: 10px;
 
+      & li button:before {
+        color: $white;
+      }
+      & .slick-active button:before {
+        color: $accent-color;
+      }
+    }
+  }
   @include respond(phone) {
     height: 70vh;
   }
@@ -139,12 +191,13 @@ export default {
     }
   }
   .tab,
-  .swiper-slide {
+  .swiper-slide,
+  .slide {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
     color: $white;
-
+    height: 100%;
     // display: flex !important;
     // align-items: center;
     transition: opacity 0.4s linear;
