@@ -1,9 +1,5 @@
 <template>
   <div>
-    <!-- <section class="page__header">
-      <h1 class="heading-primary">Services</h1>
-      <hr class="gcg-border" />
-    </section> -->
     <PageHeader
       page-title="Services"
       header-text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, reiciendis?"

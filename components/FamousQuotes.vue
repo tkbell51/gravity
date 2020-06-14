@@ -1,20 +1,42 @@
 <template>
   <section class="section__testimonials">
     <swiper ref="quoteSwiper" :options="quoteOptions">
-      <swiper-slide
-        v-for="(item, index) in slides"
-        :key="index"
-        :title="item.name"
-        class="testimonial"
-      >
+      <swiper-slide title="Kenneth B. Clark" class="testimonial">
         <div class="container">
           <p class="testimonial__quote">
-            {{ item.quote }}
+            A lot of people you think you know, you don't know, until you find
+            out you don't know then it may be too late to know.
           </p>
-          <p class="testimonial__name">{{ item.name }}</p>
+          <p class="testimonial__name">Kenneth B. Clark</p>
         </div>
       </swiper-slide>
-      <div slot="pagination" class="swiper-pagination"></div>
+      <swiper-slide title="Aaron T. Beck" class="testimonial">
+        <div class="container">
+          <p class="testimonial__quote">
+            There is more on the surface than what our eyes can see
+          </p>
+          <p class="testimonial__name">Aaron T. Beck</p>
+        </div>
+      </swiper-slide>
+      <swiper-slide title="Kervin K. Searles" class="testimonial">
+        <div class="container">
+          <p class="testimonial__quote">
+            For every problem there is a solution. The problem is...we don't
+            like the solution.
+          </p>
+          <p class="testimonial__name">Kervin K. Searles</p>
+        </div>
+      </swiper-slide>
+      <swiper-slide title="Ellen J. Langer" class="testimonial">
+        <div class="container">
+          <p class="testimonial__quote">
+            It is not primarily our physical selves that limit us but rather our
+            mindset about our physical limits.
+          </p>
+          <p class="testimonial__name">Ellen J. Langer</p>
+        </div>
+      </swiper-slide>
+      <div slot="pagination" class="swiper-pagination "></div>
     </swiper>
   </section>
 </template>
@@ -34,28 +56,7 @@ export default {
         autoplay: {
           delay: 15000
         }
-      },
-      slides: [
-        {
-          quote:
-            "A lot of people you think you know, you don't know, until you find out you don't know then it may be too late to know.",
-          name: 'Kenneth B. Clark'
-        },
-        {
-          quote: 'There is more on the surface than what our eyes can see',
-          name: 'Aaron T. Beck'
-        },
-        {
-          quote:
-            "For every problem there is a solution. The problem is...we don't like the solution.",
-          name: 'Kervin K. Searles'
-        },
-        {
-          quote:
-            'It is not primarily our physical selves that limit us but rather our mindset about our physical limits.',
-          name: 'Ellen J. Langer'
-        }
-      ]
+      }
     }
   },
   computed: {

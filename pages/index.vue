@@ -107,17 +107,14 @@ import FamousQuotes from '@/components/FamousQuotes'
 
 export default {
   components: {
-    Fas,
+    HomeTabs,
     SimplePractice,
+    Fas,
     ContactForm,
     ServicesGrid,
+    FamousQuotes,
     Gallery,
-    MentalResourceGrid,
-    HomeTabs,
-    FamousQuotes
-  },
-  data() {
-    return {}
+    MentalResourceGrid
   },
   head() {
     return {

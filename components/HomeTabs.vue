@@ -1,16 +1,40 @@
 <template>
   <section class="section__hero">
-    <swiper ref="heroSwiper" :options="heroOptions">
-      <swiper-slide
-        v-for="(item, index) in homeSlides"
-        :id="item.css"
-        :key="index"
-        :title="item.title"
-      >
+    <swiper ref="heroSwiper" :options="options">
+      <swiper-slide id="slide-help" title="Need Help?">
         <div class="tab__text">
-          <h2 class="heading-primary">{{ item.title }}</h2>
+          <h2 class="heading-primary">Need Help?</h2>
           <hr class="gcg-border" />
-          <p>{{ item.text }}</p>
+          <p>
+            Having difficulty accepting mistakes and staying committed? Want to
+            strengthen your connection? Let's do the work to create the
+            relationship that is perfect for you.
+          </p>
+          <SimplePractice />
+        </div>
+      </swiper-slide>
+
+      <swiper-slide id="slide-lost" title="Lost?">
+        <div class="tab__text">
+          <h2 class="heading-primary">Lost?</h2>
+          <hr class="gcg-border" />
+          <p>
+            Mental health is complex. Become more self aware of your thoughts,
+            feelings, and actions. Learn how they connect to create the life you
+            are currently living.
+          </p>
+          <SimplePractice />
+        </div>
+      </swiper-slide>
+
+      <swiper-slide id="slide-think" title="Overwhelmed?">
+        <div class="tab__text">
+          <h2 class="heading-primary">Overwhelmed?</h2>
+          <hr class="gcg-border" />
+          <p>
+            I am constantly thinking and analyzing every situation even if it
+            seems all good. Capture greater peace as you l gain perspective.
+          </p>
           <SimplePractice />
         </div>
       </swiper-slide>
@@ -25,17 +49,14 @@
 
 <script>
 import SimplePractice from '@/components/SimplePractice'
-// import Tab from '@/components/Tab'
-// import Tabs from '@/components/Tabs'
 export default {
   components: {
     SimplePractice
-    // Tab,
-    // Tabs
   },
   data() {
     return {
-      heroOptions: {
+      tabs: ['Need Help?', 'Lost?', 'Overwhelmed?'],
+      options: {
         pagination: {
           el: '.swiper-pagination',
           clickable: true
@@ -44,32 +65,7 @@ export default {
         autoplay: {
           delay: 15000
         }
-      },
-      homeSlides: [
-        {
-          css: 'slide-help',
-          title: 'Need Help?',
-          text:
-            "Having difficulty accepting mistakes and staying committed? Want to strengthen your connection? Let's do the work to create the relationship that is perfect for you."
-        },
-        {
-          css: 'slide-lost',
-          title: 'Lost?',
-          text:
-            'Mental health is complex. Become more self aware of your thoughts, feelings, and actions. Learn how they connect to create the life you are currently living.'
-        },
-        {
-          css: 'slide-think',
-          title: 'Overwhelmed?',
-          text:
-            'I am constantly thinking and analyzing every situation even if it seems all good. Capture greater peace as you l gain perspective.'
-        }
-      ]
-    }
-  },
-  computed: {
-    swiper() {
-      return this.$refs.heroSwiper.$swiper
+      }
     }
   }
 }

@@ -106,11 +106,22 @@ export default {
         _: 'lodash'
       })
     ],
-    extend(config, ctx) {
-      const vueLoader = config.module.rules.find(
-        (rule) => rule.loader === `vue-loader`
-      )
-      vueLoader.options.preserveWhitespace = true
+    extend(config, ctx) {},
+    generate: {
+      routes() {
+        return [
+          '/',
+          '/about',
+          '/services',
+          '/contact',
+          '/services/anger-management',
+          '/services/couples-therapy',
+          '/services/individual-therapy',
+          '/services/support-groups',
+          '/services/teletherapy',
+          '/services/workshops-presentations'
+        ]
+      }
     }
   }
 }
