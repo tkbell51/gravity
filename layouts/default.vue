@@ -139,14 +139,10 @@ a {
 .page {
   position: relative;
   min-height: 100%;
+  min-width: 100%;
   display: flex;
   flex-direction: column;
-}
-
-.gcg-border {
-  border: 3px solid $accent-color;
-  width: 10rem;
-  margin-bottom: 2rem;
+  overflow: hidden;
 }
 
 footer {

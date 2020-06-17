@@ -100,6 +100,8 @@ export default {
    ** Build configuration
    */
   build: {
+    vendor: ['vue-awesome-swiper'],
+
     plugins: [
       new webpack.ProvidePlugin({
         $: 'jquery',

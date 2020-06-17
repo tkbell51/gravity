@@ -1,7 +1,7 @@
-<template>
+<template lang="html">
   <section class="section__hero">
-    <!-- <swiper ref="heroSwiper" :options="options">
-      <swiper-slide
+    <Tabs>
+      <Tab
         v-for="(item, index) in slides"
         :id="item.css"
         :key="index"
@@ -9,92 +9,29 @@
       >
         <div class="tab__text">
           <h2 class="heading-primary">{{ item.title }}</h2>
-          <hr class="gcg-border" />
+
           <p>{{ item.text }}</p>
           <SimplePractice />
         </div>
-      </swiper-slide>
-      <div slot="pagination" class="swiper-pagination"></div>
-      <div
-        slot="pagination"
-        class="swiper-pagination swiper-pagination-bullets"
-      ></div>
-    </swiper> -->
-    <VueSlickCarousel v-bind="settings">
-      <div
-        v-for="(item, index) in slides"
-        :id="item.css"
-        :key="index"
-        :title="item.title"
-        class="slide"
-      >
-        <div class="tab__text">
-          <h2 class="heading-primary">{{ item.title }}</h2>
-          <hr class="gcg-border" />
-          <p>{{ item.text }}</p>
-          <SimplePractice />
-        </div>
-      </div>
-    </VueSlickCarousel>
+      </Tab>
+    </Tabs>
   </section>
 </template>
 
 <script>
-import VueSlickCarousel from 'vue-slick-carousel'
+import { mapGetters } from 'vuex'
 import SimplePractice from '@/components/SimplePractice'
-// import Tab from '@/components/Tab'
-// import Tabs from '@/components/Tabs'
-import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-// optional style for arrows & dots
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+import Tab from '@/components/Tab'
+import Tabs from '@/components/Tabs'
 export default {
   components: {
     SimplePractice,
-    VueSlickCarousel
-    // Tab,
-    // Tabs
+    Tab,
+    Tabs
   },
-  data() {
-    return {
-      settings: {
-        arrows: true,
-        dots: true,
-        autoplay: true,
-        fade: true,
-        autoplaySpeed: 15000
-      },
-      slides: [
-        {
-          css: 'slide-help',
-          title: 'Need Help?',
-          text:
-            "Having difficulty accepting mistakes and staying committed? Want to strengthen your connection? Let's do the work to create the relationship that is perfect for you."
-        },
-        {
-          css: 'slide-lost',
-          title: 'Lost?',
-          text:
-            'Mental health is complex. Become more self aware of your thoughts, feelings, and actions. Learn how they connect to create the life you are currently living.'
-        },
-        {
-          css: 'slide-think',
-          title: 'Overwhelmed?',
-          text:
-            'I am constantly thinking and analyzing every situation even if it seems all good. Capture greater peace as you l gain perspective.'
-        }
-      ],
-      options: {
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true
-        },
-        effect: 'fade',
-        autoplay: {
-          delay: 15000
-        }
-      }
-    }
-  }
+  computed: mapGetters({
+    slides: 'heroSlides/get'
+  })
 }
 </script>
 
@@ -109,7 +46,7 @@ export default {
     .tabs__header {
       position: absolute;
       left: 50%;
-      bottom: 10px;
+      bottom: 2%;
       transform: translateX(-50%);
       font-size: $default-font-size;
       color: $white;
@@ -134,32 +71,6 @@ export default {
         &.tab__selected {
           color: $accent-color;
         }
-      }
-    }
-  }
-  .slick {
-    &-slider {
-    }
-    &-list {
-      height: inherit;
-    }
-    &-track {
-      height: inherit;
-    }
-    &-slide {
-      height: inherit;
-      & > div {
-        height: inherit;
-      }
-    }
-    &-dots {
-      bottom: 10px;
-
-      & li button:before {
-        color: $white;
-      }
-      & .slick-active button:before {
-        color: $accent-color;
       }
     }
   }
@@ -190,14 +101,11 @@ export default {
         url('../assets/img/gcc-help.jpg');
     }
   }
-  .tab,
-  .swiper-slide,
-  .slide {
+  .tab {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
     color: $white;
-    height: 100%;
     // display: flex !important;
     // align-items: center;
     transition: opacity 0.4s linear;
@@ -232,11 +140,10 @@ export default {
         padding: 0 10%;
         left: 50%;
         transform: translate(-50%, -50%);
+      }
 
-        .gcg-border {
-          margin-left: auto;
-          margin-right: auto;
-        }
+      @include respond(phone) {
+        padding: 0 2%;
       }
     }
     &__learn-more {
@@ -255,16 +162,6 @@ export default {
 
     @include respond(phone) {
       font-size: 5rem;
-    }
-  }
-  .swiper-pagination-bullet {
-    width: 25px;
-    height: 2px;
-    border-radius: 0;
-    background: $white;
-    border: none;
-    &-active {
-      background: $accent-color;
     }
   }
 }

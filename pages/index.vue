@@ -5,7 +5,7 @@
       <div class="container">
         <div class="section__help--text">
           <h2 class="heading-secondary">It sounds like I can help.</h2>
-          <hr class="gcg-border" />
+
           <p>
             I got you! It has been proven therapy can help someone like
             you...who may be going through a crisis, breakup, remembering past
@@ -49,7 +49,7 @@
           <div class="about__text">
             <h3 class="heading-tertiary">Welcome Note</h3>
             <h2 class="heading-secondary">Kervin K. Searles, LPC-A</h2>
-            <hr class="gcg-border" />
+
             <p>
               It is estimated that only about 17% of US adults are considered to
               be in a state of optimal mental health. Therapy happens when we
@@ -68,7 +68,7 @@
     <section class="section__services">
       <div class="container">
         <h2 class="heading-secondary">Services</h2>
-        <hr class="gcg-border" />
+
         <ServicesGrid />
 
         <nuxt-link class="btn" to="services">View Services</nuxt-link>
@@ -147,11 +147,6 @@ export default {
         width: 100%;
       }
     }
-
-    .gcg-border {
-      margin: 0 auto;
-      margin-bottom: 1rem;
-    }
   }
   &__logo-cta {
     position: relative;
@@ -187,15 +182,6 @@ export default {
 
   &__services {
     .heading-secondary,
-    .gcg-border {
-      display: block;
-      text-align: center;
-      margin: 0 auto;
-    }
-    .gcg-border {
-      margin-bottom: 2rem;
-    }
-
     .btn {
       margin-top: 3rem;
       position: relative;
@@ -247,12 +233,6 @@ export default {
       &__icon {
         color: $accent-color;
         margin-right: 1rem;
-      }
-    }
-    .gcg-border {
-      @include respond(phone) {
-        margin: 0 auto;
-        margin-bottom: 1rem;
       }
     }
   }

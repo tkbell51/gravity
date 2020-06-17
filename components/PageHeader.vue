@@ -60,10 +60,6 @@ export default {
     // }
   }
 
-  .gcg-border {
-    margin: 0 auto;
-    width: inherit;
-  }
   img {
     @include absCenter;
     z-index: 10;

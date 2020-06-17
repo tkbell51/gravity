@@ -50,7 +50,6 @@
               <h2 class="heading-secondary">
                 Connect with Gravity
               </h2>
-              <hr class="gcg-border" />
 
               <div class="form__group">
                 <input

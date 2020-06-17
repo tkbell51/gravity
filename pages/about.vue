@@ -15,7 +15,7 @@
           </div>
           <div class="about-page__text">
             <h2 class="heading-secondary">Kervin K. Searles, LPC-A</h2>
-            <hr class="gcg-border" />
+
             <p>
               I love being a therapist. I have always had a desire to help
               people. For me there is no better way to give assistance than to
@@ -73,7 +73,7 @@
     <section class="section__services">
       <div class="container">
         <h2 class="heading-secondary">Services</h2>
-        <hr class="gcg-border" />
+
         <ServicesGrid />
 
         <nuxt-link class="btn" to="services">View Services</nuxt-link>
