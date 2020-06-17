@@ -1,5 +1,5 @@
 <template>
-  <div class="tab" :class="{ active: isActive }">
+  <div v-show="isActive" class="tab">
     <slot></slot>
   </div>
 </template>
@@ -23,9 +23,9 @@ export default {
 <style lang="scss">
 .tab {
   height: inherit;
-  opacity: 0;
-  position: absolute;
-  width: 100%;
+  // opacity: 0;
+  // position: absolute;
+  // width: 100%;
 
   &.active {
     opacity: 1;

@@ -30,6 +30,7 @@ export default {
   },
   methods: {
     selectTab(i) {
+      console.log('First tab active')
       this.selectedIndex = i
 
       // loop over all the tabs
