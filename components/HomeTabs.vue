@@ -52,7 +52,6 @@ export default {
           'I am constantly thinking and analyzing every situation even if it seems all good. Capture greater peace as you l gain perspective.'
       }
     ]
-    console.log(this.slides)
   },
   data() {
     return {

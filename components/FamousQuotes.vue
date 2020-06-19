@@ -50,7 +50,6 @@ export default {
         name: 'Ellen J. Langer'
       }
     ]
-    console.log(this.quoteSlides)
   },
 
   data() {

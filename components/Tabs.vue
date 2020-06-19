@@ -23,6 +23,7 @@ export default {
     }
   },
   mounted() {
+    // console.log('here I am')
     this.selectTab(0)
   },
   created() {
