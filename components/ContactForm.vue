@@ -1,45 +1,48 @@
 <template>
   <div>
-    <section id="section__contact-form" class="section__contact-form">
+    <section class="section__contact-form">
+      <h2 class="heading-secondary">
+        Connect with Gravity
+      </h2>
+      <div class="contact">
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          class="contact__form"
+        >
+          <p>
+            <label>Your Name: <input type="text" name="name"/></label>
+          </p>
+          <p>
+            <label>Your Email: <input type="email" name="email"/></label>
+          </p>
+          <p>
+            <label
+              >Choose Service:
+              <select name="services[]">
+                <option value="n/a" disabled>Choose Services</option>
+                <option value="anger-management">Anger Management</option>
+                <option value="couples-therapy">Couples Therapy</option>
+                <option value="individual-therapy">Individual Therapy</option>
+                <option value="support-groups">Support Groups</option>
+                <option value="teletherapy">Teletherapy</option>
+                <option value="workshops-presentations"
+                  >Workshops &amp; Presentations</option
+                >
+                <option value="not-sure">Not Sure</option>
+              </select></label
+            >
+          </p>
+          <p class="contact__form--submit">
+            <button type="submit" class="btn btn-primary">Book Now</button>
+          </p>
+        </form>
+      </div>
+    </section>
+    <!-- <section id="section__contact-form" class="section__contact-form">
       <div class="container">
         <div class="contact">
-          <div class="contact__info--box">
-            <p>
-              Words can hurt, help, or heal. At Gravity Counseling Group we aim
-              to create a safe space for every individual to grow through the
-              strength of words shared in the confines of this space. Making
-              changes in your life requires time and energy. We look forward to
-              investing our time and linking our efforts with yours to help you
-              reach the goals you so desire.
-            </p>
-            <ul class="contact__info--list">
-              <li class="contact__info--item">
-                <nuxt-link
-                  class="contact__info--link"
-                  to="https://www.google.com/maps/dir/?api=1&destination=104%20Maxwell%20Ave%20Suite%20219%20Greenwood%20SC%2029646"
-                  ><Fas class="contact__info--icon" i="map-marker-alt" />104
-                  Maxwell Ave Suite 219,<br />
-                  Greenwood, SC 29646</nuxt-link
-                >
-              </li>
-              <li class="contact__info--item">
-                <nuxt-link
-                  class="contact__info--link"
-                  to="mailto:gravitycounselinggroup@gmail.com"
-                  ><Fas
-                    class="contact__info--icon"
-                    i="envelope"
-                  />gravitycounselinggroup@gmail.com</nuxt-link
-                >
-              </li>
-              <li class="contact__info--item">
-                <nuxt-link class="contact__info--link" to="tel:864-724-9187"
-                  ><Fas class="contact__info--icon" i="phone" />(864)
-                  724-9187</nuxt-link
-                >
-              </li>
-            </ul>
-          </div>
           <div class="contact__form">
             <form
               name="schedule"
@@ -47,10 +50,6 @@
               data-netlify="true"
               class="form"
             >
-              <h2 class="heading-secondary">
-                Connect with Gravity
-              </h2>
-
               <div class="form__group">
                 <input
                   id="name"
@@ -86,7 +85,7 @@
                   >
                   <option value="not-sure">Not Sure</option>
                 </select>
-                <!-- <label for="services" class="form__label">Choose Service</label> -->
+              <label for="services" class="form__label">Choose Service</label>
               </div>
               <div class="form__group">
                 <button type="submit" class="btn btn-primary">Book Now</button>
@@ -95,15 +94,15 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 
 <script>
-import Fas from '@/components/Fas'
+// import Fas from '@/components/Fas'
 export default {
   components: {
-    Fas
+    // Fas
   }
 }
 </script>
@@ -112,12 +111,14 @@ export default {
 .section__contact-form {
   background-image: linear-gradient(
       to right,
-      rgba($black, 0.3) 0%,
-      rgba($black, 0.3) 100%
+      rgba($black, 0.5) 0%,
+      rgba($black, 0.5) 100%
     ),
     url('../assets/img/lake-hero.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
+
+  text-align: center;
 
   @include respond(tab-port) {
     padding: 10rem 0;
@@ -127,38 +128,11 @@ export default {
   }
 }
 .contact {
-  background: rgba($white, 0.5);
-  border-radius: 3px;
-
-  box-shadow: 0 1.5rem 4rem rgba($black, 0.2);
-  display: flex;
-  @include respond(small-tab) {
-    flex-direction: column;
-  }
-
-  // @include respond(tab-port) {
-  //   background-image: linear-gradient(
-  //       to right,
-  //       rgba($white, 0.9) 0%,
-  //       rgba($white, 0.9) 100%
-  //     ),
-  //     url('../assets/img/lake-hero.jpg');
-  // }
-
   &__form {
-    width: 45%;
-    padding: 6rem;
-
-    @include respond(tab-land) {
-      width: 55%;
-    }
-
-    @include respond(tab-port) {
-      width: 100%;
-    }
-    @include respond(phone) {
-      padding: 2rem;
-    }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    grid-gap: 5rem;
+    color: $white;
   }
   &__info {
     &--box {
