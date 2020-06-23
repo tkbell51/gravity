@@ -30,18 +30,18 @@
         <nuxt-link class="btn" to="services">View Services</nuxt-link>
       </div>
     </section>
-    <ContactForm />
+    <!-- <ContactForm /> -->
   </div>
 </template>
 
 <script>
 import PageHeader from '@/components/PageHeader'
-import ContactForm from '@/components/ContactForm'
+// import ContactForm from '@/components/ContactForm'
 import ServicesGrid from '@/components/ServicesGrid'
 export default {
   components: {
     PageHeader,
-    ContactForm,
+    // ContactForm,
     ServicesGrid
   }
 }

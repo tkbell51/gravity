@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- <HomeTabs /> -->
+    <HomeTabs />
     <section class="section__help">
       <div class="container">
         <div class="section__help--text">
@@ -64,7 +64,7 @@
         </div>
       </div>
     </section>
-    <!-- <FamousQuotes /> -->
+    <FamousQuotes />
     <section class="section__services">
       <div class="container">
         <h2 class="heading-secondary">Services</h2>
@@ -91,28 +91,28 @@
       </div>
     </section>
 
-    <ContactForm />
+    <!-- <ContactForm /> -->
   </div>
 </template>
 
 <script>
 import Fas from '@/components/Fas'
 import SimplePractice from '@/components/SimplePractice'
-import ContactForm from '@/components/ContactForm'
+// import ContactForm from '@/components/ContactForm'
 import ServicesGrid from '@/components/ServicesGrid'
 import Gallery from '@/components/Gallery'
 import MentalResourceGrid from '@/components/MentalResourceGrid'
-// import HomeTabs from '@/components/HomeTabs'
-// import FamousQuotes from '@/components/FamousQuotes'
+import HomeTabs from '@/components/HomeTabs'
+import FamousQuotes from '@/components/FamousQuotes'
 
 export default {
   components: {
-    // HomeTabs,
+    HomeTabs,
     SimplePractice,
     Fas,
-    ContactForm,
+    // ContactForm,
     ServicesGrid,
-    // FamousQuotes,
+    FamousQuotes,
     Gallery,
     MentalResourceGrid
   },

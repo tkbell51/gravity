@@ -4,16 +4,16 @@
       page-title="Contact Us"
       header-text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, reiciendis?"
     />
-    <ContactForm />
+    <!-- <ContactForm /> -->
   </div>
 </template>
 
 <script>
-import ContactForm from '@/components/ContactForm'
+// import ContactForm from '@/components/ContactForm'
 import PageHeader from '@/components/PageHeader'
 export default {
   components: {
-    ContactForm,
+    // ContactForm,
     PageHeader
   },
   head() {
