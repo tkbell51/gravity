@@ -91,14 +91,14 @@
       </div>
     </section>
 
-    <ContactForm />
+    <!-- <ContactForm /> -->
   </div>
 </template>
 
 <script>
 import Fas from '@/components/Fas'
 import SimplePractice from '@/components/SimplePractice'
-import ContactForm from '@/components/ContactForm'
+// import ContactForm from '@/components/ContactForm'
 import ServicesGrid from '@/components/ServicesGrid'
 import Gallery from '@/components/Gallery'
 import MentalResourceGrid from '@/components/MentalResourceGrid'
@@ -110,7 +110,7 @@ export default {
     HomeTabs,
     SimplePractice,
     Fas,
-    ContactForm,
+    // ContactForm,
     ServicesGrid,
     FamousQuotes,
     Gallery,
