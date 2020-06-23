@@ -12,9 +12,12 @@ export default {
       default: ''
     }
   },
+  fetch() {
+    this.isActive = false
+  },
   data() {
     return {
-      isActive: false
+      isActive: undefined
     }
   }
 }

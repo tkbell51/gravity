@@ -29,6 +29,12 @@ export default {
     // Tabs
   },
   fetch() {
+    this.quoteOptions = {
+      effect: 'fade',
+      autoplay: {
+        delay: 15000
+      }
+    }
     this.quoteSlides = [
       {
         quote:
@@ -54,12 +60,7 @@ export default {
 
   data() {
     return {
-      quoteOptions: {
-        effect: 'fade',
-        autoplay: {
-          delay: 15000
-        }
-      },
+      quoteOptions: {},
       quoteSlides: []
     }
   }
