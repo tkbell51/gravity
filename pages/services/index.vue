@@ -9,18 +9,14 @@
         <ServicesGrid />
       </div>
     </section>
-
-    <!-- <ContactForm /> -->
   </div>
 </template>
 
 <script>
-// import ContactForm from '@/components/ContactForm'
 import PageHeader from '@/components/PageHeader'
 import ServicesGrid from '@/components/ServicesGrid'
 export default {
   components: {
-    // ContactForm,
     PageHeader,
     ServicesGrid
   },

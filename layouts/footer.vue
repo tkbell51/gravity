@@ -1,114 +1,87 @@
 <template>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__box">
-        <nuxt-link to="/" class="footer__logo"><FooterLogo /></nuxt-link>
-        <div class="footer__pages">
-          <ul class="footer__menu">
-            <li class="footer__item">
-              <nuxt-link class="footer__link" to="/">Home</nuxt-link>
-            </li>
-            <li class="footer__item">
-              <nuxt-link class="footer__link" to="about">About</nuxt-link>
-            </li>
-
-            <li class="footer__item">
-              <nuxt-link class="footer__link" to="services">Services</nuxt-link>
-            </li>
-            <li class="footer__item">
-              <nuxt-link class="footer__link" to="contact">Contact</nuxt-link>
-            </li>
-            <!-- <li class="footer__item">
-              <nuxt-link class="footer__link" to="blog">Blog</nuxt-link>
-            </li> -->
-          </ul>
-        </div>
-        <div class="contact__info--box">
-          <p>
-            Words can hurt, help, or heal. At Gravity Counseling Group we aim to
-            create a safe space for every individual to grow through the
-            strength of words shared in the confines of this space. Making
-            changes in your life requires time and energy. We look forward to
-            investing our time and linking our efforts with yours to help you
-            reach the goals you so desire.
-          </p>
-        </div>
-        <ul class="contact__info--list">
-          <li class="contact__info--item">
-            <nuxt-link
-              class="contact__info--link"
-              to="https://www.google.com/maps/dir/?api=1&destination=104%20Maxwell%20Ave%20Suite%20219%20Greenwood%20SC%2029646"
-              ><Fas class="contact__info--icon" i="map-marker-alt" />104 Maxwell
-              Ave Suite 219,<br />
-              Greenwood, SC 29646</nuxt-link
-            >
-          </li>
-          <li class="contact__info--item">
-            <nuxt-link
-              class="contact__info--link"
-              to="mailto:gravitycounselinggroup@gmail.com"
-              ><Fas
-                class="contact__info--icon"
-                i="envelope"
-              />gravitycounselinggroup@gmail.com</nuxt-link
-            >
-          </li>
-          <li class="contact__info--item">
-            <nuxt-link class="contact__info--link" to="tel:864-724-9187"
-              ><Fas class="contact__info--icon" i="phone" />(864)
-              724-9187</nuxt-link
-            >
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer__bottom">
+  <div>
+    <ContactForm />
+    <ContactRow />
+    <footer class="footer">
       <div class="container">
-        <div class="footer__bottom--box">
-          <p>
-            Copyright &copy; 2020 Gravity Counseling Group
-          </p>
-          <div class="footer__social">
+        <div class="footer__box">
+          <nuxt-link to="/" class="footer__logo"><FooterLogo /></nuxt-link>
+          <div class="footer__pages">
             <ul class="footer__menu">
               <li class="footer__item">
-                <a
-                  class="footer__link"
-                  href="https://www.facebook.com/gravitycounseling/"
-                  target="_blank"
-                  ><Fab class="footer__icon" i="facebook"
-                /></a>
+                <nuxt-link class="footer__link" to="/">Home</nuxt-link>
               </li>
               <li class="footer__item">
-                <a
-                  class="footer__link"
-                  href="https://www.instagram.com/thegravitygroup/"
-                  target="_blank"
-                  ><Fab class="footer__icon" i="instagram"
-                /></a>
+                <nuxt-link class="footer__link" to="about">About</nuxt-link>
+              </li>
+
+              <li class="footer__item">
+                <nuxt-link class="footer__link" to="services"
+                  >Services</nuxt-link
+                >
               </li>
               <li class="footer__item">
-                <a
-                  class="footer__link"
-                  href="https://twitter.com/GravityCGroup"
-                  target="_blank"
-                  ><Fab class="footer__icon" i="twitter"
-                /></a>
+                <nuxt-link class="footer__link" to="contact">Contact</nuxt-link>
               </li>
+              <!-- <li class="footer__item">
+              <nuxt-link class="footer__link" to="blog">Blog</nuxt-link>
+            </li> -->
             </ul>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+      <div class="footer__bottom">
+        <div class="container">
+          <div class="footer__bottom--box">
+            <p>
+              Copyright &copy; 2020 Gravity Counseling Group
+            </p>
+            <div class="footer__social">
+              <ul class="footer__menu">
+                <li class="footer__item">
+                  <a
+                    class="footer__link"
+                    href="https://www.facebook.com/gravitycounseling/"
+                    target="_blank"
+                    ><Fab class="footer__icon" i="facebook"
+                  /></a>
+                </li>
+                <li class="footer__item">
+                  <a
+                    class="footer__link"
+                    href="https://www.instagram.com/thegravitygroup/"
+                    target="_blank"
+                    ><Fab class="footer__icon" i="instagram"
+                  /></a>
+                </li>
+                <li class="footer__item">
+                  <a
+                    class="footer__link"
+                    href="https://twitter.com/GravityCGroup"
+                    target="_blank"
+                    ><Fab class="footer__icon" i="twitter"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
 </template>
 
 <script>
 import FooterLogo from '~/components/FooterLogo'
 import Fab from '~/components/Fab'
+import ContactForm from '@/components/ContactForm'
+import ContactRow from '@/components/ContactRow'
 export default {
   components: {
     FooterLogo,
-    Fab
+    Fab,
+    ContactForm,
+    ContactRow
   }
 }
 </script>

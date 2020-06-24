@@ -44,19 +44,16 @@
         <nuxt-link class="btn" to="services">View Services</nuxt-link>
       </div>
     </section>
-    <!-- <ContactForm /> -->
   </div>
 </template>
 
 <script>
 import PageHeader from '@/components/PageHeader'
-// import ContactForm from '@/components/ContactForm'
 import SimplePractice from '@/components/SimplePractice'
 import ServicesGrid from '@/components/ServicesGrid'
 export default {
   components: {
     PageHeader,
-    // ContactForm,
     ServicesGrid,
     SimplePractice
   }

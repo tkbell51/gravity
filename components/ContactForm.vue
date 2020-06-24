@@ -1,48 +1,21 @@
 <template>
   <div>
-    <section class="section__contact-form">
-      <h2 class="heading-secondary">
-        Connect with Gravity
-      </h2>
-      <div class="contact">
-        <form
-          name="contact"
-          method="POST"
-          data-netlify="true"
-          class="contact__form"
-        >
-          <p>
-            <label>Your Name: <input type="text" name="name"/></label>
-          </p>
-          <p>
-            <label>Your Email: <input type="email" name="email"/></label>
-          </p>
-          <p>
-            <label
-              >Choose Service:
-              <select name="services[]">
-                <option value="n/a" disabled>Choose Services</option>
-                <option value="anger-management">Anger Management</option>
-                <option value="couples-therapy">Couples Therapy</option>
-                <option value="individual-therapy">Individual Therapy</option>
-                <option value="support-groups">Support Groups</option>
-                <option value="teletherapy">Teletherapy</option>
-                <option value="workshops-presentations"
-                  >Workshops &amp; Presentations</option
-                >
-                <option value="not-sure">Not Sure</option>
-              </select></label
-            >
-          </p>
-          <p class="contact__form--submit">
-            <button type="submit" class="btn btn-primary">Book Now</button>
-          </p>
-        </form>
-      </div>
-    </section>
-    <!-- <section id="section__contact-form" class="section__contact-form">
+    <section id="section__contact-form" class="section__contact-form">
       <div class="container">
         <div class="contact">
+          <div class="contact__info--box">
+            <h2 class="heading-secondary">
+              Connect with Gravity
+            </h2>
+            <p>
+              Words can hurt, help, or heal. At Gravity Counseling Group we aim
+              to create a safe space for every individual to grow through the
+              strength of words shared in the confines of this space. Making
+              changes in your life requires time and energy. We look forward to
+              investing our time and linking our efforts with yours to help you
+              reach the goals you so desire.
+            </p>
+          </div>
           <div class="contact__form">
             <form
               name="schedule"
@@ -85,7 +58,7 @@
                   >
                   <option value="not-sure">Not Sure</option>
                 </select>
-              <label for="services" class="form__label">Choose Service</label>
+                <!-- <label for="services" class="form__label">Choose Service</label> -->
               </div>
               <div class="form__group">
                 <button type="submit" class="btn btn-primary">Book Now</button>
@@ -94,16 +67,13 @@
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
   </div>
 </template>
 
 <script>
-// import Fas from '@/components/Fas'
 export default {
-  components: {
-    // Fas
-  }
+  components: {}
 }
 </script>
 
@@ -111,14 +81,12 @@ export default {
 .section__contact-form {
   background-image: linear-gradient(
       to right,
-      rgba($black, 0.5) 0%,
-      rgba($black, 0.5) 100%
+      rgba($black, 0.3) 0%,
+      rgba($black, 0.3) 100%
     ),
     url('../assets/img/lake-hero.jpg');
   background-size: cover;
-  background-position: bottom;
-
-  text-align: center;
+  background-position: center;
 
   @include respond(tab-port) {
     padding: 10rem 0;
@@ -128,83 +96,44 @@ export default {
   }
 }
 .contact {
+  background: rgba($white, 0.5);
+  border-radius: 3px;
+
+  box-shadow: 0 1.5rem 4rem rgba($black, 0.2);
+  display: flex;
+  @include respond(small-tab) {
+    flex-direction: column;
+  }
+
+  // @include respond(tab-port) {
+  //   background-image: linear-gradient(
+  //       to right,
+  //       rgba($white, 0.9) 0%,
+  //       rgba($white, 0.9) 100%
+  //     ),
+  //     url('../assets/img/lake-hero.jpg');
+  // }
+
   &__form {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-    grid-gap: 5rem;
-    color: $white;
+    flex: 40%;
+    padding: 4rem;
+
+    @include respond(phone) {
+      padding: 2rem;
+    }
   }
   &__info {
     &--box {
-      background: $primary-color;
-      width: 55%;
-      padding: 6rem;
-      @include respond(tab-port) {
-        width: 100%;
-      }
-      @include respond(phone) {
-        padding: 2rem;
-      }
+      background: rgba($primary-color, 0.8);
+      padding: 4rem;
+      flex: 60%;
 
+      .heading-secondary {
+        color: $accent-color;
+      }
       p {
         color: $white;
       }
-    }
-    &--list {
-      list-style-type: none;
-      display: flex;
-      flex-flow: column wrap;
-      justify-content: space-between;
-      width: 100%;
-      margin-top: 3rem;
-      @include respond(phone) {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    &--item {
-      &:not(:last-child) {
-        margin-bottom: 2rem;
-      }
-    }
-    &--link {
-      display: flex;
-      align-items: center;
-
-      &,
-      &:link,
-      &:visited {
-        text-decoration: none;
-        color: $white;
-        font-weight: bold;
-        @include respond(phone) {
-          /* These are technically the same, but use both */
-          overflow-wrap: break-word;
-          word-wrap: break-word;
-
-          -ms-word-break: break-all;
-          /* This is the dangerous one in WebKit, as it breaks things wherever */
-          word-break: break-all;
-          /* Instead use this non-standard one: */
-          word-break: break-word;
-
-          /* Adds a hyphen where the word breaks, if supported (No Blink) */
-          -ms-hyphens: auto;
-          -moz-hyphens: auto;
-          -webkit-hyphens: auto;
-          hyphens: auto;
-        }
-      }
-      &:hover,
-      &:focus {
-        color: $accent-color;
-      }
-    }
-    &--icon {
-      margin-right: 2rem;
-      color: $accent-color;
-      font-size: 3rem;
     }
   }
 }
@@ -226,7 +155,7 @@ export default {
     border: none;
     border-bottom: 3px solid transparent;
     color: inherit;
-    width: 90%;
+    width: 100%;
     display: block;
     transition: all 0.3s;
 
@@ -254,10 +183,9 @@ export default {
     color: #444;
     line-height: 1.3;
     padding: 0.6em 1.4em 0.5em 0.8em;
-    width: 90%;
-    max-width: 100%;
+    width: 100%;
     box-sizing: border-box;
-    margin: 0;
+    margin-bottom: 3rem;
     border: 1px solid #aaa;
     box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
     border-radius: 0.5em;

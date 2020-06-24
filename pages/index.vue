@@ -90,15 +90,12 @@
         <Gallery />
       </div>
     </section>
-
-    <!-- <ContactForm /> -->
   </div>
 </template>
 
 <script>
 import Fas from '@/components/Fas'
 import SimplePractice from '@/components/SimplePractice'
-// import ContactForm from '@/components/ContactForm'
 import ServicesGrid from '@/components/ServicesGrid'
 import Gallery from '@/components/Gallery'
 import MentalResourceGrid from '@/components/MentalResourceGrid'
@@ -110,7 +107,6 @@ export default {
     HomeTabs,
     SimplePractice,
     Fas,
-    // ContactForm,
     ServicesGrid,
     FamousQuotes,
     Gallery,
@@ -157,8 +153,7 @@ export default {
         align-items: center;
         text-align: center;
       }
-      &__logo-box {
-      }
+
       &__logo {
         width: 75%;
         height: 100%;
