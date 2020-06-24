@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ContactForm />
+    <!-- <ContactForm /> -->
     <ContactRow />
     <footer class="footer">
       <div class="container">
@@ -74,13 +74,13 @@
 <script>
 import FooterLogo from '~/components/FooterLogo'
 import Fab from '~/components/Fab'
-import ContactForm from '@/components/ContactForm'
+// import ContactForm from '@/components/ContactForm'
 import ContactRow from '@/components/ContactRow'
 export default {
   components: {
     FooterLogo,
     Fab,
-    ContactForm,
+    // ContactForm,
     ContactRow
   }
 }
