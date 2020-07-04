@@ -1,5 +1,5 @@
 <template>
-  <div v-show="isActive" class="tab">
+  <div class="tab" :class="{ active: isActive }">
     <slot></slot>
   </div>
 </template>
@@ -12,9 +12,12 @@ export default {
       default: ''
     }
   },
+  fetch() {
+    this.isActive = false
+  },
   data() {
     return {
-      isActive: false
+      isActive: undefined
     }
   }
 }
@@ -25,6 +28,10 @@ export default {
   height: inherit;
   position: absolute;
   width: 100%;
+  opacity: 0;
+  &.active {
+    opacity: 1;
+  }
 }
 
 .fade-enter-active,
