@@ -19,10 +19,13 @@
           <div class="contact__form">
             <form
               name="schedule"
+              action="/thanks"
               method="POST"
-              data-netlify="true"
+              netlify
+              netlify-honeypot="bot-field"
               class="form"
             >
+              <input type="hidden" name="form-name" value="schedule" />
               <div class="form__group">
                 <input
                   id="name"
@@ -32,6 +35,7 @@
                   placeholder="Full Name"
                   required
                 />
+
                 <label for="name" class="form__label">Full Name</label>
               </div>
               <div class="form__group">

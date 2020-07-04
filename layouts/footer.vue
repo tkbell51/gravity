@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <!-- <ContactForm /> -->
+  <footer class="footer">
+    <ContactForm />
     <ContactRow />
-    <footer class="footer">
+    <div class="footer__main">
       <div class="container">
         <div class="footer__box">
           <nuxt-link to="/" class="footer__logo"><FooterLogo /></nuxt-link>
@@ -30,6 +30,7 @@
           </div>
         </div>
       </div>
+
       <div class="footer__bottom">
         <div class="container">
           <div class="footer__bottom--box">
@@ -67,20 +68,20 @@
           </div>
         </div>
       </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 </template>
 
 <script>
 import FooterLogo from '~/components/FooterLogo'
 import Fab from '~/components/Fab'
-// import ContactForm from '@/components/ContactForm'
+import ContactForm from '@/components/ContactForm'
 import ContactRow from '@/components/ContactRow'
 export default {
   components: {
     FooterLogo,
     Fab,
-    // ContactForm,
+    ContactForm,
     ContactRow
   }
 }
@@ -88,8 +89,10 @@ export default {
 
 <style lang="scss">
 .footer {
-  padding: 5rem 0 0;
-  background: darken($dark-grey, 10%);
+  &__main {
+    padding: 5rem 0 0;
+    background: darken($dark-grey, 10%);
+  }
 
   &__box {
     // display: grid;
