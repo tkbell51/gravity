@@ -53,6 +53,7 @@ export default {
     }
     @include respond(tab-port) {
       width: 5rem;
+      margin-top: 0.8rem;
     }
   }
   &__menu {

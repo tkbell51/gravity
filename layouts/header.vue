@@ -58,6 +58,8 @@ export default {
   @include respond(tab-port) {
     position: fixed;
     background: white;
+    display: flex;
+    height: 6rem;
   }
 
   // background: $white;
