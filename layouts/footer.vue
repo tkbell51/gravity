@@ -12,16 +12,18 @@
                 <nuxt-link class="footer__link" to="/">Home</nuxt-link>
               </li>
               <li class="footer__item">
-                <nuxt-link class="footer__link" to="about">About</nuxt-link>
+                <nuxt-link class="footer__link" to="/about">About</nuxt-link>
               </li>
 
               <li class="footer__item">
-                <nuxt-link class="footer__link" to="services"
+                <nuxt-link class="footer__link" to="/services"
                   >Services</nuxt-link
                 >
               </li>
               <li class="footer__item">
-                <nuxt-link class="footer__link" to="contact">Contact</nuxt-link>
+                <nuxt-link class="footer__link" to="/contact"
+                  >Contact</nuxt-link
+                >
               </li>
               <!-- <li class="footer__item">
               <nuxt-link class="footer__link" to="blog">Blog</nuxt-link>
