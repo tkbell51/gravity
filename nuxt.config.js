@@ -4,14 +4,14 @@ export default {
   /*
    ** Headers of the page
    */
-  // head: {
-  //   title: 'Gravity Counseling Group',
-  //   meta: [
-  //     { charset: 'utf-8' },
-  //     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-  //   ],
-  //   link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-  // },
+  head: {
+    title: 'Gravity Counseling Group',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
   /*
    ** Customize the progress-bar color
    */

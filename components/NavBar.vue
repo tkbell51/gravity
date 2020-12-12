@@ -100,10 +100,7 @@ export default {
       }
     }
   }
-  &__cta {
-  }
 }
-
 @include respond(tab-port) {
   .nav__menu {
     display: none;
