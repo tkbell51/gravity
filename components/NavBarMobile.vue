@@ -14,7 +14,9 @@
       <li class="mobile-nav__item">
         <DropDown />
       </li>
-
+      <li class="mobile-nav__item" @click="closeMenu">
+        <nuxt-link class="mobile-nav__link" to="/blog">Blog</nuxt-link>
+      </li>
       <li class="mobile-nav__item" @click="closeMenu">
         <nuxt-link class="mobile-nav__link" to="/contact">Contact</nuxt-link>
       </li>
@@ -58,7 +60,7 @@ export default {
   components: {
     DropDown,
     Logo,
-    Fab
+    Fab,
   },
   // eslint-disable-next-line
   props: ['showNav'],
@@ -66,8 +68,8 @@ export default {
   methods: {
     closeMenu() {
       this.$parent.toggleMenu()
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -49,8 +49,8 @@
 import ServiceCard from '@/components/ServiceCard'
 export default {
   components: {
-    ServiceCard
-  }
+    ServiceCard,
+  },
 }
 </script>
 

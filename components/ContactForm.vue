@@ -4,9 +4,7 @@
       <div class="container">
         <div class="contact">
           <div class="contact__info--box">
-            <h2 class="heading-secondary">
-              Connect with Gravity
-            </h2>
+            <h2 class="heading-secondary">Connect with Gravity</h2>
             <p>
               Words can hurt, help, or heal. At Gravity Counseling Group we aim
               to create a safe space for every individual to grow through the
@@ -57,9 +55,9 @@
                   <option value="individual-therapy">Individual Therapy</option>
                   <option value="support-groups">Support Groups</option>
                   <option value="teletherapy">Teletherapy</option>
-                  <option value="workshops-presentations"
-                    >Workshops &amp; Presentations</option
-                  >
+                  <option value="workshops-presentations">
+                    Workshops &amp; Presentations
+                  </option>
                   <option value="not-sure">Not Sure</option>
                 </select>
                 <!-- <label for="services" class="form__label">Choose Service</label> -->
@@ -76,9 +74,7 @@
 </template>
 
 <script>
-export default {
-  components: {}
-}
+export default {}
 </script>
 
 <style lang="scss">

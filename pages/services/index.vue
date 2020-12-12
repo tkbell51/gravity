@@ -1,9 +1,6 @@
 <template>
   <div>
-    <PageHeader
-      page-title="Services"
-      header-text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, reiciendis?"
-    />
+    <PageHeader page-title="Services" />
     <section class="section__services">
       <div class="container">
         <ServicesGrid />
@@ -18,19 +15,13 @@ import ServicesGrid from '@/components/ServicesGrid'
 export default {
   components: {
     PageHeader,
-    ServicesGrid
+    ServicesGrid,
   },
   head() {
-    return {
-      title: 'Services Gravity Counseling Group',
-      meta: [
-        {
-          name: 'description',
-          content: 'This is the services page for Gravity Counseling Group'
-        }
-      ]
-    }
-  }
+    return this.$seo({
+      title: 'Services',
+    })
+  },
 }
 </script>
 

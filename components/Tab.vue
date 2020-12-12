@@ -9,17 +9,17 @@ export default {
   props: {
     title: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
   fetch() {
     this.isActive = false
   },
   data() {
     return {
-      isActive: undefined
+      isActive: undefined,
     }
-  }
+  },
 }
 </script>
 

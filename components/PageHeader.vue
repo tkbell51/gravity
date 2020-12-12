@@ -1,13 +1,14 @@
 <template>
-  <section class="page__header">
-    <div class="page__header--content">
-      <h1 class="heading-primary">
-        <span>{{ pageTitle }}</span
-        ><span>{{ subPageTitle }}</span>
-      </h1>
+  <div class="page__header">
+    <div class="container">
+      <div class="page__header--content">
+        <h1 class="heading-primary">
+          <span>{{ pageTitle }}</span>
+        </h1>
+      </div>
     </div>
-    <img src="../assets/img/logo-white.png" alt="Logo" />
-  </section>
+    <!-- <img src="../assets/img/logo-white.png" alt="Logo" /> -->
+  </div>
 </template>
 
 <script>
@@ -15,13 +16,13 @@ export default {
   props: {
     pageTitle: {
       type: String,
-      default: 'Title'
+      default: 'Title',
     },
     subPageTitle: {
       type: String,
-      default: ''
-    }
-  }
+      default: '',
+    },
+  },
 }
 </script>
 
@@ -29,21 +30,24 @@ export default {
 .page__header {
   background-image: linear-gradient(
       to right,
-      rgba($black, 0.3) 0%,
-      rgba($black, 0.3) 100%
+      rgba($tertiary-color, 0.8),
+      rgba($primary-color, 0.8)
     ),
     url('../assets/img/bridge-on-the-lake.jpg');
   background-size: cover;
   background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
   position: relative;
   overflow: hidden;
-  height: 60vh;
+  height: 30rem;
+  .container {
+    height: 100%;
+  }
   &--content {
-    width: 90%;
-    text-align: center;
+    height: inherit;
+    display: flex;
+
+    align-items: flex-end;
   }
   .heading-primary {
     @include respond(phone) {
@@ -52,12 +56,6 @@ export default {
   }
   .heading-primary span {
     display: block;
-
-    // &:last-child:after {
-    //   content: '/';
-    //   color: $accent-color;
-    //   margin: 0 1rem;
-    // }
   }
 
   img {

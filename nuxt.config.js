@@ -4,14 +4,14 @@ export default {
   /*
    ** Headers of the page
    */
-  head: {
-    title: process.env.npm_package_name || '',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
-  },
+  // head: {
+  //   title: 'Gravity Counseling Group',
+  //   meta: [
+  //     { charset: 'utf-8' },
+  //     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+  //   ],
+  //   link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  // },
   /*
    ** Customize the progress-bar color
    */
@@ -22,13 +22,13 @@ export default {
   css: ['@/assets/css/main.css'],
   webfontloader: {
     google: {
-      families: ['Nanum+Myeongjo', 'Open+Sans']
-    }
+      families: ['Nanum+Myeongjo', 'Open+Sans'],
+    },
   },
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/vue-awesome-swiper.js'],
+  plugins: ['@/plugins/vue-awesome-swiper.js', '~plugins/date'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -37,13 +37,13 @@ export default {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
-    '@aceforth/nuxt-optimized-images'
+    '@aceforth/nuxt-optimized-images',
   ],
   optimizedImages: {
-    optimizeImages: true
+    optimizeImages: true,
   },
   eslint: {
-    fix: true
+    fix: true,
   },
 
   /*
@@ -56,14 +56,25 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/style-resources',
     'nuxt-fontawesome',
-    'nuxt-webfontloader'
+    'nuxt-webfontloader',
+    '@nuxt/content',
+    'vue-social-sharing/nuxt',
+    'nuxt-seo',
   ],
+  seo: {
+    baseUrl: 'https://gravitycounselinggroup.com',
+    title: '<title of page>',
+    name: 'Gravity Counseling Group',
+    templateTitle: '%title% - %name%',
+    description:
+      'At Gravity Counseling Group, we aim to create a safe space for every individual to grow through the strength of words shared in the confines of this space',
+  },
   styleResources: {
     scss: [
       '~assets/scss/_breakpoints.scss',
       '~assets/scss/_mixins.scss',
-      '~assets/scss/_variables.scss'
-    ]
+      '~assets/scss/_variables.scss',
+    ],
   },
   fontawesome: {
     imports: [
@@ -81,16 +92,41 @@ export default {
           'faBars',
           'faCaretDown',
           'faMobileAlt',
-          'faUsers'
-        ]
+          'faUsers',
+        ],
       },
       {
         set: '@fortawesome/free-brands-svg-icons', // Brand icons
-        icons: ['faDev', 'faFacebook', 'faTwitter', 'faInstagram', 'faYoutube']
-      }
-    ]
+        icons: [
+          'faDev',
+          'faFacebook',
+          'faTwitter',
+          'faLinkedin',
+          'faInstagram',
+          'faYoutube',
+        ],
+      },
+    ],
   },
+  sitemap: {
+    hostname: 'https://gravitycounselinggroup.com',
+    gzip: true,
+    routes: async () => {
+      const { $content } = require('@nuxt/content')
 
+      const posts = await $content('posts').only(['path']).fetch()
+
+      return posts.map((p) => p.path)
+    },
+  },
+  generate: {
+    async routes() {
+      const { $content } = require('@nuxt/content')
+      const files = await $content({ deep: true }).only(['path']).fetch()
+
+      return files.map((file) => (file.path === '/index' ? '/' : file.path))
+    },
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
@@ -103,25 +139,9 @@ export default {
     plugins: [
       new webpack.ProvidePlugin({
         $: 'jquery',
-        _: 'lodash'
-      })
+        _: 'lodash',
+      }),
     ],
     extend(config, ctx) {},
-    generate: {
-      routes() {
-        return [
-          '/',
-          '/about',
-          '/services',
-          '/contact',
-          '/services/anger-management',
-          '/services/couples-therapy',
-          '/services/individual-therapy',
-          '/services/support-groups',
-          '/services/teletherapy',
-          '/services/workshops-presentations'
-        ]
-      }
-    }
-  }
+  },
 }

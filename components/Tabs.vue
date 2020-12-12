@@ -19,7 +19,7 @@ export default {
   data() {
     return {
       selectedIndex: 0, // the index of the selected tab,
-      tabs: [] // all of the tabs
+      tabs: [], // all of the tabs
     }
   },
   mounted() {
@@ -37,8 +37,8 @@ export default {
       this.tabs.forEach((tab, index) => {
         tab.isActive = index === i
       })
-    }
-  }
+    },
+  },
 }
 </script>
 

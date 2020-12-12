@@ -52,12 +52,12 @@ import { mixin as clickaway } from 'vue-clickaway'
 import Fas from '@/components/Fas'
 export default {
   components: {
-    Fas
+    Fas,
   },
   mixins: [clickaway],
   data() {
     return {
-      isVisible: false
+      isVisible: false,
     }
   },
   methods: {
@@ -75,8 +75,8 @@ export default {
       if (this.$parent.showNav === true) {
         this.$parent.closeMenu()
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

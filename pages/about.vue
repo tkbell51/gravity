@@ -88,19 +88,13 @@ import ServicesGrid from '@/components/ServicesGrid'
 export default {
   components: {
     PageHeader,
-    ServicesGrid
+    ServicesGrid,
   },
   head() {
-    return {
-      title: 'About Gravity Counseling Group',
-      meta: [
-        {
-          name: 'description',
-          content: 'This is the page about Gravity Counseling Group'
-        }
-      ]
-    }
-  }
+    return this.$seo({
+      title: 'About',
+    })
+  },
 }
 </script>
 

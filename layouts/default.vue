@@ -3,18 +3,21 @@
     <div class="overlay"></div>
     <Header />
     <nuxt class="main-content" />
+    <ContactForm />
     <Footer />
   </div>
 </template>
 <script>
-import Header from './header'
-import Footer from './footer'
+import Header from '@/components/header'
+import Footer from '@/components/footer'
+import ContactForm from '@/components/ContactForm'
 
 export default {
   components: {
+    ContactForm,
     Header,
-    Footer
-  }
+    Footer,
+  },
 }
 </script>
 <style lang="scss">

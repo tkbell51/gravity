@@ -11,19 +11,13 @@
 import PageHeader from '@/components/PageHeader'
 export default {
   components: {
-    PageHeader
+    PageHeader,
   },
   head() {
-    return {
-      title: 'Contact Gravity Counseling Group',
-      meta: [
-        {
-          name: 'description',
-          content: 'This is the contact page for Gravity Counseling Group'
-        }
-      ]
-    }
-  }
+    return this.$seo({
+      title: 'Contact',
+    })
+  },
 }
 </script>
 

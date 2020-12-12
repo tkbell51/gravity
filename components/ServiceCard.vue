@@ -19,26 +19,26 @@
 import Fas from '@/components/Fas'
 export default {
   components: {
-    Fas
+    Fas,
   },
   props: {
     serviceLink: {
       type: String,
-      default: '/services'
+      default: '/services',
     },
     serviceIcon: {
       type: String,
-      default: 'user-friends'
+      default: 'user-friends',
     },
     serviceTitle: {
       type: String,
-      default: 'Service Title'
+      default: 'Service Title',
     },
     serviceDescription: {
       type: String,
-      default: 'Service Description'
-    }
-  }
+      default: 'Service Description',
+    },
+  },
 }
 </script>
 

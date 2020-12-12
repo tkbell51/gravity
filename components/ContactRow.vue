@@ -28,8 +28,8 @@ import Fas from '@/components/Fas'
 
 export default {
   components: {
-    Fas
-  }
+    Fas,
+  },
 }
 </script>
 

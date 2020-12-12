@@ -90,6 +90,18 @@
         <Gallery />
       </div>
     </section>
+    <section class="section__blog">
+      <div class="container">
+        <h2 class="heading-secondary">Latest Articles</h2>
+        <div class="blog__grid">
+          <BlogCard
+            v-for="article in articles.slice(0, 3)"
+            :key="article.slug"
+            :article="article"
+          />
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -100,6 +112,7 @@ import ServicesGrid from '@/components/ServicesGrid'
 import Gallery from '@/components/Gallery'
 import MentalResourceGrid from '@/components/MentalResourceGrid'
 import HomeTabs from '@/components/HomeTabs'
+import BlogCard from '@/components/BlogCard'
 import FamousQuotes from '@/components/FamousQuotes'
 
 export default {
@@ -110,19 +123,24 @@ export default {
     ServicesGrid,
     FamousQuotes,
     Gallery,
-    MentalResourceGrid
+    MentalResourceGrid,
+    BlogCard,
+  },
+  async asyncData({ $content, params }) {
+    const articles = await $content('articles', params.slug)
+      .only(['title', 'description', 'description', 'img', 'slug', 'alt'])
+      .sortBy('createdAt', 'asc')
+      .fetch()
+
+    return {
+      articles,
+    }
   },
   head() {
-    return {
-      title: 'Gravity Counseling Group Home',
-      meta: [
-        {
-          name: 'description',
-          content: 'This is the home page for Gravity Counseling Group'
-        }
-      ]
-    }
-  }
+    return this.$seo({
+      title: 'Home',
+    })
+  },
 }
 </script>
 
@@ -208,6 +226,9 @@ export default {
         @include respond(phone) {
           margin-right: 0;
         }
+        img {
+          box-shadow: $shadow;
+        }
       }
       &__text {
         flex: 65%;
@@ -259,6 +280,15 @@ export default {
 
   &__blog-row {
     .blog-row__grid {
+      display: grid;
+      align-items: center;
+      grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+
+      grid-gap: 3rem;
+    }
+  }
+  &__blog {
+    .blog__grid {
       display: grid;
       align-items: center;
       grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
