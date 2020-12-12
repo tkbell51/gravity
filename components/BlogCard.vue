@@ -51,5 +51,8 @@ export default {
   &__link {
     color: $primary-color;
   }
+  &__sub {
+    font-size: 1.4rem;
+  }
 }
 </style>

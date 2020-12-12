@@ -2,7 +2,7 @@
 title: Expectations of A Man
 img: expectations-of-a-man.jpg
 alt: silhouette of people looking at sunset
-description: This is the preview text for this article
+description: The ultimate expectation of man should come from within. Far too often, some men look to others to tell them what they should and shouldn’t do.
 category: Everything Affects Everything
 ---
 
