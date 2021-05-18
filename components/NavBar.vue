@@ -43,10 +43,10 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10%;
+  padding: 3rem 10%;
   z-index: 99;
   @include respond(tab-mid) {
-    padding: 0 3%;
+    padding: 3rem 3%;
   }
   .logo {
     width: 9rem;
@@ -54,7 +54,7 @@ export default {
       cursor: pointer !important;
     }
     @include respond(tab-port) {
-      width: 5rem;
+      width: 7rem;
       margin-top: 0.8rem;
     }
   }

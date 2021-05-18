@@ -83,7 +83,6 @@ export default {
 <style lang="scss" scope>
 .nav__btn {
   padding: 0.5em;
-  text-transform: uppercase;
   text-decoration: none;
   color: $white;
   display: flex;

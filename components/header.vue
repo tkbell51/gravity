@@ -73,7 +73,6 @@ export default {
     position: fixed;
     background: white;
     display: flex;
-    height: 6rem;
   }
 
   // background: $white;
