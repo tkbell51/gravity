@@ -12,13 +12,13 @@ export default {
       default: '',
     },
   },
-  fetch() {
-    this.isActive = false
-  },
   data() {
     return {
       isActive: undefined,
     }
+  },
+  fetch() {
+    this.isActive = false
   },
 }
 </script>

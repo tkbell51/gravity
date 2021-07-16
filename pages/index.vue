@@ -48,7 +48,7 @@
           </div>
           <div class="about__text">
             <h3 class="heading-tertiary">Welcome Note</h3>
-            <h2 class="heading-secondary">Kervin K. Searles, LPC-A</h2>
+            <h2 class="heading-secondary">Kervin K. Searles, LPC</h2>
 
             <p>
               It is estimated that only about 17% of US adults are considered to

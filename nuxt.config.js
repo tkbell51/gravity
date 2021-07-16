@@ -28,7 +28,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/vue-awesome-swiper.js', '~plugins/date'],
+  plugins: ['~plugins/date', '~plugins/vue-awesome-swiper'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -144,4 +144,5 @@ export default {
     ],
     extend(config, ctx) {},
   },
+  target: 'static',
 }

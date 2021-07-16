@@ -1,7 +1,7 @@
 <template>
   <div class="dropdown" @click="toggleDropdown">
     <button class="nav__btn">
-      Services <Fas class="nav__icon" i="caret-down" />
+      SERVICES <Fas class="nav__icon" i="caret-down" />
     </button>
     <transition name="dropdown-fade">
       <ul
@@ -131,6 +131,8 @@ export default {
   }
 
   &__menu {
+    border-radius: 10px;
+    overflow: hidden;
     position: absolute;
     z-index: 40;
     list-style-type: none;
@@ -164,6 +166,7 @@ export default {
     &:focus {
       background: $primary-color;
       color: $white;
+      border: 1px solid $primary-color;
 
       @include respond(tab-port) {
         color: $accent-color;

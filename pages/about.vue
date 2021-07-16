@@ -14,7 +14,7 @@
             />
           </div>
           <div class="about-page__text">
-            <h2 class="heading-secondary">Kervin K. Searles, LPC-A</h2>
+            <h2 class="heading-secondary">Kervin K. Searles, LPC</h2>
 
             <p>
               I love being a therapist. I have always had a desire to help

@@ -29,6 +29,11 @@ export default {
     Tab,
     Tabs,
   },
+  data() {
+    return {
+      slides: [],
+    }
+  },
   fetch() {
     // console.log(this)
 
@@ -52,11 +57,6 @@ export default {
           'I am constantly thinking and analyzing every situation even if it seems all good. Capture greater peace as you l gain perspective.',
       },
     ]
-  },
-  data() {
-    return {
-      slides: [],
-    }
   },
 }
 </script>

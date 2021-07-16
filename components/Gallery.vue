@@ -21,8 +21,7 @@ export default {
       gallery: [
         {
           num: '3',
-          alt:
-            'You never asked me how I was doing. And for your information I was doing terribly.',
+          alt: 'You never asked me how I was doing. And for your information I was doing terribly.',
         },
         { num: '4', alt: "If it doesn't evolve me, it doesnt't involve me." },
         { num: '17', alt: 'There is no health without mental health.' },
@@ -30,36 +29,30 @@ export default {
         { num: '15', alt: 'On average it takes 66 days to form a habit' },
         {
           num: '18',
-          alt:
-            'The one thing you are always responsible for is how you act, no matter how you feel.',
+          alt: 'The one thing you are always responsible for is how you act, no matter how you feel.',
         },
         { num: '7', alt: 'You are only as needy as your unmet needs' },
         {
           num: '6',
-          alt:
-            "If we don't change, we don't grow. If we don't grow, we aren't really living.",
+          alt: "If we don't change, we don't grow. If we don't grow, we aren't really living.",
         },
         {
           num: '8',
-          alt:
-            "20 things that women should stop wearing after the age of 30: 1-20 The weight of other people's expectations & judgements.",
+          alt: "20 things that women should stop wearing after the age of 30: 1-20 The weight of other people's expectations & judgements.",
         },
         { num: '2', alt: 'You are enough' },
         {
           num: '11',
-          alt:
-            "You don't have to have all the answers. You don't have to fix it all by yourself. You don't have to pretend to be ok.",
+          alt: "You don't have to have all the answers. You don't have to fix it all by yourself. You don't have to pretend to be ok.",
         },
         { num: '10', alt: 'you need to start somewhere' },
         {
           num: '9',
-          alt:
-            "Seeing a therapist doesn't mean there's something wrong with you.",
+          alt: "Seeing a therapist doesn't mean there's something wrong with you.",
         },
         {
           num: '1',
-          alt:
-            'You can develop any habit or thought or behavior that you consider desirable or necessary.',
+          alt: 'You can develop any habit or thought or behavior that you consider desirable or necessary.',
         },
         { num: '12', alt: "Q's to check-in with yourself" },
         {
@@ -68,13 +61,11 @@ export default {
         },
         {
           num: '14',
-          alt:
-            'Follow your calling. Trust your talent. Chase your dream. Believe in yourself.',
+          alt: 'Follow your calling. Trust your talent. Chase your dream. Believe in yourself.',
         },
         {
           num: '16',
-          alt:
-            'When we open up enough to share the darkest parts of ourselves with someone else, we let a little light in.',
+          alt: 'When we open up enough to share the darkest parts of ourselves with someone else, we let a little light in.',
         },
       ],
     }
