@@ -104,7 +104,10 @@
       <div class="footer__bottom">
         <div class="container">
           <div class="footer__bottom--box">
-            <p>Copyright &copy; 2020 Gravity Counseling Group</p>
+            <p>
+              Copyright &copy; {{ new Date().getFullYear() }} Gravity Counseling
+              Group
+            </p>
             <div class="footer__social">
               <ul class="footer__menu">
                 <li class="footer__item">
