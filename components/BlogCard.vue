@@ -1,14 +1,16 @@
 <template>
-  <div :key="article.slug" class="blog-card">
-    <div class="blog-card__img">
-      <img
-        :src="require(`~/assets/img/blog/${article.img}`)"
-        :alt="article.alt"
-      />
-    </div>
+  <div
+    :key="article.slug"
+    class="blog-card"
+    :style="{
+      background: `center / contain no-repeat linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.9)),
+        url(${backgroundURL})`,
+      backgroundSize: 'cover',
+    }"
+  >
     <div class="blog-card__text">
       <h3 class="blog-card__title heading-tertiary">{{ article.title }}</h3>
-      <p class="blog-card__sub">{{ article.description }}</p>
+      <!-- <p class="blog-card__sub">{{ article.description }}</p> -->
       <nuxt-link
         class="blog-card__link"
         :to="{ name: 'blog-slug', params: { slug: article.slug } }"
@@ -26,19 +28,27 @@ export default {
       default: () => ({}),
     },
   },
+  computed: {
+    backgroundURL() {
+      return require(`~/assets/img/blog/${this.article.img}`)
+    },
+  },
 }
 </script>
 
 <style lang="scss">
 .blog-card {
-  background: $white;
   border-radius: $border-radius;
   box-shadow: $shadow;
+  height: 30rem;
+  position: relative;
   &__title {
-    color: $primary-color;
+    color: $white;
     margin-bottom: 1rem;
   }
   &__text {
+    position: absolute;
+    bottom: 0;
     padding: 2rem;
   }
   &__img {
@@ -49,7 +59,7 @@ export default {
     }
   }
   &__link {
-    color: $primary-color;
+    color: $accent-color;
   }
   &__sub {
     font-size: 1.4rem;
