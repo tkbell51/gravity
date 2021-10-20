@@ -1,21 +1,21 @@
 <template>
   <section class="section__testimonials">
-    <swiper ref="quoteSwiper" :options="quoteOptions">
-      <swiper-slide
+    <VueSlickCarousel v-bind="quoteOptions">
+      <div
         v-for="(item, index) in quoteSlides"
         :key="index"
         :title="item.name"
         class="testimonial"
       >
-        <div class="container">
+        <div class="testimonial__container">
           <p class="testimonial__quote">
             {{ item.quote }}
           </p>
-          <p class="testimonial__name">{{ item.name }}</p>
+          <p class="testimonial__name">- {{ item.name }}</p>
         </div>
-      </swiper-slide>
+      </div>
       <div slot="pagination" class="swiper-pagination"></div>
-    </swiper>
+    </VueSlickCarousel>
   </section>
 </template>
 
@@ -31,17 +31,15 @@ export default {
 
   data() {
     return {
-      quoteOptions: {},
+      quoteOptions: {
+        autoplay: true,
+        fade: true,
+        autoplaySpeed: 7000,
+      },
       quoteSlides: [],
     }
   },
   fetch() {
-    this.quoteOptions = {
-      effect: 'fade',
-      autoplay: {
-        delay: 15000,
-      },
-    }
     this.quoteSlides = [
       {
         quote:
@@ -115,31 +113,19 @@ export default {
     }
   }
 
-  .tab,
-  .swiper-slide {
-    // opacity: 0;
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
-    background: $gradient;
-    padding: 0;
-    height: 35rem;
-    width: 100%;
-    // height: inherit;
-    transition: all 0.2s ease-in;
-
-    &.active {
-      opacity: 1;
-    }
-  }
   .testimonial {
+    // height: 35rem;
+
     display: flex;
     flex-direction: column;
 
     justify-content: center;
     align-items: center;
+    position: relative;
+    background: $gradient;
+    height: 35rem;
     // padding: 0 15%;
+
     &:before,
     &:after {
       position: absolute;
@@ -148,14 +134,19 @@ export default {
       color: rgba($white, 0.2);
     }
     &:before {
-      content: '\201c';
-      left: 1%;
-      top: -13rem;
+      content: '\201f';
+      left: 5%;
+      top: 75%;
+      transform: translateY(-50%);
     }
     &:after {
       content: '\201d';
-      right: 1%;
-      top: -1rem;
+      right: 5%;
+      top: 75%;
+      transform: translateY(-50%);
+    }
+    &__container {
+      @include absCenter;
     }
 
     &__quote {
@@ -170,6 +161,7 @@ export default {
       font-size: $default-font-size;
       font-style: italic;
       text-align: center;
+      color: $white;
     }
   }
 }

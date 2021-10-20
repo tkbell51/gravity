@@ -61,8 +61,8 @@ import Fas from '~/components/Fas'
 export default {
   components: {
     Fab,
-    Fas
-  }
+    Fas,
+  },
 }
 </script>
 
@@ -71,9 +71,7 @@ export default {
   &__nav {
     background: $primary-color;
     padding: 0 1rem;
-    @include respond(phone) {
-      display: none;
-    }
+
     &--box {
       display: flex;
       align-items: center;

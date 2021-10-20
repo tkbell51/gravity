@@ -28,7 +28,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~plugins/date', '~plugins/vue-awesome-swiper'],
+  plugins: ['~plugins/date', '~plugins/vue-slick-carousel'],
   /*
    ** Nuxt.js dev-modules
    */

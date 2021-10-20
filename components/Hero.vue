@@ -1,60 +1,55 @@
 <template lang="html">
   <section class="section__hero">
-    <Tabs>
-      <Tab
+    <VueSlickCarousel v-bind="settings">
+      <div
         v-for="(item, index) in slides"
         :id="item.css"
         :key="index"
-        :title="item.title"
+        class="slide"
       >
-        <div class="tab__text">
+        <div class="slide__text">
           <h2 class="heading-primary">{{ item.title }}</h2>
 
           <p>{{ item.text }}</p>
           <SimplePractice />
         </div>
-      </Tab>
-    </Tabs>
+      </div>
+    </VueSlickCarousel>
   </section>
 </template>
 
 <script>
-// import { mapGetters } from 'vuex'
 import SimplePractice from '@/components/SimplePractice'
-import Tab from '@/components/Tab'
-import Tabs from '@/components/Tabs'
 export default {
   components: {
     SimplePractice,
-    Tab,
-    Tabs,
   },
   data() {
     return {
       slides: [],
+      settings: {
+        autoplay: true,
+        fade: true,
+        autoplaySpeed: 7000,
+      },
     }
   },
   fetch() {
-    // console.log(this)
-
     this.slides = [
       {
         css: 'slide-help',
         title: 'Need Help?',
-        text:
-          "Having difficulty accepting mistakes and staying committed? Want to strengthen your connection? Let's do the work to create the relationship that is perfect for you.",
+        text: "Having difficulty accepting mistakes and staying committed? Want to strengthen your connection? Let's do the work to create the relationship that is perfect for you.",
       },
       {
         css: 'slide-lost',
         title: 'Lost?',
-        text:
-          'Mental health is complex. Become more self aware of your thoughts, feelings, and actions. Learn how they connect to create the life you are currently living.',
+        text: 'Mental health is complex. Become more self aware of your thoughts, feelings, and actions. Learn how they connect to create the life you are currently living.',
       },
       {
         css: 'slide-think',
         title: 'Overwhelmed?',
-        text:
-          'I am constantly thinking and analyzing every situation even if it seems all good. Capture greater peace as you l gain perspective.',
+        text: 'I am constantly thinking and analyzing every situation even if it seems all good. Capture greater peace as you l gain perspective.',
       },
     ]
   },
@@ -100,9 +95,18 @@ export default {
       }
     }
   }
-  @include respond(phone) {
-    height: 70vh;
+  @include respond(tab-port) {
+    height: 65vh;
   }
+  @include respond(phone) {
+    height: 50vh;
+  }
+  .slick-track,
+  .slick-list,
+  .slick-slide > div {
+    height: 100%;
+  }
+
   #slide-lost {
     background-image: linear-gradient(rgba($black, 0.4), rgba($black, 0.4)),
       url('../assets/img/gcc-happy.jpg');
@@ -127,7 +131,8 @@ export default {
         url('../assets/img/gcc-help.jpg');
     }
   }
-  .tab {
+  .slide {
+    height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
@@ -135,9 +140,10 @@ export default {
     // display: flex !important;
     // align-items: center;
     transition: opacity 0.4s linear;
+    position: relative;
 
     &__text {
-      width: 50%;
+      width: 35%;
       position: absolute;
       top: 50%;
       left: 10%;

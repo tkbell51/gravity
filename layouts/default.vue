@@ -214,4 +214,7 @@ section {
     max-width: 107em;
   }
 }
+.slick-slide > div {
+  height: 100%;
+}
 </style>

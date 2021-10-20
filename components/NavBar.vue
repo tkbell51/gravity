@@ -46,7 +46,7 @@ export default {
   padding: 3rem 10%;
   z-index: 99;
   @include respond(tab-mid) {
-    padding: 3rem 3%;
+    padding: 1rem 3%;
   }
   .logo {
     width: 9rem;

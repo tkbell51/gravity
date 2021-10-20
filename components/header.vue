@@ -1,5 +1,8 @@
 <template>
   <header class="header">
+    <div class="header__top">
+      <SocialRow />
+    </div>
     <nav class="nav">
       <nuxt-link to="/" class="logo"><Logo /></nuxt-link>
       <NavBar />
@@ -12,11 +15,15 @@
 </template>
 
 <script>
+// import Fas from '@/components/Fas'
 import NavBar from '@/components/NavBar'
 import NavBarMobile from '@/components/NavBarMobile'
+import SocialRow from '@/components/SocialRow'
 import Logo from '~/components/Logo'
 export default {
   components: {
+    SocialRow,
+    // Fas,
     Logo,
     NavBar,
     NavBarMobile,
@@ -54,6 +61,27 @@ export default {
   left: 0;
   z-index: 99;
   width: 100%;
+  @include respond(tab-port) {
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+  }
+  &__top {
+    background: $primary-color;
+    padding: 1rem 10%;
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+  &__link {
+    &,
+    &:link,
+    &:visited {
+      color: $white;
+    }
+  }
+  &__icon {
+    color: $accent-color;
+    margin-right: 1rem;
+  }
   &.blog {
     position: relative;
     .nav__link,

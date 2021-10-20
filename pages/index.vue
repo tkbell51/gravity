@@ -1,31 +1,51 @@
 <template>
   <div>
-    <HomeTabs />
+    <Hero />
     <section class="section__help">
       <div class="container">
-        <div class="section__help--text">
-          <h2 class="heading-secondary">It sounds like I can help.</h2>
+        <div class="help__header">
+          <h3 class="heading-tertiary">Kervin K. Searles, LPC</h3>
+          <h2 class="heading-secondary">
+            Your Perception Dictate Your Options
+          </h2>
+        </div>
+        <div class="help">
+          <div class="help__img">
+            <img src="../assets/img/kervin-searles.png" alt="Kervin Searles" />
+          </div>
+          <div class="help__text">
+            <p>
+              I got you! It has been proven therapy can help someone like
+              you...who may be going through a crisis, breakup, remembering past
+              trauma, or just feeling anxious, sad, and angry. Finding the right
+              therapist and having a great relationship with them is a vital
+              component in reaching the goals that you have set. More important
+              than orientation or technique is the therapeutic alliance that one
+              creates with a therapist.
+            </p>
+            <p>
+              My alliance with you will ensure there is a connection, an
+              understanding of goals, and how we are going to go about trying to
+              reach those goals. I will give you the upmost respect, provide a
+              listening ear to gain understanding of your life, issue unbiased
+              honesty, and share evidenced-based techniques you can implement
+              daily. Starting today, book an appointment and take one hour each
+              week to focus completely on yourself.
+            </p>
 
-          <p>
-            I got you! It has been proven therapy can help someone like
-            you...who may be going through a crisis, breakup, remembering past
-            trauma, or just feeling anxious, sad, and angry. Finding the right
-            therapist and having a great relationship with them is a vital
-            component in reaching the goals that you have set. More important
-            than orientation or technique is the therapeutic alliance that one
-            creates with a therapist. My alliance with you will ensure there is
-            a connection, an understanding of goals, and how we are going to go
-            about trying to reach those goals. I will give you the upmost
-            respect, provide a listening ear to gain understanding of your life,
-            issue unbiased honesty, and share evidenced-based techniques you can
-            implement daily. Starting today, book an appointment and take one
-            hour each week to focus completely on yourself.
-          </p>
-          <SimplePractice />
+            <p>
+              It is estimated that only about 17% of US adults are considered to
+              be in a state of optimal mental health. Therapy happens when we
+              address what is preventing us from reaching our goals. If you want
+              to live your best life, sit with a therapist...the conversation is
+              different.
+            </p>
+            <SimplePractice />
+          </div>
         </div>
       </div>
     </section>
-    <section class="section__logo-cta">
+    <!-- <section class="section__logo-cta">
       <div class="container">
         <div class="logo-cta__box">
           <img
@@ -35,8 +55,17 @@
           />
         </div>
       </div>
+    </section> -->
+    <section class="section__services">
+      <div class="container">
+        <h2 class="heading-secondary">Services</h2>
+
+        <ServicesGrid />
+
+        <nuxt-link class="btn" to="services">View Services</nuxt-link>
+      </div>
     </section>
-    <section class="section__about">
+    <!-- <section class="section__about">
       <div class="container">
         <div class="about__box">
           <div class="about__img--box">
@@ -63,17 +92,8 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <FamousQuotes />
-    <section class="section__services">
-      <div class="container">
-        <h2 class="heading-secondary">Services</h2>
-
-        <ServicesGrid />
-
-        <nuxt-link class="btn" to="services">View Services</nuxt-link>
-      </div>
-    </section>
 
     <section class="section__online-cta">
       <div class="container">
@@ -87,6 +107,14 @@
     </section>
     <section class="section__gallery">
       <div class="container">
+        <div>
+          <a
+            href="https://www.instagram.com/gravitycounselinggroup/"
+            target="_blank"
+            class="gallery__link"
+            >@gravitycounselinggroup</a
+          >
+        </div>
         <Gallery />
       </div>
     </section>
@@ -95,7 +123,7 @@
         <h2 class="heading-secondary">Latest Articles</h2>
         <div class="blog__grid">
           <BlogCard
-            v-for="article in articles.slice(0, 3)"
+            v-for="article in articles"
             :key="article.slug"
             :article="article"
           />
@@ -106,20 +134,20 @@
 </template>
 
 <script>
-import Fas from '@/components/Fas'
+// import Fas from '@/components/Fas'
 import SimplePractice from '@/components/SimplePractice'
 import ServicesGrid from '@/components/ServicesGrid'
 import Gallery from '@/components/Gallery'
 import MentalResourceGrid from '@/components/MentalResourceGrid'
-import HomeTabs from '@/components/HomeTabs'
+import Hero from '@/components/Hero'
 import BlogCard from '@/components/BlogCard'
 import FamousQuotes from '@/components/FamousQuotes'
 
 export default {
   components: {
-    HomeTabs,
+    Hero,
     SimplePractice,
-    Fas,
+    // Fas,
     ServicesGrid,
     FamousQuotes,
     Gallery,
@@ -129,7 +157,8 @@ export default {
   async asyncData({ $content, params }) {
     const articles = await $content('articles', params.slug)
       .only(['title', 'description', 'description', 'img', 'slug', 'alt'])
-      .sortBy('createdAt', 'asc')
+      .sortBy('createdAt', 'desc')
+      .limit(3)
       .fetch()
 
     return {
@@ -147,18 +176,47 @@ export default {
 <style lang="scss">
 .section {
   &__help {
-    &--text {
-      text-align: center;
-
-      .heading-primary {
-        color: $primary-color;
-      }
+    .help {
+      display: flex;
       @include respond(tab-port) {
-        width: 80%;
-        margin: 0 auto;
+        flex-direction: column;
       }
-      @include respond(phone) {
-        width: 100%;
+      &__header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      &__img {
+        width: 35%;
+        margin-right: 3rem;
+        @include respond(tab-port) {
+          width: 61%;
+          margin: 2rem auto 4rem;
+          display: block;
+        }
+        img {
+          max-width: 100%;
+          height: auto;
+          box-shadow: -4rem 3rem #0b4c9a;
+          border-radius: 1rem;
+          @include respond(tab-port) {
+            box-shadow: -1rem 1rem #0b4c9a;
+          }
+        }
+      }
+      &__text {
+        width: 65%;
+        // text-align: center;
+
+        .heading-primary {
+          color: $primary-color;
+        }
+        @include respond(tab-port) {
+          width: 80%;
+          margin: 0 auto;
+        }
+        @include respond(phone) {
+          width: 100%;
+        }
       }
     }
   }
@@ -277,7 +335,15 @@ export default {
       }
     }
   }
-
+  &__gallery {
+    .gallery__link {
+      color: $primary-color;
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      display: inline-block;
+    }
+  }
   &__blog-row {
     .blog-row__grid {
       display: grid;

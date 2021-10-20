@@ -41,6 +41,7 @@ export default {
   border-radius: $border-radius;
   box-shadow: $shadow;
   height: 30rem;
+  background-blend-mode: luminosity;
   position: relative;
   &__title {
     color: $white;
@@ -60,6 +61,10 @@ export default {
   }
   &__link {
     color: $accent-color;
+    transition: all 0.4s;
+    &:hover {
+      color: $white;
+    }
   }
   &__sub {
     font-size: 1.4rem;
