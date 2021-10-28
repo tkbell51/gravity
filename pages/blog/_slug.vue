@@ -14,7 +14,7 @@
             <div>
               <em>written by</em>
 
-              <p>Kervin K. Searles, LPCA</p>
+              <p>Kervin K. Searles, LPC</p>
             </div>
             <div>
               <em>posted on</em>

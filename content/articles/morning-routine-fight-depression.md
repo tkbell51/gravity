@@ -2,7 +2,7 @@
 title: A Morning Routine to Fight Depression
 img: huge-depression.jpg
 alt: woman in bed
-description: We all need therapy to assess, address, and connect our emotional, psychological, and social well-being.
+description: Consistently performing a healthy routine can promote improved mental health.
 category: Therapy
 ---
 

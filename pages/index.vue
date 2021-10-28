@@ -5,9 +5,7 @@
       <div class="container">
         <div class="help__header">
           <h3 class="heading-tertiary">Kervin K. Searles, LPC</h3>
-          <h2 class="heading-secondary">
-            Your Perception Dictate Your Options
-          </h2>
+          <h2 class="heading-secondary">Lost? Overwhelmed? Need Help?</h2>
         </div>
         <div class="help">
           <div class="help__img">
@@ -15,13 +13,13 @@
           </div>
           <div class="help__text">
             <p>
-              I got you! It has been proven therapy can help someone like
-              you...who may be going through a crisis, breakup, remembering past
-              trauma, or just feeling anxious, sad, and angry. Finding the right
-              therapist and having a great relationship with them is a vital
-              component in reaching the goals that you have set. More important
-              than orientation or technique is the therapeutic alliance that one
-              creates with a therapist.
+              I got you! It has been proven therapy can help someone like you.
+              Someone who may be going through a crisis, breakup, remembering
+              past trauma, or just feeling anxious, sad, and angry. Finding the
+              right therapist and having a great relationship with them is a
+              vital component in reaching the goals you will set. More important
+              than orientation or technique is the therapeutic alliance you will
+              have with your therapist.
             </p>
             <p>
               My alliance with you will ensure there is a connection, an
@@ -35,10 +33,10 @@
 
             <p>
               It is estimated that only about 17% of US adults are considered to
-              be in a state of optimal mental health. Therapy happens when we
-              address what is preventing us from reaching our goals. If you want
-              to live your best life, sit with a therapist...the conversation is
-              different.
+              be in a state of optimal mental health. Improve your mental health
+              with therapy. Therapy happens when we address what is preventing
+              us from reaching our goals. If you want to live your best life,
+              sit with a therapist...the conversation is different.
             </p>
             <SimplePractice />
           </div>
@@ -342,6 +340,10 @@ export default {
       font-weight: bold;
       margin-bottom: 2rem;
       display: inline-block;
+      transition: all 0.2s;
+      &:hover {
+        color: $accent-color;
+      }
     }
   }
   &__blog-row {

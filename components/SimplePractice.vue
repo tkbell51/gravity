@@ -1,11 +1,11 @@
 <template>
   <a
-    href="https://kervin-searles.clientsecure.me"
+    :href="$config.appLink"
     class="btn"
     target="_blank"
-    data-spwidget-scope-id="ee2cba87-720a-4fab-b6ca-dabbeb4c0351"
-    data-spwidget-scope-uri="kervin-searles"
-    data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b"
+    :data-spwidget-scope-id="$config.scopeID"
+    :data-spwidget-scope-uri="$config.scopeURI"
+    :data-spwidget-application-id="$config.appID"
     data-spwidget-scope-global
     data-spwidget-autobind
     ><span>Request Appointment</span></a

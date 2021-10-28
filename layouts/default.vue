@@ -100,7 +100,7 @@ a {
   align-items: center;
   background: darken($accent-color, 5%);
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 50px;
+  border-radius: 6px;
   height: 4rem;
   padding: 0 2.5rem;
   color: #fff;

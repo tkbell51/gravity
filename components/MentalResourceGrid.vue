@@ -27,13 +27,13 @@ export default {
         },
         {
           link: 'https://www.veteranscrisisline.net/',
-          imgSrc: 'veteranscrisisline-badge-phone-1.gif',
-          imgAlt: 'Veterans Crisis Line',
+          imgSrc: 'mcl.png',
+          imgAlt: 'Veterans Crisis Line Military Crisis Line',
         },
         {
-          link: 'https://www.veteranscrisisline.net/',
-          imgSrc: 'veteranscrisisline-badge-text-1.gif',
-          imgAlt: 'Veterans Crisis Line',
+          link: 'https://mhanational.org/',
+          imgSrc: 'mha.png',
+          imgAlt: 'Mental Health America',
         },
       ],
     }
@@ -53,6 +53,11 @@ export default {
     width: 20rem;
     img {
       width: 100%;
+      transition: all 0.4s;
+      &:hover {
+        transform: translate(4px, -4px);
+        box-shadow: -8px 8px $primary-color;
+      }
     }
   }
 }
