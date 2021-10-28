@@ -194,7 +194,7 @@ export default {
         img {
           max-width: 100%;
           height: auto;
-          box-shadow: -4rem 3rem #0b4c9a;
+          box-shadow: -2rem 2rem #0b4c9a;
           border-radius: 1rem;
           @include respond(tab-port) {
             box-shadow: -1rem 1rem #0b4c9a;

@@ -1,23 +1,17 @@
 <template>
-  <div
-    :key="article.slug"
-    class="blog-card"
-    :style="{
-      background: `center / contain no-repeat linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.9)),
-        url(${backgroundURL})`,
-      backgroundSize: 'cover',
-    }"
-  >
+  <figure :key="article.slug" class="blog-card">
+    <img class="blog-card__img" :src="backgroundURL" :alt="article.alt" />
+
     <div class="blog-card__text">
       <h3 class="blog-card__title heading-tertiary">{{ article.title }}</h3>
       <!-- <p class="blog-card__sub">{{ article.description }}</p> -->
       <nuxt-link
         class="blog-card__link"
         :to="{ name: 'blog-slug', params: { slug: article.slug } }"
-        >Read Article</nuxt-link
+        >Read Article <span>&rarr;</span></nuxt-link
       >
     </div>
-  </div>
+  </figure>
 </template>
 
 <script>
@@ -36,38 +30,52 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .blog-card {
   border-radius: $border-radius;
   box-shadow: $shadow;
-  height: 30rem;
-  background-blend-mode: luminosity;
   position: relative;
-  &__title {
-    color: $white;
-    margin-bottom: 1rem;
-  }
-  &__text {
-    position: absolute;
-    bottom: 0;
-    padding: 2rem;
-  }
+  overflow: hidden;
+  transition: $transition;
   &__img {
-    overflow: hidden;
-    height: 20rem;
-    img {
-      width: 100%;
+    width: 100%;
+    filter: grayscale(1);
+    transition: all 0.4s;
+    @include respond(tab-port) {
+      filter: none;
     }
   }
+  &__title {
+    margin: 1rem 0;
+  }
+  &__text {
+    padding: 2rem;
+  }
+
   &__link {
     color: $accent-color;
     transition: all 0.4s;
+    span {
+      transition: color 0.1s, margin-left 0.4s;
+    }
     &:hover {
-      color: $white;
+      color: $primary-color;
+      & span {
+        margin-left: 1rem;
+      }
     }
   }
   &__sub {
     font-size: 1.4rem;
+  }
+  @media only screen and(min-width: 56.25em) {
+    &:hover {
+      transform: translate(4px, -4px);
+      box-shadow: -8px 8px $primary-color;
+      & .blog-card__img {
+        filter: none;
+      }
+    }
   }
 }
 </style>

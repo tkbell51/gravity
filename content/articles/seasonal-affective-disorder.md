@@ -12,8 +12,4 @@ It is estimated that 10 million people are affected by seasonal affective disord
 
 The good news is that SAD is treatable and steps can be taken to reduce symptoms someone is experiencing. SAD can be treated with light therapy, talk therapy, and medication management. Light therapy is exposure to artificial light. During light therapy, you sit near a device that mimics natural outdoor light. Light therapy is thought to affect brain chemicals linked to mood and sleep and thereby ease SAD symptoms. During talk therapy, individuals will be given the opportunity to participate in interventions aimed at decreasing symptoms. Interventions may include getting eight hours of sleep, getting fresh air daily, and exercise. Nature walks is a great way to tackle two of the three interventions aforementioned. Studies have shown that people suffering from depressive disorders showed significant positive change in mood when exposed to nature. Medication management will determine and utilize medicine to stabilize mood or reduce symptoms. Medication is not an exact science and may take several change of medicine or dosage before accomplishing desired goal.
 
-As a therapist, I recommend reaching out to your primary physician or therapist if you are struggling with a depressed mood during the colder months of this year. Maintain a journal that allows you to keep track of your mood and thoughts. Share your journal with your provider to allow the specific information recorded to help you and your doctor in deciding what treatment is best for you.  
-
-
-
-
+As a therapist, I recommend reaching out to your primary physician or therapist if you are struggling with a depressed mood during the colder months of this year. Maintain a journal that allows you to keep track of your mood and thoughts. Share your journal with your provider to allow the specific information recorded to help you and your doctor in deciding what treatment is best for you.

@@ -1,6 +1,5 @@
 import webpack from 'webpack'
 export default {
-  mode: 'universal',
   publicRuntimeConfig: {
     scopeId: process.env.SCOPE_ID,
     scopeURI: process.env.SCOPE_URI,
@@ -56,8 +55,6 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     '@nuxtjs/style-resources',
@@ -133,11 +130,7 @@ export default {
       return files.map((file) => (file.path === '/index' ? '/' : file.path))
     },
   },
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
-  axios: {},
+
   /*
    ** Build configuration
    */

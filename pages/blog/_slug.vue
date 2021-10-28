@@ -89,6 +89,8 @@ export default {
     return this.$seo({
       title: this.article.title,
       description: this.article.description,
+      author: 'Kervin K. Searles, LPC',
+      image: `/${this.article.img}`,
     })
   },
   computed: {
