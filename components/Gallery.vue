@@ -32,12 +32,10 @@ export default {
 <style lang="scss">
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
   grid-gap: 1rem;
   grid-auto-flow: dense;
-  @include respond(phone) {
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  }
+
   &__img {
     width: 100%;
     height: 100%;
