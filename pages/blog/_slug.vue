@@ -35,7 +35,7 @@
                 <ShareNetwork
                   class="article__social--link"
                   network="facebook"
-                  :url="`https://localhost:3000/blog/${article.slug}`"
+                  :url="`https://gravitycounselinggroup.com/blog/${article.slug}`"
                   :title="article.title"
                   :description="article.description"
                 >
@@ -47,7 +47,7 @@
                 <ShareNetwork
                   class="article__social--link"
                   network="twitter"
-                  :url="`https://localhost:3000/blog/${article.slug}`"
+                  :url="`https://gravitycounselinggroup.com/blog/${article.slug}`"
                   :title="article.title"
                 >
                   <Fab i="twitter"
@@ -57,7 +57,7 @@
                 <ShareNetwork
                   class="article__social--link"
                   network="linkedin"
-                  :url="`https://localhost:3000/blog/${article.slug}`"
+                  :url="`https://gravitycounselinggroup.com/blog/${article.slug}`"
                 >
                   <Fab i="linkedin"
                 /></ShareNetwork>
