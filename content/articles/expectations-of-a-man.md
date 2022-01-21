@@ -4,6 +4,9 @@ img: expectations-of-a-man.jpg
 alt: silhouette of people looking at sunset
 description: The ultimate expectation of man should come from within. Far too often, some men look to others to tell them what they should and shouldn’t do.
 category: Everything Affects Everything
+author:
+    name: Kervin K. Searles, LPC
+    img: kervin-searles.png
 ---
 
 It has often been said that there is no perfect man or woman. You may agree perfection is fleeting at best while others believe it is not a real possibility. However, you have expectations of individuals you engage regularly or maintain a relationship with. You have expectations of your boss, teammates, partner, siblings, parents, and much more. Those expectations have affected your career, friendships, love life, family, and community involvement.

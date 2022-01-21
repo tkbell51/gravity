@@ -6,15 +6,17 @@
           <h1 class="article__title">{{ article.title }}</h1>
           <div class="article__meta">
             <div class="article__avatar">
-              <img
-                src="@/assets/img/kervin-searles.png"
-                alt="Kervin Searles smiling"
+              <nuxt-img
+                v-if="article.author.img"
+                :src="`img/${article.author.img}`"
               />
             </div>
             <div>
               <em>written by</em>
 
-              <p>Kervin K. Searles, LPC</p>
+              <p>
+                {{ article.author.name }}
+              </p>
             </div>
             <div>
               <em>posted on</em>
@@ -58,6 +60,7 @@
                   class="article__social--link"
                   network="linkedin"
                   :url="`https://gravitycounselinggroup.com/blog/${article.slug}`"
+                  :title="article.title"
                 >
                   <Fab i="linkedin"
                 /></ShareNetwork>
@@ -70,26 +73,56 @@
         </div>
       </div>
     </div>
+    <!-- <section class="section__pagination" >
+      <div class="container">
+        <div class="pagination">
+          <NuxtLink
+            v-if="prev"
+            :to="{ name: 'blog-slug', params: { slug: prev.slug } }"
+            class="prev heading-secondary text-right"
+          >
+            {{ prev.title }}
+          </NuxtLink>
+          <div class="pagination__logo">
+            <Logo />
+          </div>
+          <NuxtLink
+            v-if="next"
+            :to="{ name: 'blog-slug', params: { slug: next.slug } }"
+            class="next heading-secondary"
+          >
+            {{ next.title }}
+          </NuxtLink>
+        </div>
+      </div>
+    </section> -->
   </article>
 </template>
 
 <script>
 import Fab from '@/components/Fab'
+// import Logo from '@/components/Logo'
 export default {
   components: {
     Fab,
+    // Logo,
   },
   layout: 'blog',
   async asyncData({ $content, params }) {
     const article = await $content('articles', params.slug).fetch()
+    const [prev, next] = await $content('articles')
+      .only(['title', 'slug'])
+      .sortBy('createdAt', 'asc')
+      .surround(params.slug)
+      .fetch()
 
-    return { article }
+    return { article, prev, next }
   },
   head() {
     return this.$seo({
       title: this.article.title,
       description: this.article.description,
-      author: 'Kervin K. Searles, LPC',
+      author: this.article.author.name,
       image: `/${this.article.img}`,
     })
   },
@@ -197,6 +230,39 @@ export default {
     width: 100%;
     img {
       width: inherit;
+    }
+  }
+}
+.section__pagination {
+  padding: 2rem 0;
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    @include respond(tab-small) {
+      display: block;
+    }
+
+    &__logo {
+      width: 8rem;
+      @include respond(tab-small) {
+        display: none;
+      }
+    }
+
+    .prev,
+    .next {
+      font-size: 2rem;
+      line-height: 1;
+      width: 45%;
+      &:hover .is-outline {
+        color: $black;
+      }
+    }
+
+    .is-outline {
+      transition: $transition;
     }
   }
 }

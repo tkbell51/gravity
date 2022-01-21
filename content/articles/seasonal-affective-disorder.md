@@ -4,6 +4,9 @@ img: seasonal-affective-disorder.jpg
 alt: woman looking out window
 description: It is estimated that 10 million people are affected by seasonal affective disorder. Many in the SAD community report experiencing symptoms for approximately 40 percent of the year.
 category: What's Wrong With Me
+author:
+    name: Kervin K. Searles, LPC
+    img: kervin-searles.png
 ---
 
 As the time change and the leaves fall so do our mood and thoughts. Seasonal affective disorder (also known as SAD) is subtype of major depressive disorder. SAD can be extremely serious and debilitating. It is much more than a slight change of mood. This diagnosis present depressive symptoms associated with the change of a particular season. SAD is most often linked to winter and fall months. However, there are a few individuals who experience this diagnosis in the spring and summer months. People who experience this illness often notice a significant change in sleep, appetite, and mood. They may also find themselves withdrawing from family and friends or lacking energy to expend on normal activities.

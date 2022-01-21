@@ -43,6 +43,7 @@ export default {
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
     '@aceforth/nuxt-optimized-images',
+    '@nuxt/image',
   ],
   optimizedImages: {
     optimizeImages: true,

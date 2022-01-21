@@ -4,6 +4,9 @@ img: managinganxiety.jpg
 alt: man holding head
 description: We all need therapy to assess, address, and connect our emotional, psychological, and social well-being.
 category: Therapy
+author:
+    name: Kervin K. Searles, LPC
+    img: kervin-searles.png
 ---
 
 Anxiety can show up and manifest in many ways. At its best, anxiety can be intense, awkward, uncomfortable, and even debilitating. If you have experienced this issue with any consistency, you may describe your symptoms as inclusive of worrying, restlessness, irrational thoughts, and subsequently a lack of focus. At times you may even feel as if you are diving into a rabbit hole no matter how far it takes you. Without some guidance, your anxiety can prevent you from taking the next steps necessary to move on from your current situation.

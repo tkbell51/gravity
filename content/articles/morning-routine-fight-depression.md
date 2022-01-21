@@ -4,6 +4,9 @@ img: huge-depression.jpg
 alt: woman in bed
 description: Consistently performing a healthy routine can promote improved mental health.
 category: Therapy
+author:
+    name: Kervin K. Searles, LPC
+    img: kervin-searles.png
 ---
 
 In moments of distress and deep sadness we lose sight of ways we can overcome difficult times. Minimal lifestyle changes can make the biggest difference in disabling depressive like symptoms. Be encouraged that creating a routine will help you begin to reject the feeling of doing nothing to improve your circumstance. Consistently performing a healthy routine can promote improved mental health. You can begin exploring a new routine today by following 5 simple steps:
