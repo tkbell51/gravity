@@ -1,6 +1,5 @@
 ---
 title: A Morning Routine to Fight Depression
-date: 10/19/2021
 img: huge-depression.jpg
 alt: woman in bed
 description: Consistently performing a healthy routine can promote improved mental health.

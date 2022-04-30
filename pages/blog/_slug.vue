@@ -20,7 +20,7 @@
             </div>
             <div>
               <em>published on</em>
-              <p>{{ $formatDate(article.date) }}</p>
+              <p>{{ $formatDate(article.createdAt) }}</p>
             </div>
           </div>
         </div>
@@ -141,7 +141,7 @@ export default {
         '@type': 'Person',
         name: this.article.author.name,
       },
-      datePublished: this.$dateToTimestamp(this.article.date),
+      datePublished: this.article.createdAt,
       publisher: {
         '@type': 'Organization',
         name: 'Gravity Counseling Group',

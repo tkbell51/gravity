@@ -1,6 +1,5 @@
 ---
 title: 6 Signs of Burnout
-date: 01/18/2022
 img: signs-of-burnout.jpg
 alt: grassy hills under clear blue sky
 description: Burnout is a state of chronic stress that leads to emotional, physical, and mental exhaustion and feelings of ineffectiveness. Many professionals and working individuals, at some point during the course of their career, experience this condition.

@@ -61,6 +61,7 @@ export default {
     '@nuxtjs/style-resources',
     'nuxt-fontawesome',
     'nuxt-webfontloader',
+    'nuxt-content-git',
     '@nuxt/content',
     'vue-social-sharing/nuxt',
     'nuxt-seo',

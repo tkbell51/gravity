@@ -1,6 +1,5 @@
 ---
 title: Everyone Needs Therapy
-date: 11/28/2020
 img: everyone-needs-therapy.jpg
 alt: woman talking to man
 description: We all need therapy to assess, address, and connect our emotional, psychological, and social well-being.
