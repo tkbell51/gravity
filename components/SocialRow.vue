@@ -13,12 +13,12 @@
       <div class="social__nav--right">
         <a
           class="social__link"
-          href="mailto:gravitycounselinggroup@gmail.com"
+          href="mailto:admin@gravitycounselinggroup.com"
           target="_blank"
           ><Fas
             class="social__nav--icon"
             i="envelope"
-          />gravitycounselinggroup@gmail.com</a
+          />admin@gravitycounselinggroup.com</a
         >
         <a class="social__link" href="tel:864-724-9187" target="_blank"
           ><Fas class="social__nav--icon" i="phone" />(864) 724-9187</a

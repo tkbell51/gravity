@@ -23,8 +23,10 @@
               come and share their experience. My past experience in therapy
               allows me to help with excessive worry, depression, and
               relationship issues. Although, I have worked with a wide range of
-              diagnoses and treatment goals, my greatest passion is aiding women
-              experiencing anxiety, stress, and significant life transitions.
+              diagnoses and treatment goals, my greatest passion is aiding
+              African-American men experiencing anxiety, stress, significant
+              life transitions and subsequently navigating changes within their
+              daily routine.
             </p>
             <p>
               One of the biggest predictor of success in therapy is the
@@ -54,17 +56,14 @@
               myself, and God. (not necessarily in that order)
             </p>
             <p>
-              In conclusion, as a Licensed Professional Counselor – Associate, I
-              am working towards completing the two year required supervision to
-              gain full licensure. I receive supervision from Giovanna Burgess,
-              who is a Licensed Professional Counselor and Supervisor for the
-              state of South Carolina. I have a Bachelor’s Degree in Psychology
-              from Anderson University and a Master’s Degree in Counseling
-              Psychology from Troy University. My own work experience has
-              afforded me the opportunity to provide behavior modification,
-              therapy and facilitate workshops. I look forward to working with
-              you and exploring how we can get you to a place where you can feel
-              content with
+              In conclusion, I am a pretty eclectic Licensed Professional
+              Counselor. I have a Bachelor’s Degree in Psychology from Anderson
+              University and a Master’s Degree in Counseling Psychology from
+              Troy University. My own work experience has afforded me the
+              opportunity to provide behavior modification, therapy and
+              facilitate workshops. I look forward to working with you and
+              exploring how we can get you to a place where you can feel content
+              with
             </p>
           </div>
         </div>

@@ -9,7 +9,10 @@
             <div class="teletherapy">
               <div class="teletherapy__box">
                 <div class="teletherapy__img">
-                  <img src="../../assets/img/gcg-online.jpg" alt="" />
+                  <img
+                    src="../../assets/img/gcg-online.jpg"
+                    alt="Person typing on computer"
+                  />
                 </div>
                 <div>
                   <p>

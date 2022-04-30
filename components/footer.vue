@@ -81,11 +81,11 @@
               <li class="footer__item">
                 <nuxt-link
                   class="footer__link contact-flex"
-                  to="mailto:gravitycounselinggroup@gmail.com"
+                  to="mailto:admin@gravitycounselinggroup.com"
                   ><Fas
                     class="footer__icon"
                     i="envelope"
-                  />gravitycounselinggroup@gmail.com</nuxt-link
+                  />admin@gravitycounselinggroup.com</nuxt-link
                 >
               </li>
               <li class="footer__item">

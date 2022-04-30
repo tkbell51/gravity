@@ -10,11 +10,11 @@
       >
       <nuxt-link
         class="contact-info__link"
-        to="mailto:gravitycounselinggroup@gmail.com"
+        to="mailto:admin@gravitycounselinggroup.com"
         ><Fas
           class="contact-info__icon"
           i="envelope"
-        />gravitycounselinggroup@gmail.com</nuxt-link
+        />admin@gravitycounselinggroup.com</nuxt-link
       >
       <nuxt-link class="contact-info__link" to="tel:864-724-9187"
         ><Fas class="contact-info__icon" i="phone" />(864) 724-9187</nuxt-link

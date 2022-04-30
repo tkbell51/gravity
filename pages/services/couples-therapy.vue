@@ -5,7 +5,13 @@
       <div class="container">
         <div class="grid">
           <ServiceLinks />
-          <div>
+          <div class="couples-therapy__content">
+            <div class="couples-therapy__img">
+              <nuxt-img
+                src="/img/couples-therapy.jpg"
+                alt="man and women sitting on couch laughing"
+              />
+            </div>
             <p>
               Gravity Counseling Group provides couples counseling to
               acknowledge and address specific areas of foundation upon which to
@@ -47,4 +53,13 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.couples-therapy {
+  &__img {
+    margin-bottom: 2rem;
+    img {
+      width: 100%;
+    }
+  }
+}
+</style>
