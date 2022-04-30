@@ -19,8 +19,8 @@
               </p>
             </div>
             <div>
-              <em>posted on</em>
-              <p>{{ $formatDate(article.createdAt) }}</p>
+              <em>published on</em>
+              <p>{{ $formatDate(article.date) }}</p>
             </div>
           </div>
         </div>
@@ -77,21 +77,21 @@
       <div class="container">
         <div class="pagination">
           <NuxtLink
-            v-if="prev"
-            :to="{ name: 'blog-slug', params: { slug: prev.slug } }"
+            v-if="prevBlog"
+            :to="{ name: 'blog-slug', params: { slug: prevBlog.slug } }"
             class="prev heading-secondary text-right"
           >
-            {{ prev.title }}
+            {{ prevBlog.title }}
           </NuxtLink>
           <div class="pagination__logo">
             <Logo />
           </div>
           <NuxtLink
-            v-if="next"
-            :to="{ name: 'blog-slug', params: { slug: next.slug } }"
+            v-if="nextBlog"
+            :to="{ name: 'blog-slug', params: { slug: nextBlog.slug } }"
             class="next heading-secondary"
           >
-            {{ next.title }}
+            {{ nextBlog.title }}
           </NuxtLink>
         </div>
       </div>
@@ -110,13 +110,13 @@ export default {
   layout: 'blog',
   async asyncData({ $content, params }) {
     const article = await $content('articles', params.slug).fetch()
-    const [prev, next] = await $content('articles')
+    const [prevBlog, nextBlog] = await $content('articles')
       .only(['title', 'slug'])
       .sortBy('createdAt', 'asc')
       .surround(params.slug)
       .fetch()
 
-    return { article, prev, next }
+    return { article, prevBlog, nextBlog }
   },
   head() {
     return this.$seo({
@@ -125,6 +125,28 @@ export default {
       author: this.article.author.name,
       image: `/${this.article.img}`,
     })
+  },
+  jsonld() {
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'NewsArticle',
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': 'https://gravitycounselinggroup/blog/' + this.article.slug,
+      },
+      headline: this.article.title,
+      description: this.article.description,
+      image: `/${this.article.img}`,
+      author: {
+        '@type': 'Person',
+        name: this.article.author.name,
+      },
+      datePublished: this.$dateToTimestamp(this.article.date),
+      publisher: {
+        '@type': 'Organization',
+        name: 'Gravity Counseling Group',
+      },
+    }
   },
   computed: {
     backgroundURL() {

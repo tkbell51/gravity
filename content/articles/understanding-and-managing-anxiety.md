@@ -1,5 +1,6 @@
 ---
 title: Understanding and Managing Anxiety
+date: 10/27/2021
 img: managinganxiety.jpg
 alt: man holding head
 description: We all need therapy to assess, address, and connect our emotional, psychological, and social well-being.
