@@ -2,7 +2,7 @@
 title: Skills For a Healthy Relationship
 img: healthy-relationship.jpg
 alt: hispanic couples
-description: Couples often come to therapy with the expectation of fixing one problem:\ COMMUNICATION. Everyone feels that if they can just learn to communicate better, then the relationship will be void of deceit, conflict, and misunderstanding. As a therapist I am taught to look for patterns and all too often I find many couples stuck in repetitive patterns that are not beneficial for the relationship.
+description: Everyone feels that if they can just learn to communicate better, then the relationship will be void of deceit, conflict, and misunderstanding.
 category: Couples Therapy
 author:
     name: Kervin K. Searles, LPC
