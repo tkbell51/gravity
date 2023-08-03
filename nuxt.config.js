@@ -44,9 +44,6 @@ export default {
     optimizedImages: {
         optimizeImages: true,
     },
-    eslint: {
-        fix: true,
-    },
 
     /*
      ** Nuxt.js modules
