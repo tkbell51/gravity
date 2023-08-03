@@ -9,7 +9,7 @@
                 </div>
                 <div class="help">
                     <div class="help__img">
-                        <img src="../assets/img/kervin-searles.png" alt="Kervin Searles" />
+                        <nuxt-img src="img/kervin-searles.png" alt="Kervin Searles" />
                     </div>
                     <div class="help__text">
                         <p>

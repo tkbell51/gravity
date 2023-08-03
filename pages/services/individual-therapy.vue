@@ -10,7 +10,7 @@
                             <div class="ind-therapy__text">
                                 <div class="ind-therapy__img">
                                     <img
-                                        src="~/assets/img/teletherapy-photo.jpg"
+                                        src="~assets/img/teletherapy-photo.jpg"
                                         alt="Woman sitting on couch looking at laptop"
                                     />
                                 </div>
