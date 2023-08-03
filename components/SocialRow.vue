@@ -24,28 +24,13 @@
           ><Fas class="social__nav--icon" i="phone" />(864) 724-9187</a
         >
         <ul class="social__list">
-          <li class="social__item">
+          <li v-for="item in social" :key="item.name" class="social__item">
             <a
               class="social__link"
-              href="https://www.facebook.com/gravitycounseling/"
+              :href="item.link"
               target="_blank"
-              ><Fab class="social__nav--icon" i="facebook"
-            /></a>
-          </li>
-          <li class="social__item">
-            <a
-              class="social__link"
-              href="https://www.instagram.com/thegravitygroup/"
-              target="_blank"
-              ><Fab class="social__nav--icon" i="instagram"
-            /></a>
-          </li>
-          <li class="social__item">
-            <a
-              class="social__link"
-              href="https://twitter.com/GravityCGroup"
-              target="_blank"
-              ><Fab class="social__nav--icon" i="twitter"
+              :title="item.name"
+              ><Fab class="social__nav--icon" :i="item.name"
             /></a>
           </li>
         </ul>
@@ -62,6 +47,29 @@ export default {
   components: {
     Fab,
     Fas,
+  },
+  data() {
+    return {
+      social: [
+        {
+          name: 'instagram',
+          link: 'https://www.instagram.com/gravitycounselinggroup/',
+        },
+        {
+          name: 'facebook',
+          link: 'https://www.facebook.com/gravitycounseling/',
+        },
+        {
+          name: 'linkedin',
+          link: 'https://www.linkedin.com/company/gravity-counseling-group',
+        },
+        { name: 'twitter', link: 'https://twitter.com/GravityCGroup' },
+        {
+          name: 'youtube',
+          link: 'https://www.youtube.com/@gravitycounselinggroup8683',
+        },
+      ],
+    }
   },
 }
 </script>
@@ -96,6 +104,7 @@ export default {
 
     .social__nav--icon {
       color: $white;
+      transition: $transition;
 
       &:hover {
         color: $accent-color;
@@ -112,6 +121,7 @@ export default {
     align-items: center;
     margin-right: 1rem;
     font-size: 1.3rem;
+    transition: $transition;
   }
   &__link:hover,
   &__link:focus {

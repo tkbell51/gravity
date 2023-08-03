@@ -7,7 +7,7 @@
         </h1>
       </div>
     </div>
-    <!-- <img src="../assets/img/logo-white.png" alt="Logo" /> -->
+    <!-- <img src="img/logo-white.png" alt="Logo" /> -->
   </div>
 </template>
 
@@ -33,7 +33,7 @@ export default {
       rgba($tertiary-color, 0.8),
       rgba($primary-color, 0.8)
     ),
-    url('../assets/img/bridge-on-the-lake.jpg');
+    url('/img/bridge-on-the-lake.jpg');
   background-size: cover;
   background-position: center;
 

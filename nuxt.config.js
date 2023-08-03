@@ -4,7 +4,7 @@ export default {
     scopeId: process.env.SCOPE_ID,
     scopeURI: process.env.SCOPE_URI,
     appID: process.env.APP_ID,
-    appLink: process.env.APP_LINK,
+    appLink: 'process.env.APP_LINK',
   },
   /*
    ** Headers of the page

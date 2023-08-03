@@ -14,7 +14,7 @@ export default {
     }
   },
   mounted() {
-    this.importAll(require.context('../assets/img/gallery/', true, /|.jpeg$/))
+    this.importAll(require.context('../assets/img/gallery/', true, /\.jpeg$/))
   },
   methods: {
     importAll(r) {

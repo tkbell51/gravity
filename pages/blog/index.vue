@@ -4,8 +4,8 @@
     <section class="section__first-blog">
       <div class="container">
         <figure class="first-blog">
-          <img
-            :src="require(`~/assets/img/blog/${firstArticle.img}`)"
+          <nuxt-img
+            :src="`img/blog/${firstArticle.img}`"
             :alt="firstArticle.alt"
           />
           <div class="first-blog__text">
@@ -30,9 +30,9 @@
             :key="article.slug"
             class="blog-card"
           >
-            <img
+            <nuxt-img
               class="blog-card__img"
-              :src="require(`~/assets/img/blog/${article.img}`)"
+              :src="`img/blog/${article.img}`"
               :alt="article.alt"
             />
 

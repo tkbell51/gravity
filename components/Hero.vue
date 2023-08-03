@@ -109,26 +109,26 @@ export default {
 
   #slide-lost {
     background-image: linear-gradient(rgba($black, 0.4), rgba($black, 0.4)),
-      url('../assets/img/gcc-happy.jpg');
+      url('/img/gcc-happy.jpg');
     @include respond(phone) {
       background-image: linear-gradient(rgba($black, 0.6), rgba($black, 0.6)),
-        url('../assets/img/gcc-happy.jpg');
+        url('/img/gcc-happy.jpg');
     }
   }
   #slide-think {
     background-image: linear-gradient(rgba($black, 0.4), rgba($black, 0.4)),
-      url('../assets/img/gcc-think.jpg');
+      url('/img/gcc-think.jpg');
     @include respond(phone) {
       background-image: linear-gradient(rgba($black, 0.6), rgba($black, 0.6)),
-        url('../assets/img/gcc-think.jpg');
+        url('/img/gcc-think.jpg');
     }
   }
   #slide-help {
     background-image: linear-gradient(rgba($black, 0.4), rgba($black, 0.4)),
-      url('../assets/img/gcc-help.jpg');
+      url('/img/gcc-help.jpg');
     @include respond(phone) {
       background-image: linear-gradient(rgba($black, 0.6), rgba($black, 0.6)),
-        url('../assets/img/gcc-help.jpg');
+        url('/img/gcc-help.jpg');
     }
   }
   .slide {

@@ -84,7 +84,7 @@ export default {}
       rgba($black, 0.3) 0%,
       rgba($black, 0.3) 100%
     ),
-    url('../assets/img/lake-hero.jpg');
+    url('/img/lake-hero.jpg');
   background-size: cover;
   background-position: center;
 
@@ -111,7 +111,7 @@ export default {}
   //       rgba($white, 0.9) 0%,
   //       rgba($white, 0.9) 100%
   //     ),
-  //     url('../assets/img/lake-hero.jpg');
+  //     url('img/lake-hero.jpg');
   // }
 
   &__form {

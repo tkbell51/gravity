@@ -25,10 +25,7 @@
           </div>
         </div>
         <div class="article__img">
-          <img
-            :src="require(`~/assets/img/blog/${article.img}`)"
-            :alt="article.alt"
-          />
+          <nuxt-img :src="`/img/blog/${article.img}`" :alt="article.alt" />
         </div>
         <div class="article__grid">
           <div>
@@ -150,7 +147,7 @@ export default {
   },
   computed: {
     backgroundURL() {
-      return require(`~/assets/img/blog/${this.article.img}`)
+      return `/img/blog/${this.article.img}`
     },
   },
 }

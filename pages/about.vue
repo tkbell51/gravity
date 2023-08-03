@@ -9,7 +9,7 @@
         <div class="about-page">
           <div class="about-page__img">
             <img
-              src="../assets/img/kervin-searles.png"
+              src="img/kervin-searles.png"
               alt="Kervin Searles smiling"
             />
           </div>

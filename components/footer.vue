@@ -174,7 +174,7 @@ export default {
     justify-content: space-between;
     margin-bottom: 2rem;
     padding-bottom: 0rem;
-    @media only screen and(max-width: 28.125em) {
+    @media only screen and (max-width: 28.125em) {
       width: 100%;
     }
     div {

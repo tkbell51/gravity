@@ -8,7 +8,7 @@
           <div class="couples-therapy__content">
             <div class="couples-therapy__img">
               <nuxt-img
-                src="/img/couples-therapy.jpg"
+                src="img/couples-therapy.jpg"
                 alt="man and women sitting on couch laughing"
               />
             </div>

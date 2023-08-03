@@ -7,8 +7,8 @@
       class="resource__link"
       target="_blanky"
     >
-      <img
-        :src="require(`~/assets/img/mental-resources/${item.imgSrc}`)"
+      <nuxt-img
+        :src="`img/mental-resources/${item.imgSrc}`"
         :alt="`${item.imgAlt}`"
       />
     </a>

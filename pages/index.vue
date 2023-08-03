@@ -9,7 +9,7 @@
         </div>
         <div class="help">
           <div class="help__img">
-            <img src="../assets/img/kervin-searles.png" alt="Kervin Searles" />
+            <nuxt-img src="img/kervin-searles.png" alt="Kervin Searles" />
           </div>
           <div class="help__text">
             <p>
@@ -47,7 +47,7 @@
       <div class="container">
         <div class="logo-cta__box">
           <img
-            src="../assets/img/gravity-counsel-full.svg"
+            src="img/gravity-counsel-full.svg"
             alt="Logo"
             class="logo-cta__logo"
           />
@@ -68,7 +68,7 @@
         <div class="about__box">
           <div class="about__img--box">
             <img
-              src="../assets/img/kervin-searles.png"
+              src="img/kervin-searles.png"
               alt="Kervin Searles smiling"
               class="about__img"
             />

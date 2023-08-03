@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" :class="{ scrolled: !view.atTopOfPage }">
     <div class="header__top">
       <SocialRow />
     </div>
@@ -32,7 +32,13 @@ export default {
     return {
       // mobileView: true,
       showNav: false,
+      view: {
+        atTopOfPage: true,
+      },
     }
+  },
+  beforeMount() {
+    window.addEventListener('scroll', this.handleScroll)
   },
   mounted() {},
   methods: {
@@ -50,6 +56,15 @@ export default {
       body.classList.toggle('overflow')
       // event.stopPropagation()
     },
+    handleScroll() {
+      // when the user scrolls, check the pageYOffset
+      if (window.scrollY > 0) {
+        // user is scrolled
+        if (this.view.atTopOfPage) this.view.atTopOfPage = false
+      } else {
+        this.view.atTopOfPage = true
+      }
+    },
   },
 }
 </script>
@@ -61,12 +76,15 @@ export default {
   left: 0;
   z-index: 99;
   width: 100%;
+  transition: $transition;
   @include respond(tab-port) {
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
   }
   &__top {
     background: $primary-color;
     padding: 1rem 10%;
+    transition: $transition;
+
     @include respond(tab-port) {
       display: none;
     }
@@ -76,6 +94,7 @@ export default {
     &:link,
     &:visited {
       color: $white;
+      transition: $transition;
     }
   }
   &__icon {
@@ -131,6 +150,7 @@ export default {
     }
     .nav .logo {
       width: 8rem;
+      transition: $transition;
     }
     .nav__link,
     .nav__btn {
@@ -223,6 +243,37 @@ export default {
       position: relative;
       top: 0;
       right: 0;
+    }
+  }
+
+  &.scrolled {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    border-bottom: 0px;
+
+    background: $white;
+    .header__top {
+      height: 0;
+      position: fixed;
+      top: -50px;
+      width: 100%;
+      z-index: 99;
+    }
+    .nav {
+      padding: 1rem 10%;
+    }
+    .nav .logo {
+      width: 5rem;
+    }
+    .nav__link,
+    .nav__btn {
+      &,
+      &:link,
+      &:visited {
+        color: $primary-color;
+      }
     }
   }
 }

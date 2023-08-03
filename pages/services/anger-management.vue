@@ -8,7 +8,7 @@
           <div class="anger-management__content">
             <div class="anger-management__img">
               <nuxt-img
-                src="/img/anger-management.jpg"
+                src="img/anger-management.jpg"
                 alt="man holding heading"
               />
             </div>

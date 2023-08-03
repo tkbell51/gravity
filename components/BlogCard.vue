@@ -24,7 +24,7 @@ export default {
   },
   computed: {
     backgroundURL() {
-      return require(`~/assets/img/blog/${this.article.img}`)
+      return `img/blog/${this.article.img}`
     },
   },
 }
@@ -68,7 +68,7 @@ export default {
   &__sub {
     font-size: 1.4rem;
   }
-  @media only screen and(min-width: 56.25em) {
+  @media only screen and (min-width: 56.25em) {
     &:hover {
       transform: translate(4px, -4px);
       box-shadow: -8px 8px $primary-color;
