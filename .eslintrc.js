@@ -1,33 +1,28 @@
 module.exports = {
-  root: true,
-  env: {
-    browser: true,
-    node: true,
-  },
-  parserOptions: {
-    parser: 'babel-eslint',
-  },
-  extends: [
-    '@nuxtjs',
-    'prettier',
-    'prettier/vue',
-    'plugin:prettier/recommended',
-    'plugin:nuxt/recommended',
-  ],
-  plugins: ['prettier'],
-  // add your custom rules here
-  rules: {
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'auto',
-      },
-    ],
-    'vue/comment-directive': [
-      'error',
-      {
-        reportUnusedDisableDirectives: false,
-      },
-    ],
-  },
+    root: true,
+    env: {
+        browser: true,
+        node: true,
+    },
+    parserOptions: {
+        parser: '@babel/eslint-parser',
+        requireConfigFile: false,
+    },
+    extends: ['@nuxtjs', 'plugin:nuxt/recommended', 'prettier'],
+    plugins: ['prettier'],
+    rules: {
+        'prettier/prettier': ['error'],
+        'vue/html-indent': ['error', 4],
+        'vue/singleline-html-element-content-newline': 0,
+        'vue/component-name-in-template-casing': ['error', 'PascalCase'],
+        'vue/valid-v-slot': [
+            'error',
+            {
+                allowModifiers: true,
+            },
+        ],
+    },
+    globals: {
+        _: true,
+    },
 }
