@@ -19,7 +19,7 @@
 import NavBar from '@/components/NavBar'
 import NavBarMobile from '@/components/NavBarMobile'
 import SocialRow from '@/components/SocialRow'
-import Logo from '~/components/Logo'
+import Logo from '~/components/Logos/Logo'
 export default {
   components: {
     SocialRow,
@@ -268,10 +268,13 @@ export default {
       z-index: 99;
     }
     .nav {
-      padding: 1rem 10%;
+      // padding: 1rem 10%;
     }
     .nav .logo {
       width: 5rem;
+      @include respond(tab-port) {
+        width: 3rem;
+      }
     }
     .nav__link,
     .nav__btn {

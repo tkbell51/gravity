@@ -45,7 +45,7 @@
 
 <script>
 import DropDown from '@/components/DropdownMenu'
-import Logo from '@/components/LogoFull'
+import Logo from '@/components/Logos/LogoFull'
 import Fab from '@/components/Fab'
 export default {
     components: {

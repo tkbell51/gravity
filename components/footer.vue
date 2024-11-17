@@ -130,7 +130,7 @@
 </template>
 
 <script>
-import FooterLogo from '~/components/FooterLogo'
+import FooterLogo from '~/components/Logos/FooterLogo'
 import Fab from '~/components/Fab'
 import Fas from '~/components/Fas'
 
