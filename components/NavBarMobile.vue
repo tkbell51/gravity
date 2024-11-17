@@ -45,7 +45,7 @@
 
 <script>
 import DropDown from '@/components/DropdownMenu'
-import Logo from '@/components/Logo-old'
+import Logo from '@/components/LogoFull'
 import Fab from '@/components/Fab'
 export default {
     components: {
@@ -78,7 +78,7 @@ export default {
     overflow-y: auto;
     .logo {
         display: block;
-        width: 30rem;
+        width: 20rem;
         margin: 0 auto;
     }
     &__menu {

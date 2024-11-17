@@ -54,7 +54,7 @@ export default {
       cursor: pointer !important;
     }
     @include respond(tab-port) {
-      width: 7rem;
+      width: 3rem;
       margin-top: 0.8rem;
     }
   }
