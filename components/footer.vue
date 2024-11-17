@@ -70,30 +70,27 @@
             <h4 class="footer__menu--title">Contact Us</h4>
             <ul class="footer__menu">
               <li class="footer__item">
-                <nuxt-link
+                <a
                   class="footer__link contact-flex"
-                  to="https://www.google.com/maps/dir/?api=1&destination=104%20Maxwell%20Ave%20Suite%20219%20Greenwood%20SC%2029646"
+                  href="https://www.google.com/maps/dir/?api=1&destination=104%20Maxwell%20Ave%20Suite%20219%20Greenwood%20SC%2029646"
                   ><Fas class="footer__icon" i="map-marker-alt" />104 Maxwell
                   Ave Suite 219,<br />
-                  Greenwood, SC 29646</nuxt-link
+                  Greenwood, SC 29646</a
                 >
               </li>
               <li class="footer__item">
-                <nuxt-link
+                <a
                   class="footer__link contact-flex"
-                  to="mailto:admin@gravitycounselinggroup.com"
+                  href="mailto:admin@gravitycounselinggroup.com"
                   ><Fas
                     class="footer__icon"
                     i="envelope"
-                  />admin@gravitycounselinggroup.com</nuxt-link
+                  />admin@gravitycounselinggroup.com</a
                 >
               </li>
               <li class="footer__item">
-                <nuxt-link
-                  class="footer__link contact-flex"
-                  to="tel:864-724-9187"
-                  ><Fas class="footer__icon" i="phone" />(864)
-                  724-9187</nuxt-link
+                <a class="footer__link contact-flex" href="tel:864-724-9187"
+                  ><Fas class="footer__icon" i="phone" />(864) 724-9187</a
                 >
               </li>
             </ul>

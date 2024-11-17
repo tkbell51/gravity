@@ -1,23 +1,23 @@
 <template>
   <section class="section__contact-row">
     <div class="container">
-      <nuxt-link
+      <a
         class="contact-info__link"
-        to="https://www.google.com/maps/dir/?api=1&destination=104%20Maxwell%20Ave%20Suite%20219%20Greenwood%20SC%2029646"
+        href="https://www.google.com/maps/dir/?api=1&destination=104%20Maxwell%20Ave%20Suite%20219%20Greenwood%20SC%2029646"
         ><Fas class="contact-info__icon" i="map-marker-alt" />104 Maxwell Ave
         Suite 219,<br />
-        Greenwood, SC 29646</nuxt-link
+        Greenwood, SC 29646</a
       >
-      <nuxt-link
+      <a
         class="contact-info__link"
-        to="mailto:admin@gravitycounselinggroup.com"
+        href="mailto:admin@gravitycounselinggroup.com"
         ><Fas
           class="contact-info__icon"
           i="envelope"
-        />admin@gravitycounselinggroup.com</nuxt-link
+        />admin@gravitycounselinggroup.com</a
       >
-      <nuxt-link class="contact-info__link" to="tel:864-724-9187"
-        ><Fas class="contact-info__icon" i="phone" />(864) 724-9187</nuxt-link
+      <a class="contact-info__link" href="tel:864-724-9187"
+        ><Fas class="contact-info__icon" i="phone" />(864) 724-9187</a
       >
     </div>
   </section>
