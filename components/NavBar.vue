@@ -49,7 +49,7 @@ export default {
     padding: 1rem 5%;
   }
   .logo {
-    width: 9rem;
+    width: 6rem;
     &:hover {
       cursor: pointer !important;
     }

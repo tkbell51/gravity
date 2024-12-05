@@ -85,6 +85,9 @@ export default {
     padding: 1rem 10%;
     transition: $transition;
 
+    @include respond(tab-mid) {
+      padding: 1rem 5%;
+    }
     @include respond(tab-port) {
       display: none;
     }
@@ -195,15 +198,9 @@ export default {
         height: 4px;
         background-color: $primary-color;
         outline: 1px solid transparent;
-        -webkit-transition-property:
-          background-color,
-          -webkit-transform;
-        -moz-transition-property:
-          background-color,
-          -moz-transform;
-        -o-transition-property:
-          background-color,
-          -o-transform;
+        -webkit-transition-property: background-color, -webkit-transform;
+        -moz-transition-property: background-color, -moz-transform;
+        -o-transition-property: background-color, -o-transform;
         transition-property: background-color, transform;
         -webkit-transition-duration: 0.3s;
         -moz-transition-duration: 0.3s;
