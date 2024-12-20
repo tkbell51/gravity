@@ -116,10 +116,9 @@ export default {
 <style lang="scss">
 .insurance-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
   grid-gap: 3rem;
   place-items: center;
-
   &__item {
   }
   &__img {
@@ -131,9 +130,11 @@ export default {
   &__insurance-logos,
   &__session-rates {
     padding: 0;
-    margin: 7rem 0;
+    margin: 4rem 0;
     .heading-secondary {
-      margin-inline: auto;
+      text-align: center;
+      display: block;
+      margin-bottom: 1rem;
     }
   }
 }
