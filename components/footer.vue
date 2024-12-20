@@ -25,6 +25,16 @@
                   >Contact Us</nuxt-link
                 >
               </li>
+              <li class="footer__item">
+                <nuxt-link class="footer__link" to="/cancellation"
+                  >Cancellation Policy</nuxt-link
+                >
+              </li>
+              <li class="footer__item">
+                <nuxt-link class="footer__link" to="/good-faith-estimate"
+                  >Good Faith Estimate</nuxt-link
+                >
+              </li>
             </ul>
           </div>
           <div class="footer__pages">
