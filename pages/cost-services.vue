@@ -73,7 +73,7 @@
             <div>
               <h3 class="heading-tertiary">GROUP Self Pay Sessions</h3>
               <p>Men's Wellness Group (90 minutes) - $FREE</p>
-              <p>Managing Anger Appropriately II (60 minutes) - $25</p>
+              <p>Managing Anger Appropriately I (60 minutes) - $25</p>
               <p>Managing Anger Appropriately II (60 minutes) - $25</p>
               <p>Positively Parenting (60 minutes) - $25</p>
             </div>
