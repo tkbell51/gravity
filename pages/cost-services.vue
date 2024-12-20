@@ -60,22 +60,60 @@
             </li>
           </ul>
           <div class="self-pay-flex">
-            <div>
+            <div class="self-pay-flex__box">
               <h3 class="heading-tertiary">PRIVATE Self-Pay Sessions</h3>
-              <p>Individual/Family Therapy Intake (60-90 minutes)- $225</p>
-              <p>Couples Therapy Intake (60-90 minutes) - $225</p>
-              <p>
-                Individual/Family Therapy with a Licensed Therapist (50 minutes)
-                - $175
-              </p>
-              <p>Couples Therapy session (50 minutes) - $175</p>
+              <div class="self-pay-flex__price">
+                <p class="self-pay-flex__title">
+                  Individual/Family Therapy Intake (60-90 minutes)
+                </p>
+                <p>$225</p>
+              </div>
+              <div class="self-pay-flex__price">
+                <p class="self-pay-flex__title">
+                  Couples Therapy Intake (60-90 minutes)
+                </p>
+                <p>$225</p>
+              </div>
+              <div class="self-pay-flex__price">
+                <p class="self-pay-flex__title">
+                  Individual/Family Therapy session with a Licensed Therapist
+                  (50 minutes)
+                </p>
+                <p>$175</p>
+              </div>
+              <div class="self-pay-flex__price">
+                <p class="self-pay-flex__title">
+                  Couples Therapy session (50 minutes)
+                </p>
+                <p>$175</p>
+              </div>
             </div>
-            <div>
+            <div class="self-pay-flex__box">
               <h3 class="heading-tertiary">GROUP Self Pay Sessions</h3>
-              <p>Men's Wellness Group (90 minutes) - $FREE</p>
-              <p>Managing Anger Appropriately I (60 minutes) - $25</p>
-              <p>Managing Anger Appropriately II (60 minutes) - $25</p>
-              <p>Positively Parenting (60 minutes) - $25</p>
+              <div class="self-pay-flex__price">
+                <p class="self-pay-flex__title">
+                  Men's Wellness Group (90 minutes)
+                </p>
+                <p>$FREE</p>
+              </div>
+              <div class="self-pay-flex__price">
+                <p class="self-pay-flex__title">
+                  Managing Anger Appropriately I (60 minutes)
+                </p>
+                <p>$25</p>
+              </div>
+              <div class="self-pay-flex__price">
+                <p class="self-pay-flex__title">
+                  Managing Anger Appropriately II (60 minutes)
+                </p>
+                <p>$25</p>
+              </div>
+              <div class="self-pay-flex__price">
+                <p class="self-pay-flex__title">
+                  Positively Parenting (60 minutes)
+                </p>
+                <p>$25</p>
+              </div>
             </div>
           </div>
         </div>
@@ -150,7 +188,7 @@ export default {
 .session-rate-content {
   background: $primary-color;
   color: $white;
-  padding: 4rem 10%;
+  padding: 4rem 8%;
   margin-bottom: 4rem;
   h2 {
     color: white;
@@ -168,10 +206,25 @@ export default {
 .self-pay-flex {
   display: flex;
   margin-top: 4rem;
-  gap: 4rem;
+  gap: 8rem;
   justify-content: space-between;
   @include respond(small-tab) {
     flex-direction: column;
+    gap: 2rem;
+  }
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+  &__title {
+    flex-basis: 75%;
+  }
+  &__box {
+    width: 50%;
+    @include respond(small-tab) {
+      width: 100%;
+    }
   }
 }
 </style>
