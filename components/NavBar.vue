@@ -10,6 +10,11 @@
       <DropDown />
     </li>
     <li class="nav__item">
+      <nuxt-link class="nav__link" to="/cost-services"
+        >Cost of Services</nuxt-link
+      >
+    </li>
+    <li class="nav__item">
       <nuxt-link class="nav__link" to="/blog">Blog</nuxt-link>
     </li>
     <li class="nav__item">

@@ -1,9 +1,6 @@
 <template>
   <div>
-    <PageHeader
-      page-title="Contact Us"
-      header-text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, reiciendis?"
-    />
+    <PageHeader page-title="Contact Us" header-text="Contact Us" />
   </div>
 </template>
 

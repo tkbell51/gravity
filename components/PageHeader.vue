@@ -64,5 +64,8 @@ export default {
     opacity: 0.2;
     filter: blur(1px);
   }
+  @include respond(small-tab) {
+    height: 20rem;
+  }
 }
 </style>
