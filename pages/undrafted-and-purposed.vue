@@ -63,7 +63,7 @@
     <section class="section__video">
       <div class="container">
         <div class="two-columns">
-          <video src="../assets/video.mp4" controls></video>
+          <!-- <video src="../assets/video.mp4" controls></video> -->
           <div class="section__video--text">
             <h2 class="heading-secondary">For the man who...</h2>
             <ul>
