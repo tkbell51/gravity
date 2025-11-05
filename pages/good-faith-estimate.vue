@@ -1,9 +1,6 @@
 <template>
   <div>
-    <PageHeader
-      page-title="Good Faith Estimate"
-      header-text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, reiciendis?"
-    />
+    <PageHeader page-title="Good Faith Estimate" />
     <section class="section__good-faith">
       <div class="container">
         <p>

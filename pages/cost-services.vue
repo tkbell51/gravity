@@ -1,9 +1,6 @@
 <template>
   <div>
-    <PageHeader
-      page-title="Cost of Services"
-      header-text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, reiciendis?"
-    />
+    <PageHeader page-title="Cost of Services" />
     <section class="section__insurance-logos">
       <div class="container">
         <h2 class="heading-secondary">Accepted Insurances</h2>

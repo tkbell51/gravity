@@ -1,9 +1,6 @@
 <template>
   <div>
-    <PageHeader
-      page-title="Cancellation Policy"
-      header-text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, reiciendis?"
-    />
+    <PageHeader page-title="Cancellation Policy" />
     <section>
       <div class="container">
         <p>

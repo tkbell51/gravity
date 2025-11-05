@@ -18,10 +18,6 @@ export default {
       type: String,
       default: 'Title',
     },
-    subPageTitle: {
-      type: String,
-      default: '',
-    },
   },
 }
 </script>
