@@ -11,7 +11,7 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
-   "dependencies": {
+  "dependencies": {
     "@fortawesome/fontawesome-svg-core": "1.2.32",
     "@fortawesome/free-brands-svg-icons": "5.15.1",
     "@fortawesome/free-solid-svg-icons": "5.15.1",
@@ -50,6 +50,7 @@
     "imagemin-mozjpeg": "8.0.0",
     "imagemin-pngquant": "8.0.0",
     "imagemin-svgo": "9.0.0",
+    "img-loader": "^4.0.0",
     "prettier": "2.3.2",
     "sass": "1.64.2",
     "sass-loader": "10.1.1"
