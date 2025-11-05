@@ -186,6 +186,7 @@ export default {
       flex: 75%;
     }
   }
+
   &__description {
     h3 {
       text-align: center;
@@ -194,6 +195,7 @@ export default {
       font-size: 2.5rem;
     }
   }
+
   &__quote {
     background: $gradient;
     height: 35rem;
@@ -202,10 +204,12 @@ export default {
     .quote {
       font-size: 5rem;
     }
+
     .name {
       font-size: 2rem;
     }
   }
+
   &__shift {
     .heading-secondary {
       display: block;
@@ -213,6 +217,7 @@ export default {
       margin-bottom: 1rem;
     }
   }
+
   &__video {
     &--text {
       margin-left: 2rem;
@@ -220,17 +225,21 @@ export default {
     }
   }
 }
+
 .two-columns {
   display: flex;
   align-items: center;
   gap: 1rem;
+
   video {
     width: 50%;
   }
+
   &__img {
     flex: 25%;
   }
 }
+
 .icon-row {
   display: flex;
   justify-content: center;
@@ -247,9 +256,11 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     .heading-tertiary {
       color: $primary-color;
     }
+
     &:hover {
       transform: translate(4px, -4px);
       box-shadow: -8px 8px $primary-color;
