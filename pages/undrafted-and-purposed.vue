@@ -6,9 +6,8 @@
         <div class="two-columns">
           <div class="two-columns__img">
             <img
-              src="../static/img/undrafted.png"
+              src="../static/img/book-1.png"
               alt="Undrafted and Purposed book"
-              width="500"
             />
           </div>
 
@@ -20,6 +19,13 @@
             <p>
               This is the journey of living, loving, and leading with purpose.
             </p>
+            <a
+              class="btn"
+              href="https://a.co/d/1kx4GLv"
+              target="_blank"
+              title="Purchase Undrafted and Purposed at Amazon"
+              >Purchase at Amazon</a
+            >
           </div>
         </div>
       </div>
@@ -63,6 +69,16 @@
     <section class="section__video">
       <div class="container">
         <div class="two-columns">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/tKSpTfShdyA?si=S4ZX-qx_6Pbb_HaR"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
           <!-- <video src="../assets/video.mp4" controls></video> -->
           <div class="section__video--text">
             <h2 class="heading-secondary">For the man who...</h2>
@@ -84,82 +100,96 @@
         <p class="name">- Kervin Searles</p>
       </div>
     </section>
-    <section class="section__pages">
+    <section class="section__shift">
       <div class="container">
+        <h2 class="heading-secondary">What You'll Gain Inside These Pages</h2>
         <div class="two-columns">
           <div class="two-columns__img">
             <img
-              src="../static/img/undrafted-1.png"
+              src="../static/img/book-1.png"
               alt="Undrafted and Purposed book"
-              width="500"
+              width="600"
             />
           </div>
           <div>
-            <h2 class="heading-secondary">
-              What You'll Gain Inside These Pages
-            </h2>
-            <ul>
-              <li>
-                <strong>Clarity</strong> - Identify the hidden patterns holding
-                you back.
-              </li>
-              <li>
-                <strong>Healing</strong> - Transform pain into purpose with
-                practical exercises.
-              </li>
-              <li>
-                <strong>Connection</strong> - Build brotherhood, belonging, and
-                healthy relationships.
-              </li>
-              <li>
-                <strong>Leadership</strong> - Lead yourself and others with
-                integrity and confidence
-              </li>
-            </ul>
-            <p>
-              This book goes beyond motivation - it gives you tools for real
-              change.
-            </p>
+            <div class="icon-grid">
+              <div class="card">
+                <p class="heading-tertiary">Clarity</p>
+                <p>Identify the hidden patterns holding you back</p>
+              </div>
+              <div class="card">
+                <p class="heading-tertiary">Healing</p>
+                <p>Transform pain into purpose with practical exercises</p>
+              </div>
+              <div class="card">
+                <p class="heading-tertiary">Connection</p>
+                <p>Build brotherhood, belonging, and healthy relationships</p>
+              </div>
+              <div class="card">
+                <p class="heading-tertiary">Leadership</p>
+                <p>Lead yourself and others with integrity and confidence</p>
+              </div>
+              <a
+                class="btn buy-cta"
+                href="https://a.co/d/1kx4GLv"
+                target="_blank"
+                title="Purchase Undrafted and Purposed at Amazon"
+                >Purchase at Amazon</a
+              >
+            </div>
           </div>
         </div>
       </div>
     </section>
+
     <section>
       <div class="container">
-        <h2 class="heading-secondary">About the Author</h2>
-        <p>
-          <strong>Kervin Searles</strong> is a Licensed Professional Counselor,
-          speaker, and mental health advocate dedicated to helping men live with
-          clarity and purpose. With over a decade of experience, he has guided
-          countless individuals through trauma, major life transitions, and the
-          challenging work of breaking generational cycles to build healthier,
-          more meaningful relationships.
-        </p>
-        <p>
-          Kervin holds a Bachelor of Arts in Psychology from Anderson University
-          and a Masters of Science in Counseling Psychology from Troy
-          University. He is part owner of Gravity Counseling Group, a practice
-          that blends clinical expertise with real-life strategies to empower
-          individuals to heal without shame and embrace strength through
-          vulnerability.
-        </p>
-        <p>
-          Outside the therapy room, Kervin is a keynote speaker, facilitates
-          workshops, leads community programs, and produces Speaking with
-          Gravity—a podcast that normalizes open, practical conversations about
-          mental health. He is deeply committed to creating spaces where Black
-          men feel seen, heard, and equipped to grow.
-        </p>
-        <p>
-          When he’s not counseling, Kervin enjoys spending time with his wife
-          and four children, mentoring youth, watching sports, and staying
-          involved in faith-based community initiatives that uplift and inspire
-          others.
-        </p>
-        <p>
-          Kervin believes every man deserves the chance to heal, grow, and build
-          a life rooted in truth, trust, and love.
-        </p>
+        <div class="two-columns">
+          <div class="two-columns__img">
+            <img
+              src="../static/img/book-profile.jpg"
+              alt="Kervin Searles"
+              width="500"
+            />
+          </div>
+          <div>
+            <h2 class="heading-secondary">About the Author</h2>
+            <p>
+              <strong>Kervin Searles</strong> is a Licensed Professional
+              Counselor, speaker, and mental health advocate dedicated to
+              helping men live with clarity and purpose. With over a decade of
+              experience, he has guided countless individuals through trauma,
+              major life transitions, and the challenging work of breaking
+              generational cycles to build healthier, more meaningful
+              relationships.
+            </p>
+            <p>
+              Kervin holds a Bachelor of Arts in Psychology from Anderson
+              University and a Masters of Science in Counseling Psychology from
+              Troy University. He is part owner of Gravity Counseling Group, a
+              practice that blends clinical expertise with real-life strategies
+              to empower individuals to heal without shame and embrace strength
+              through vulnerability.
+            </p>
+            <p>
+              Outside the therapy room, Kervin is a keynote speaker, facilitates
+              workshops, leads community programs, and produces Speaking with
+              Gravity—a podcast that normalizes open, practical conversations
+              about mental health. He is deeply committed to creating spaces
+              where Black men feel seen, heard, and equipped to grow.
+            </p>
+            <p>
+              When he’s not counseling, Kervin enjoys spending time with his
+              wife and four children, mentoring youth, watching sports, and
+              staying involved in faith-based community initiatives that uplift
+              and inspire others.
+            </p>
+            <p>
+              Kervin believes every man deserves the chance to heal, grow, and
+              build a life rooted in truth, trust, and love.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   </div>
@@ -188,6 +218,8 @@ export default {
   }
 
   &__description {
+    background: $gradient;
+    color: white;
     h3 {
       text-align: center;
       margin-inline: auto;
@@ -223,20 +255,44 @@ export default {
       margin-left: 2rem;
       flex: 50%;
     }
+    @include respond(tab-port) {
+      iframe {
+        width: 100%;
+        max-width: 560px;
+      }
+    }
   }
+}
+
+.buy-now-cta {
+  background: $primary-color;
+  color: white;
 }
 
 .two-columns {
   display: flex;
   align-items: center;
-  gap: 1rem;
-
+  gap: 2rem;
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
   video {
     width: 50%;
   }
 
   &__img {
     flex: 25%;
+    img {
+      width: 500px;
+      @include respond(tab-port) {
+        width: 50%;
+        margin-inline: auto;
+        display: block;
+      }
+    }
+    @include respond(phone) {
+      flex: 50%;
+    }
   }
 }
 
@@ -244,27 +300,48 @@ export default {
   display: flex;
   justify-content: center;
   gap: 2rem;
-
-  .card {
-    flex: 32%;
-    text-align: center;
-    transition: all 0.4s;
-    border-radius: 6px;
-    box-shadow: 0px 5px 10px rgba($tertiary-color, 0.8);
-    padding: 2rem;
-    display: flex;
+  @include respond(tab-port) {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    .heading-tertiary {
-      color: $primary-color;
+  }
+  &.two-rows {
+    flex-wrap: wrap;
+    .card {
+      flex: 50%;
     }
+  }
+}
 
-    &:hover {
-      transform: translate(4px, -4px);
-      box-shadow: -8px 8px $primary-color;
-    }
+.card {
+  flex: 32%;
+  text-align: center;
+  transition: all 0.4s;
+  border-radius: 6px;
+  box-shadow: 0px 5px 10px rgba($tertiary-color, 0.8);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .heading-tertiary {
+    color: $primary-color;
+  }
+
+  &:hover {
+    transform: translate(4px, -4px);
+    box-shadow: -8px 8px $primary-color;
+  }
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+
+  .buy-cta {
+    grid-column: 1 / span 2;
+    text-align: center;
+    margin-inline: auto;
   }
 }
 </style>
