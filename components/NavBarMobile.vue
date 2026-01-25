@@ -24,6 +24,11 @@
         <nuxt-link class="mobile-nav__link" to="/blog">Blog</nuxt-link>
       </li>
       <li class="mobile-nav__item" @click="closeMenu">
+        <nuxt-link class="mobile-nav__link" to="/undrafted-and-purposed"
+          >Book</nuxt-link
+        >
+      </li>
+      <li class="mobile-nav__item" @click="closeMenu">
         <nuxt-link class="mobile-nav__link" to="/contact">Contact</nuxt-link>
       </li>
       <li class="mobile-nav__item">
@@ -101,6 +106,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    list-style-type: none;
   }
   &__item {
   }
@@ -127,6 +133,10 @@ export default {
     display: flex;
     list-style: none;
     justify-content: center;
+  }
+  &__icon {
+    width: 4rem;
+    height: 4rem;
   }
 }
 </style>

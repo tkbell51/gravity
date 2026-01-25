@@ -18,6 +18,9 @@
       <nuxt-link class="nav__link" to="/blog">Blog</nuxt-link>
     </li>
     <li class="nav__item">
+      <nuxt-link class="nav__link" to="/undrafted-and-purposed">Book</nuxt-link>
+    </li>
+    <li class="nav__item">
       <nuxt-link class="nav__link" to="/contact">Contact</nuxt-link>
     </li>
     <li class="nav__item">
