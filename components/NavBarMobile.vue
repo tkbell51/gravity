@@ -98,8 +98,10 @@ export default {
   overflow-y: auto;
   .logo {
     display: block;
-    width: 20rem;
+    width: 100%;
+    max-width: 210px;
     margin: 0 auto;
+    padding: 1rem;
   }
   &__menu {
     // display: none;
@@ -130,9 +132,17 @@ export default {
     margin-bottom: 0;
   }
   &__social {
-    display: flex;
-    list-style: none;
-    justify-content: center;
+    display: grid;
+    width: full;
+    list-style-type: none;
+    grid-template-columns: repeat(3, 1fr);
+    .mobile-nav__item {
+      margin: 0;
+    }
+    .mobile-nav__link {
+      text-align: center;
+      padding: 0;
+    }
   }
   &__icon {
     width: 4rem;

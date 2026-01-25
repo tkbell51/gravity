@@ -48,6 +48,7 @@ export default {
   .heading-primary {
     @include respond(phone) {
       letter-spacing: 0.2rem;
+      line-height: normal;
     }
   }
   .heading-primary span {
