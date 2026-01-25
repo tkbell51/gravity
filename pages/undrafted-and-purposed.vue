@@ -230,11 +230,10 @@ export default {
 
   &__quote {
     background: $gradient;
-    height: 35rem;
     color: white;
 
     .quote {
-      font-size: 5rem;
+      font-size: calc(3rem + 1vw);
     }
 
     .name {
