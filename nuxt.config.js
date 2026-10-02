@@ -42,7 +42,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Open+Sans&display=swap',
+          href: 'https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Open+Sans:400,400i,600,700&display=swap',
         },
       ],
     },

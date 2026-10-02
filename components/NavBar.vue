@@ -4,7 +4,7 @@
       <nuxt-link class="nav__link" to="/">Home</nuxt-link>
     </li>
     <li class="nav__item">
-      <nuxt-link class="nav__link" to="/about">About</nuxt-link>
+      <DropDown label="ABOUT" :items="aboutLinks" />
     </li>
     <li class="nav__item">
       <DropDown />
@@ -36,6 +36,14 @@ export default {
   components: {
     SimplePractice,
     DropDown,
+  },
+  data() {
+    return {
+      aboutLinks: [
+        { to: '/about', label: 'Welcome' },
+        { to: '/about/team', label: 'Meet the Team' },
+      ],
+    }
   },
   methods: {
     hideDropdown() {

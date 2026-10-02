@@ -1,27 +1,10 @@
 <template>
     <div ref="dropdown" class="dropdown" @click="toggleDropdown">
-        <button class="nav__btn">SERVICES <Fas class="nav__icon" :class="{ open: isVisible }" i="caret-down" /></button>
+        <button class="nav__btn">{{ label }} <Fas class="nav__icon" :class="{ open: isVisible }" i="caret-down" /></button>
         <transition name="dropdown-fade">
             <ul v-if="isVisible" class="dropdown__menu">
-                <li class="dropdown__item" @click="emit('navigate')">
-                    <nuxt-link class="dropdown__link" to="/services/individual-therapy">Individual Therapy</nuxt-link>
-                </li>
-                <li class="dropdown__item" @click="emit('navigate')">
-                    <nuxt-link class="dropdown__link" to="/services/couples-therapy">Couples Therapy</nuxt-link>
-                </li>
-                <li class="dropdown__item" @click="emit('navigate')">
-                    <nuxt-link class="dropdown__link" to="/services/teletherapy">Teletherapy</nuxt-link>
-                </li>
-                <li class="dropdown__item" @click="emit('navigate')">
-                    <nuxt-link class="dropdown__link" to="/services/anger-management">Anger Management</nuxt-link>
-                </li>
-                <li class="dropdown__item" @click="emit('navigate')">
-                    <nuxt-link class="dropdown__link" to="/services/support-groups">Support Groups</nuxt-link>
-                </li>
-                <li class="dropdown__item" @click="emit('navigate')">
-                    <nuxt-link class="dropdown__link" to="/services/workshops-presentations"
-                    >Workshops &amp; Presentations</nuxt-link
-                    >
+                <li v-for="item in items" :key="item.to" class="dropdown__item" @click="emit('navigate')">
+                    <nuxt-link class="dropdown__link" :to="item.to">{{ item.label }}</nuxt-link>
                 </li>
             </ul>
         </transition>
@@ -30,6 +13,24 @@
 
 <script setup>
 import Fas from '@/components/Fas.vue'
+
+defineProps({
+    label: {
+        type: String,
+        default: 'SERVICES',
+    },
+    items: {
+        type: Array,
+        default: () => [
+            { to: '/services/individual-therapy', label: 'Individual Therapy' },
+            { to: '/services/couples-therapy', label: 'Couples Therapy' },
+            { to: '/services/teletherapy', label: 'Teletherapy' },
+            { to: '/services/anger-management', label: 'Anger Management' },
+            { to: '/services/support-groups', label: 'Support Groups' },
+            { to: '/services/workshops-presentations', label: 'Workshops & Presentations' },
+        ],
+    },
+})
 
 const emit = defineEmits(['navigate'])
 

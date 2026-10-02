@@ -13,6 +13,11 @@
                 <nuxt-link class="footer__link" to="/about">About</nuxt-link>
               </li>
               <li class="footer__item">
+                <nuxt-link class="footer__link" to="/about/team"
+                  >Meet the Team</nuxt-link
+                >
+              </li>
+              <li class="footer__item">
                 <nuxt-link class="footer__link" to="/blog">Blog</nuxt-link>
               </li>
               <li class="footer__item">
