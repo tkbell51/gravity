@@ -16,5 +16,21 @@ export default defineContentConfig({
         }),
       }),
     }),
+    team: defineCollection({
+      type: 'page',
+      source: 'team/*.md',
+      schema: z.object({
+        name: z.string(),
+        credentials: z.string().optional(),
+        role: z.string(),
+        // licensed | pre-licensed | intern (see TEAM_TIERS in utils/team.js)
+        tier: z.enum(['licensed', 'pre-licensed', 'intern']),
+        // Sort order within a tier (lower first)
+        order: z.number().default(100),
+        // Photo in public/img/team/ (falls back to initials)
+        img: z.string().optional(),
+        location: z.string().optional(),
+      }),
+    }),
   },
 })

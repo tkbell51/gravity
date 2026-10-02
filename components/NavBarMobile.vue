@@ -8,8 +8,8 @@
       <li class="mobile-nav__item" @click="closeMenu">
         <nuxt-link class="mobile-nav__link" to="/">Home</nuxt-link>
       </li>
-      <li class="mobile-nav__item" @click="closeMenu">
-        <nuxt-link class="mobile-nav__link" to="/about">About</nuxt-link>
+      <li class="mobile-nav__item">
+        <DropDown label="ABOUT" :items="aboutLinks" @navigate="closeMenu" />
       </li>
       <li class="mobile-nav__item">
         <DropDown @navigate="closeMenu" />
@@ -76,6 +76,14 @@ export default {
   // eslint-disable-next-line
   props: ['showNav'],
   emits: ['close'],
+  data() {
+    return {
+      aboutLinks: [
+        { to: '/about', label: 'Welcome' },
+        { to: '/about/team', label: 'Meet the Team' },
+      ],
+    }
+  },
 
   methods: {
     closeMenu() {
