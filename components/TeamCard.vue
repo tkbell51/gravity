@@ -44,11 +44,6 @@ export default {
 
   &__photo {
     border-radius: 0;
-    filter: grayscale(1);
-    transition: all 0.4s;
-    @include respond(tab-port) {
-      filter: none;
-    }
   }
 
   &__text {
@@ -91,9 +86,6 @@ export default {
     &:hover {
       transform: translate(4px, -4px);
       box-shadow: -8px 8px $primary-color;
-      .team-card__photo {
-        filter: none;
-      }
     }
   }
 }
