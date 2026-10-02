@@ -44,6 +44,11 @@ export default {
 
   &__photo {
     border-radius: 0;
+    filter: grayscale(1);
+    transition: all 0.4s;
+    @include respond(tab-port) {
+      filter: none;
+    }
   }
 
   &__text {
@@ -68,16 +73,27 @@ export default {
     margin-top: auto;
     color: $accent-color;
     font-weight: 600;
+    transition: all 0.4s;
     span {
-      transition: margin-left 0.4s;
+      transition: color 0.1s, margin-left 0.4s;
     }
   }
 
-  &:hover {
-    box-shadow: $hover-shadow;
-    transform: translateY(-4px);
-    .team-card__link span {
+  &:hover &__link {
+    color: $primary-color;
+    span {
       margin-left: 1rem;
+    }
+  }
+
+  // Same hover as BlogCard
+  @media only screen and (min-width: 56.25em) {
+    &:hover {
+      transform: translate(4px, -4px);
+      box-shadow: -8px 8px $primary-color;
+      .team-card__photo {
+        filter: none;
+      }
     }
   }
 }
