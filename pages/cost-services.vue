@@ -41,9 +41,9 @@
             </li>
             <li>
               <p>
-                Insurance reimbursement  (We are in-network healthcare providers
+                Insurance reimbursement  (We are in-network healthcare providers
                 for several insurance carriers. Check for your insurance logo on
-                this page to see if we are  in-network with your carrier. To
+                this page to see if we are  in-network with your carrier. To
                 qualify for insurance benefits, services must be deemed
                 medically necessary, which requires your mental health
                 professional to establish a diagnosis.)
@@ -116,7 +116,7 @@
         </div>
 
         <p>
-          By collaborating with you, our mental health professionals ensure that
+          By collaborating with you, our mental health professionals ensure that
           treatment plans align with your goals, preferences, and financial
           needs, creating a supportive and informed therapeutic experience.
         </p>
@@ -126,33 +126,21 @@
 </template>
 
 <script>
-import PageHeader from '@/components/PageHeader'
+import PageHeader from '@/components/PageHeader.vue'
 export default {
   components: {
     PageHeader,
   },
+  setup() {
+    usePageSeo({ title: 'Cost of Services' })
+  },
   data() {
     return {
-      images: [],
+      images: Object.entries(insuranceImages).map(([file, url]) => ({
+        pathLong: url,
+        pathShort: file.replace(/\.[^/.]+$/, ''),
+      })),
     }
-  },
-  mounted() {
-    this.importAll(require.context('../assets/img/insurance/', true, /|.jpeg$/))
-  },
-  methods: {
-    importAll(r) {
-      r.keys().forEach((key) =>
-        this.images.push({
-          pathLong: r(key),
-          pathShort: key.replace(/\.[^/.]+$/, '').replace('./', ''),
-        })
-      )
-    },
-  },
-  head() {
-    return this.$seo({
-      title: 'Cost of Services',
-    })
   },
 }
 </script>

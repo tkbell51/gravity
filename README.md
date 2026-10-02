@@ -15,8 +15,12 @@ $ npm run dev
 $ npm run build
 $ npm run start
 
-# generate static project
+# generate static project (output in .output/public, symlinked as dist/)
 $ npm run generate
+$ npm run preview
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+Requires Node 22.13+ (see `.nvmrc`). Copy SimplePractice settings into a `.env`
+file: `SCOPE_ID`, `SCOPE_URI`, `APP_ID`, `APP_LINK`.
+
+For detailed explanation on how things work, check out the [Nuxt 3 docs](https://nuxt.com/docs/3.x) and [Nuxt Content docs](https://content.nuxt.com).

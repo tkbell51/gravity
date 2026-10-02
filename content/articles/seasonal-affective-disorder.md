@@ -4,6 +4,7 @@ img: seasonal-affective-disorder.jpg
 alt: woman looking out window
 description: It is estimated that 10 million people are affected by seasonal affective disorder. Many in the SAD community report experiencing symptoms for approximately 40 percent of the year.
 category: What's Wrong With Me
+date: 2020-12-11
 author:
     name: Kervin K. Searles, LPC
     img: kervin-searles.png

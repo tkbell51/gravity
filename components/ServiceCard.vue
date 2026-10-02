@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import Fas from '@/components/Fas'
+import Fas from '@/components/Fas.vue'
 export default {
     components: {
         Fas,
@@ -52,8 +52,8 @@ export default {
     align-items: center;
     transition: ease-in 0.2s all;
     padding: 2rem 3rem;
-    background-image: $white;
     text-align: center;
+    background-color: $primary-color;
     z-index: 1;
     &:before {
         position: absolute;
@@ -62,7 +62,7 @@ export default {
         left: 0;
         right: 0;
         bottom: 0;
-        background-image: $gradient;
+        background-color: $white;
         z-index: -1;
         transition: opacity 0.3s linear;
         opacity: 0;
@@ -76,7 +76,7 @@ export default {
         cursor: pointer;
         transform: scale(1.1);
         .services__title {
-            color: $white;
+            color: $primary-color;
         }
         &:before {
             opacity: 1;
@@ -110,7 +110,7 @@ export default {
     }
     &__title {
         font-size: 2rem;
-        color: $primary-color;
+        color: $white;
         transition: ease-in 0.2s all;
     }
 

@@ -6,7 +6,7 @@
                     <h1 class="article__title">{{ article.title }}</h1>
                     <div class="article__meta">
                         <div class="article__avatar">
-                            <nuxt-img v-if="article.author.img" :src="`img/${article.author.img}`" />
+                            <nuxt-img v-if="article.author.img" :src="`/img/${article.author.img}`" />
                         </div>
                         <div>
                             <em>written by</em>
@@ -17,52 +17,31 @@
                         </div>
                         <div>
                             <em>published on</em>
-                            <p>{{ $formatDate(article.createdAt) }}</p>
+                            <p>{{ formatDate(article.date) }}</p>
                         </div>
                     </div>
                 </div>
                 <div class="article__img">
-                    <img :src="require(`~/assets/img/blog/${article.img}`)" :alt="article.alt" />
+                    <img :src="blogImages[article.img]" :alt="article.alt" />
                 </div>
                 <div class="article__grid">
                     <div>
                         <ul class="article__social--list">
-                            <li class="article__social--item">
-                                <ShareNetwork
+                            <li v-for="network in shareLinks" :key="network.name" class="article__social--item">
+                                <a
                                     class="article__social--link"
-                                    network="facebook"
-                                    :url="`https://gravitycounselinggroup.com/blog/${article.slug}`"
-                                    :title="article.title"
-                                    :description="article.description"
+                                    :href="network.href"
+                                    target="_blank"
+                                    rel="noopener"
+                                    :title="`Share on ${network.name}`"
                                 >
-                                    <Fab i="facebook" />
-                                </ShareNetwork>
-                            </li>
-
-                            <li class="article__social--item">
-                                <ShareNetwork
-                                    class="article__social--link"
-                                    network="twitter"
-                                    :url="`https://gravitycounselinggroup.com/blog/${article.slug}`"
-                                    :title="article.title"
-                                >
-                                    <Fab i="twitter"
-                                    /></ShareNetwork>
-                            </li>
-                            <li class="article__social--item">
-                                <ShareNetwork
-                                    class="article__social--link"
-                                    network="linkedin"
-                                    :url="`https://gravitycounselinggroup.com/blog/${article.slug}`"
-                                    :title="article.title"
-                                >
-                                    <Fab i="linkedin"
-                                    /></ShareNetwork>
+                                    <Fab :i="network.name" />
+                                </a>
                             </li>
                         </ul>
                     </div>
                     <div>
-                        <nuxt-content :document="article" />
+                        <ContentRenderer class="nuxt-content" :value="article" />
                     </div>
                 </div>
             </div>
@@ -93,61 +72,70 @@
     </article>
 </template>
 
-<script>
-import Fab from '@/components/Fab'
-// import Logo from '@/components/Logo'
-export default {
-    components: {
-        Fab,
-        // Logo,
-    },
-    layout: 'blog',
-    async asyncData({ $content, params }) {
-        const article = await $content('articles', params.slug).fetch()
-        const [prevBlog, nextBlog] = await $content('articles')
-            .only(['title', 'slug'])
-            .sortBy('createdAt', 'asc')
-            .surround(params.slug)
-            .fetch()
+<script setup>
+import Fab from '@/components/Fab.vue'
+// import Logo from '@/components/Logo.vue'
 
-        return { article, prevBlog, nextBlog }
-    },
-    head() {
-        return this.$seo({
-            title: this.article.title,
-            description: this.article.description,
-            author: this.article.author.name,
-            image: `/${this.article.img}`,
-        })
-    },
-    jsonld() {
-        return {
-            '@context': 'https://schema.org',
-            '@type': 'NewsArticle',
-            mainEntityOfPage: {
-                '@type': 'WebPage',
-                '@id': 'https://gravitycounselinggroup/blog/' + this.article.slug,
-            },
-            headline: this.article.title,
-            description: this.article.description,
-            image: `/${this.article.img}`,
-            author: {
-                '@type': 'Person',
-                name: this.article.author.name,
-            },
-            datePublished: this.article.createdAt,
-            publisher: {
-                '@type': 'Organization',
-                name: 'Gravity Counseling Group',
-            },
-        }
-    },
-    computed: {
-        backgroundURL() {
-            return require(`~/assets/img/blog/${this.article.img}`)
-        },
-    },
+definePageMeta({ layout: 'blog' })
+
+const route = useRoute()
+const { siteUrl } = useRuntimeConfig().public
+
+const { data: article } = await useAsyncData(`article-${route.params.slug}`, () =>
+    queryCollection('articles').path(`/articles/${route.params.slug}`).first()
+)
+if (!article.value) {
+    throw createError({ statusCode: 404, statusMessage: 'Article not found', fatal: true })
 }
+
+const articleUrl = computed(() => `${siteUrl}/blog/${route.params.slug}`)
+const imageUrl = computed(() => siteUrl + blogImages[article.value.img])
+
+const shareLinks = computed(() => {
+    const url = encodeURIComponent(articleUrl.value)
+    const title = encodeURIComponent(article.value.title)
+    return [
+        { name: 'facebook', href: `https://www.facebook.com/sharer/sharer.php?u=${url}` },
+        { name: 'twitter', href: `https://twitter.com/intent/tweet?text=${title}&url=${url}` },
+        { name: 'linkedin', href: `https://www.linkedin.com/sharing/share-offsite/?url=${url}` },
+    ]
+})
+
+usePageSeo(() => ({
+    title: article.value.title,
+    description: article.value.description,
+    author: article.value.author.name,
+    image: imageUrl.value,
+}))
+
+useHead({
+    script: [
+        {
+            type: 'application/ld+json',
+            innerHTML: () =>
+                JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@type': 'NewsArticle',
+                    mainEntityOfPage: {
+                        '@type': 'WebPage',
+                        '@id': articleUrl.value,
+                    },
+                    headline: article.value.title,
+                    description: article.value.description,
+                    image: imageUrl.value,
+                    author: {
+                        '@type': 'Person',
+                        name: article.value.author.name,
+                    },
+                    datePublished: article.value.date,
+                    publisher: {
+                        '@type': 'Organization',
+                        name: 'Gravity Counseling Group',
+                    },
+                }),
+        },
+    ],
+})
 </script>
 
 <style lang="scss" scoped>

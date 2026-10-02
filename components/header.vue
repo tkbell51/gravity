@@ -6,7 +6,7 @@
     <nav class="nav">
       <nuxt-link to="/" class="logo"><Logo /></nuxt-link>
       <NavBar />
-      <NavBarMobile :show-nav="showNav" />
+      <NavBarMobile :show-nav="showNav" @close="toggleMenu" />
       <div class="nav__mobile" @click="toggleMenu">
         <span></span>
       </div>
@@ -15,11 +15,11 @@
 </template>
 
 <script>
-// import Fas from '@/components/Fas'
-import NavBar from '@/components/NavBar'
-import NavBarMobile from '@/components/NavBarMobile'
-import SocialRow from '@/components/SocialRow'
-import Logo from '~/components/Logos/Logo'
+// import Fas from '@/components/Fas.vue'
+import NavBar from '@/components/NavBar.vue'
+import NavBarMobile from '@/components/NavBarMobile.vue'
+import SocialRow from '@/components/SocialRow.vue'
+import Logo from '~/components/Logos/Logo.vue'
 export default {
   components: {
     SocialRow,
@@ -39,6 +39,9 @@ export default {
   },
   beforeMount() {
     window.addEventListener('scroll', this.handleScroll)
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
   },
   mounted() {},
   methods: {

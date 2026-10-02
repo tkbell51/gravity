@@ -1,57 +1,48 @@
 <template lang="html">
   <section class="section__hero">
-    <VueSlickCarousel v-bind="settings">
-      <div
-        v-for="(item, index) in slides"
-        :id="item.css"
-        :key="index"
-        class="slide"
-      >
-        <div class="slide__text">
-          <h2 class="heading-primary">{{ item.title }}</h2>
+    <FadeCarousel :items="slides" :autoplay-speed="7000">
+      <template #default="{ item }">
+        <div :id="item.css" class="slide">
+          <div class="slide__text">
+            <h2 class="heading-primary">{{ item.title }}</h2>
 
-          <p>{{ item.text }}</p>
-          <SimplePractice />
+            <p>{{ item.text }}</p>
+            <SimplePractice />
+          </div>
         </div>
-      </div>
-    </VueSlickCarousel>
+      </template>
+    </FadeCarousel>
   </section>
 </template>
 
 <script>
-import SimplePractice from '@/components/SimplePractice'
+import FadeCarousel from '@/components/FadeCarousel.vue'
+import SimplePractice from '@/components/SimplePractice.vue'
 export default {
   components: {
+    FadeCarousel,
     SimplePractice,
   },
   data() {
     return {
-      slides: [],
-      settings: {
-        autoplay: true,
-        fade: true,
-        autoplaySpeed: 7000,
-      },
+      slides: [
+        {
+          css: 'slide-help',
+          title: 'Need Help?',
+          text: "Having difficulty accepting mistakes and staying committed? Want to strengthen your connection? Let's do the work to create the relationship that is perfect for you.",
+        },
+        {
+          css: 'slide-lost',
+          title: 'Lost?',
+          text: 'Mental health is complex. Become more self aware of your thoughts, feelings, and actions. Learn how they connect to create the life you are currently living.',
+        },
+        {
+          css: 'slide-think',
+          title: 'Overwhelmed?',
+          text: 'I am constantly thinking and analyzing every situation even if it seems all good. Capture greater peace as you l gain perspective.',
+        },
+      ],
     }
-  },
-  fetch() {
-    this.slides = [
-      {
-        css: 'slide-help',
-        title: 'Need Help?',
-        text: "Having difficulty accepting mistakes and staying committed? Want to strengthen your connection? Let's do the work to create the relationship that is perfect for you.",
-      },
-      {
-        css: 'slide-lost',
-        title: 'Lost?',
-        text: 'Mental health is complex. Become more self aware of your thoughts, feelings, and actions. Learn how they connect to create the life you are currently living.',
-      },
-      {
-        css: 'slide-think',
-        title: 'Overwhelmed?',
-        text: 'I am constantly thinking and analyzing every situation even if it seems all good. Capture greater peace as you l gain perspective.',
-      },
-    ]
   },
 }
 </script>
@@ -101,34 +92,32 @@ export default {
   @include respond(phone) {
     height: 50vh;
   }
-  .slick-track,
-  .slick-list,
-  .slick-slide > div {
+  .fade-carousel {
     height: 100%;
   }
 
   #slide-lost {
     background-image: linear-gradient(rgba($black, 0.4), rgba($black, 0.4)),
-      url('assets/img/gcc-happy.jpg');
+      url('~/assets/img/gcc-happy.jpg');
     @include respond(phone) {
       background-image: linear-gradient(rgba($black, 0.6), rgba($black, 0.6)),
-        url('assets/img/gcc-happy.jpg');
+        url('~/assets/img/gcc-happy.jpg');
     }
   }
   #slide-think {
     background-image: linear-gradient(rgba($black, 0.4), rgba($black, 0.4)),
-      url('assets/img/gcc-think.jpg');
+      url('~/assets/img/gcc-think.jpg');
     @include respond(phone) {
       background-image: linear-gradient(rgba($black, 0.6), rgba($black, 0.6)),
-        url('assets/img/gcc-think.jpg');
+        url('~/assets/img/gcc-think.jpg');
     }
   }
   #slide-help {
     background-image: linear-gradient(rgba($black, 0.4), rgba($black, 0.4)),
-      url('assets/img/gcc-help.jpg');
+      url('~/assets/img/gcc-help.jpg');
     @include respond(phone) {
       background-image: linear-gradient(rgba($black, 0.6), rgba($black, 0.6)),
-        url('assets/img/gcc-help.jpg');
+        url('~/assets/img/gcc-help.jpg');
     }
   }
   .slide {

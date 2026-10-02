@@ -10,21 +10,11 @@
 export default {
     data() {
         return {
-            images: [],
+            images: Object.entries(galleryImages).map(([file, url]) => ({
+                pathLong: url,
+                pathShort: file.replace(/\.[^/.]+$/, ''),
+            })),
         }
-    },
-    mounted() {
-        this.importAll(require.context('../assets/img/gallery/', true, /|.jpeg$/))
-    },
-    methods: {
-        importAll(r) {
-            r.keys().forEach((key) =>
-                this.images.push({
-                    pathLong: r(key),
-                    pathShort: key.replace(/\.[^/.]+$/, '').replace('./', ''),
-                })
-            )
-        },
     },
 }
 </script>

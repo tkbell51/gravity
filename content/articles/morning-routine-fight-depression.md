@@ -4,6 +4,7 @@ img: huge-depression.jpg
 alt: woman in bed
 description: Consistently performing a healthy routine can promote improved mental health.
 category: Therapy
+date: 2021-10-19
 author:
     name: Kervin K. Searles, LPC
     img: kervin-searles.png

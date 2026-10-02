@@ -12,7 +12,7 @@
         <nuxt-link class="mobile-nav__link" to="/about">About</nuxt-link>
       </li>
       <li class="mobile-nav__item">
-        <DropDown />
+        <DropDown @navigate="closeMenu" />
       </li>
 
       <li class="mobile-nav__item" @click="closeMenu">
@@ -64,9 +64,9 @@
 </template>
 
 <script>
-import DropDown from '@/components/DropdownMenu'
-import Logo from '@/components/Logos/LogoFull'
-import Fab from '@/components/Fab'
+import DropDown from '@/components/DropdownMenu.vue'
+import Logo from '@/components/Logos/LogoFull.vue'
+import Fab from '@/components/Fab.vue'
 export default {
   components: {
     DropDown,
@@ -75,10 +75,11 @@ export default {
   },
   // eslint-disable-next-line
   props: ['showNav'],
+  emits: ['close'],
 
   methods: {
     closeMenu() {
-      this.$parent.toggleMenu()
+      this.$emit('close')
     },
   },
 }

@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import ServiceCard from '@/components/ServiceCard'
+import ServiceCard from '@/components/ServiceCard.vue'
 export default {
     components: {
         ServiceCard,
@@ -55,6 +55,17 @@ export default {
 </script>
 
 <style lang="scss">
+// Centered heading/button in the Services section that wraps this grid
+// (home, about); kept here so every page using the grid gets it.
+.section__services {
+    .heading-secondary,
+    .btn {
+        margin-top: 3rem;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
 .section__services--grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));

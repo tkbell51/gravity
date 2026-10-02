@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import Fas from '@/components/Fas'
+import Fas from '@/components/Fas.vue'
 
 export default {
   components: {

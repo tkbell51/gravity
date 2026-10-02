@@ -9,7 +9,7 @@
         </div>
         <div class="help">
           <div class="help__img">
-            <img src="~assets/img/kervin-searles.png" alt="Kervin Searles" />
+            <img src="~/assets/img/kervin-searles.png" alt="Kervin Searles" />
           </div>
           <div class="help__text">
             <p>
@@ -122,7 +122,7 @@
         <div class="blog__grid">
           <BlogCard
             v-for="article in articles"
-            :key="article.slug"
+            :key="article.path"
             :article="article"
           />
         </div>
@@ -131,44 +131,24 @@
   </div>
 </template>
 
-<script>
-// import Fas from '@/components/Fas'
-import SimplePractice from '@/components/SimplePractice'
-import ServicesGrid from '@/components/ServicesGrid'
-import Gallery from '@/components/Gallery'
-import MentalResourceGrid from '@/components/MentalResourceGrid'
-import Hero from '@/components/Hero'
-import BlogCard from '@/components/BlogCard'
-import FamousQuotes from '@/components/FamousQuotes'
+<script setup>
+import SimplePractice from '@/components/SimplePractice.vue'
+import ServicesGrid from '@/components/ServicesGrid.vue'
+import Gallery from '@/components/Gallery.vue'
+import MentalResourceGrid from '@/components/MentalResourceGrid.vue'
+import Hero from '@/components/Hero.vue'
+import BlogCard from '@/components/BlogCard.vue'
+import FamousQuotes from '@/components/FamousQuotes.vue'
 
-export default {
-  components: {
-    Hero,
-    SimplePractice,
-    // Fas,
-    ServicesGrid,
-    FamousQuotes,
-    Gallery,
-    MentalResourceGrid,
-    BlogCard,
-  },
-  async asyncData({ $content, params }) {
-    const articles = await $content('articles', params.slug)
-      .only(['title', 'description', 'description', 'img', 'slug', 'alt'])
-      .sortBy('createdAt', 'desc')
-      .limit(3)
-      .fetch()
+usePageSeo({ title: 'Home' })
 
-    return {
-      articles,
-    }
-  },
-  head() {
-    return this.$seo({
-      title: 'Home',
-    })
-  },
-}
+const { data: articles } = await useAsyncData('latest-articles', () =>
+  queryCollection('articles')
+    .select('path', 'title', 'description', 'img', 'alt')
+    .order('date', 'DESC')
+    .limit(3)
+    .all()
+)
 </script>
 
 <style lang="scss">
@@ -246,16 +226,6 @@ export default {
           color: $accent-color;
         }
       }
-    }
-  }
-
-  &__services {
-    .heading-secondary,
-    .btn {
-      margin-top: 3rem;
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
     }
   }
 

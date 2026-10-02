@@ -1,58 +1,47 @@
 <template>
     <section class="section__testimonials">
-        <VueSlickCarousel v-bind="quoteOptions">
-            <div v-for="(item, index) in quoteSlides" :key="index" :title="item.name" class="testimonial">
-                <div class="testimonial__container">
-                    <p class="testimonial__quote">
-                        {{ item.quote }}
-                    </p>
-                    <p class="testimonial__name">- {{ item.name }}</p>
+        <FadeCarousel :items="quoteSlides" :autoplay-speed="7000">
+            <template #default="{ item }">
+                <div :title="item.name" class="testimonial">
+                    <div class="testimonial__container">
+                        <p class="testimonial__quote">
+                            {{ item.quote }}
+                        </p>
+                        <p class="testimonial__name">- {{ item.name }}</p>
+                    </div>
                 </div>
-            </div>
-            <div slot="pagination" class="swiper-pagination"></div>
-        </VueSlickCarousel>
+            </template>
+        </FadeCarousel>
     </section>
 </template>
 
 <script>
-// optional style for arrows & dots
-// import Tab from '@/components/Tab'
-// import Tabs from '@/components/Tabs'
+import FadeCarousel from '@/components/FadeCarousel.vue'
 export default {
     components: {
-        // Tab,
-        // Tabs
+        FadeCarousel,
     },
-
     data() {
         return {
-            quoteOptions: {
-                autoplay: true,
-                fade: true,
-                autoplaySpeed: 7000,
-            },
-            quoteSlides: [],
+            quoteSlides: [
+                {
+                    quote: "A lot of people you think you know, you don't know, until you find out you don't know then it may be too late to know.",
+                    name: 'Kenneth B. Clark',
+                },
+                {
+                    quote: 'There is more on the surface than what our eyes can see',
+                    name: 'Aaron T. Beck',
+                },
+                {
+                    quote: "For every problem there is a solution. The problem is...we don't like the solution.",
+                    name: 'Kervin K. Searles',
+                },
+                {
+                    quote: 'It is not primarily our physical selves that limit us but rather our mindset about our physical limits.',
+                    name: 'Ellen J. Langer',
+                },
+            ],
         }
-    },
-    fetch() {
-        this.quoteSlides = [
-            {
-                quote: "A lot of people you think you know, you don't know, until you find out you don't know then it may be too late to know.",
-                name: 'Kenneth B. Clark',
-            },
-            {
-                quote: 'There is more on the surface than what our eyes can see',
-                name: 'Aaron T. Beck',
-            },
-            {
-                quote: "For every problem there is a solution. The problem is...we don't like the solution.",
-                name: 'Kervin K. Searles',
-            },
-            {
-                quote: 'It is not primarily our physical selves that limit us but rather our mindset about our physical limits.',
-                name: 'Ellen J. Langer',
-            },
-        ]
     },
 }
 </script>

@@ -4,6 +4,7 @@ img: healthy-relationship.jpg
 alt: hispanic couples
 description: Everyone feels that if they can just learn to communicate better, then the relationship will be void of deceit, conflict, and misunderstanding.
 category: Couples Therapy
+date: 2022-05-03
 author:
     name: Kervin K. Searles, LPC
     img: kervin-searles.png

@@ -10,7 +10,7 @@
                             <div class="ind-therapy__text">
                                 <div class="ind-therapy__img">
                                     <img
-                                        src="~assets/img/teletherapy-photo.jpg"
+                                        src="~/assets/img/teletherapy-photo.jpg"
                                         alt="Woman sitting on couch looking at laptop"
                                     />
                                 </div>
@@ -38,19 +38,17 @@
 </template>
 
 <script>
-import PageHeader from '@/components/PageHeader'
-import SimplePractice from '@/components/SimplePractice'
-import ServiceLinks from '@/components/ServiceLinks'
+import PageHeader from '@/components/PageHeader.vue'
+import SimplePractice from '@/components/SimplePractice.vue'
+import ServiceLinks from '@/components/ServiceLinks.vue'
 export default {
     components: {
         PageHeader,
         ServiceLinks,
         SimplePractice,
     },
-    head() {
-        return this.$seo({
-            title: 'Individual Therapy',
-        })
+    setup() {
+        usePageSeo({ title: 'Individual Therapy' })
     },
 }
 </script>

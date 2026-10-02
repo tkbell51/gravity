@@ -3,7 +3,7 @@
     <nav class="nav">
       <nuxt-link to="/" class="logo"><Logo /></nuxt-link>
       <NavBar />
-      <NavBarMobile :show-nav="showNav" />
+      <NavBarMobile :show-nav="showNav" @close="toggleMenu" />
       <div class="nav__mobile" @click="toggleMenu">
         <span></span>
       </div>
@@ -12,9 +12,9 @@
 </template>
 
 <script>
-import NavBar from '@/components/NavBar'
-import NavBarMobile from '@/components/NavBarMobile'
-import Logo from '~/components/Logo'
+import NavBar from '@/components/NavBar.vue'
+import NavBarMobile from '@/components/NavBarMobile.vue'
+import Logo from '~/components/Logos/Logo.vue'
 export default {
   components: {
     Logo,

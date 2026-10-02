@@ -78,3 +78,24 @@ export default {}
   font-weight: bold;
 }
 </style>
+
+<style lang="scss">
+// Two-column layout shared by every service page (sidebar + content).
+// Lives here because every service page renders ServiceLinks.
+.section__content {
+  p {
+    margin-bottom: 2rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 30rem 1fr;
+    grid-gap: 4rem;
+    @include respond(small-tab) {
+      grid-template-columns: 1fr;
+      .services-links {
+        display: none;
+      }
+    }
+  }
+}
+</style>

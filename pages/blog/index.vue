@@ -4,13 +4,13 @@
         <section class="section__first-blog">
             <div class="container">
                 <figure class="first-blog">
-                    <img :src="require(`~/assets/img/blog/${firstArticle.img}`)" :alt="firstArticle.alt" />
+                    <img :src="blogImages[firstArticle.img]" :alt="firstArticle.alt" />
                     <div class="first-blog__text">
                         <h2 class="first-blog__title heading-tertiary">
                             {{ firstArticle.title }}
                         </h2>
                         <p>{{ firstArticle.description }}</p>
-                        <nuxt-link class="first-blog__link" :to="`/blog/${firstArticle.slug}`"
+                        <nuxt-link class="first-blog__link" :to="`/blog/${articleSlug(firstArticle)}`"
                             >Read Article <span>&rarr;</span></nuxt-link
                         >
                     </div>
@@ -20,10 +20,10 @@
         <section class="section__blog-list">
             <div class="container">
                 <div class="blog__grid">
-                    <figure v-for="article in articles.slice(1)" :key="article.slug" class="blog-card">
+                    <figure v-for="article in articles.slice(1)" :key="article.path" class="blog-card">
                         <img
                             class="blog-card__img"
-                            :src="require(`~/assets/img/blog/${article.img}`)"
+                            :src="blogImages[article.img]"
                             :alt="article.alt"
                         />
 
@@ -34,7 +34,7 @@
                             <p class="blog-card__sub">{{ article.description }}</p>
                             <nuxt-link
                                 class="blog-card__link"
-                                :to="{ name: 'blog-slug', params: { slug: article.slug } }"
+                                :to="`/blog/${articleSlug(article)}`"
                                 >Read Article <span>&rarr;</span></nuxt-link
                             >
                         </div>
@@ -45,30 +45,18 @@
     </div>
 </template>
 
-<script>
-import PageHeader from '@/components/PageHeader'
+<script setup>
+import PageHeader from '@/components/PageHeader.vue'
 
-export default {
-    components: {
-        PageHeader,
-    },
-    async asyncData({ $content, params }) {
-        const articles = await $content('articles', params.slug)
-            .only(['title', 'description', 'previewText', 'img', 'slug', 'alt'])
-            .sortBy('createdAt', 'desc')
-            .fetch()
-        const firstArticle = articles[0]
-        return {
-            articles,
-            firstArticle,
-        }
-    },
-    head() {
-        return this.$seo({
-            title: 'Blog',
-        })
-    },
-}
+usePageSeo({ title: 'Blog' })
+
+const { data: articles } = await useAsyncData('articles', () =>
+    queryCollection('articles')
+        .select('path', 'title', 'description', 'img', 'alt')
+        .order('date', 'DESC')
+        .all()
+)
+const firstArticle = computed(() => articles.value[0])
 </script>
 
 <style lang="scss" scoped>

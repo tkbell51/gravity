@@ -29,19 +29,17 @@
 </template>
 
 <script>
-import PageHeader from '@/components/PageHeader'
-import SimplePractice from '@/components/SimplePractice'
-import ServiceLinks from '@/components/ServiceLinks'
+import PageHeader from '@/components/PageHeader.vue'
+import SimplePractice from '@/components/SimplePractice.vue'
+import ServiceLinks from '@/components/ServiceLinks.vue'
 export default {
     components: {
         PageHeader,
         ServiceLinks,
         SimplePractice,
     },
-    head() {
-        return this.$seo({
-            title: 'Couples Therapy',
-        })
+    setup() {
+        usePageSeo({ title: 'Couples Therapy' })
     },
 }
 </script>

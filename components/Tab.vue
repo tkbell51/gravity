@@ -6,19 +6,20 @@
 
 <script>
 export default {
+  inject: ['registerTab', 'selectedTab'],
   props: {
     title: {
       type: String,
       default: '',
     },
   },
-  data() {
-    return {
-      isActive: undefined,
-    }
+  computed: {
+    isActive() {
+      return this.selectedTab() === this
+    },
   },
-  fetch() {
-    this.isActive = false
+  created() {
+    this.registerTab(this)
   },
 }
 </script>

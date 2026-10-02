@@ -1,7 +1,7 @@
 <template>
     <div class="resource__grid">
         <a v-for="(item, index) in items" :key="index" :href="`${item.link}`" class="resource__link" target="_blanky">
-            <img :src="require(`~/assets/img/mental-resources/${item.imgSrc}`)" :alt="`${item.imgAlt}`" />
+            <img :src="images[item.imgSrc]" :alt="`${item.imgAlt}`" />
         </a>
     </div>
 </template>
@@ -10,6 +10,7 @@
 export default {
     data() {
         return {
+            images: mentalResourceImages,
             items: [
                 {
                     link: 'https://suicidepreventionlifeline.org/',

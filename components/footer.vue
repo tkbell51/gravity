@@ -140,9 +140,9 @@
 </template>
 
 <script>
-import FooterLogo from '~/components/Logos/FooterLogo'
-import Fab from '~/components/Fab'
-import Fas from '~/components/Fas'
+import FooterLogo from '~/components/Logos/FooterLogo.vue'
+import Fab from '~/components/Fab.vue'
+import Fas from '~/components/Fas.vue'
 
 export default {
   components: {
@@ -298,6 +298,9 @@ export default {
       flex-direction: row;
       @include respond(phone) {
         justify-content: center;
+      }
+      .footer__item {
+        margin-bottom:0;
       }
       .footer__icon {
         font-size: 3rem;

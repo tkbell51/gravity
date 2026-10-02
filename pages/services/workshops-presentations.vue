@@ -24,18 +24,16 @@
 </template>
 
 <script>
-import PageHeader from '@/components/PageHeader'
-import ServiceLinks from '@/components/ServiceLinks'
+import PageHeader from '@/components/PageHeader.vue'
+import ServiceLinks from '@/components/ServiceLinks.vue'
 
 export default {
     components: {
         PageHeader,
         ServiceLinks,
     },
-    head() {
-        return this.$seo({
-            title: 'Workshops & Presentations',
-        })
+    setup() {
+        usePageSeo({ title: 'Workshops & Presentations' })
     },
 }
 </script>

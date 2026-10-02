@@ -4,6 +4,7 @@ img: everyone-needs-therapy.jpg
 alt: woman talking to man
 description: We all need therapy to assess, address, and connect our emotional, psychological, and social well-being.
 category: Therapy
+date: 2020-12-11
 author:
     name: Kervin K. Searles, LPC
     img: kervin-searles.png

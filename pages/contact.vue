@@ -5,15 +5,13 @@
 </template>
 
 <script>
-import PageHeader from '@/components/PageHeader'
+import PageHeader from '@/components/PageHeader.vue'
 export default {
   components: {
     PageHeader,
   },
-  head() {
-    return this.$seo({
-      title: 'Contact',
-    })
+  setup() {
+    usePageSeo({ title: 'Contact' })
   },
 }
 </script>

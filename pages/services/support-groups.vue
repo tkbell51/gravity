@@ -24,9 +24,9 @@
 </template>
 
 <script>
-import PageHeader from '@/components/PageHeader'
-import SimplePractice from '@/components/SimplePractice'
-import ServiceLinks from '@/components/ServiceLinks'
+import PageHeader from '@/components/PageHeader.vue'
+import SimplePractice from '@/components/SimplePractice.vue'
+import ServiceLinks from '@/components/ServiceLinks.vue'
 
 export default {
   components: {
@@ -34,10 +34,8 @@ export default {
     ServiceLinks,
     SimplePractice,
   },
-  head() {
-    return this.$seo({
-      title: 'Support Groups',
-    })
+  setup() {
+    usePageSeo({ title: 'Support Groups' })
   },
 }
 </script>

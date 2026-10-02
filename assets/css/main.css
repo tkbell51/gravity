@@ -19,7 +19,7 @@ a {
   transition: opacity .5s;
 }
 
-.page-enter, .page-leave-active{
+.page-enter-from, .page-leave-to{
   opacity: 0;
 }
 

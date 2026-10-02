@@ -61,15 +61,13 @@
 </template>
 
 <script>
-import PageHeader from '@/components/PageHeader'
+import PageHeader from '@/components/PageHeader.vue'
 export default {
   components: {
     PageHeader,
   },
-  head() {
-    return this.$seo({
-      title: 'Good Faith Estimate',
-    })
+  setup() {
+    usePageSeo({ title: 'Good Faith Estimate' })
   },
 }
 </script>

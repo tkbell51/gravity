@@ -4,6 +4,7 @@ img: signs-of-burnout.jpg
 alt: grassy hills under clear blue sky
 description: Burnout is a state of chronic stress that leads to emotional, physical, and mental exhaustion and feelings of ineffectiveness. Many professionals and working individuals, at some point during the course of their career, experience this condition.
 category: Therapy
+date: 2022-01-21
 author:
     name: Heather Williams, Clinical Intern
     img: heather-williams.jpg

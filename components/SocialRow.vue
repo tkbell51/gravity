@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import Fab from '~/components/Fab'
-import Fas from '~/components/Fas'
+import Fab from '~/components/Fab.vue'
+import Fas from '~/components/Fas.vue'
 
 export default {
     components: {
@@ -116,6 +116,9 @@ export default {
     &__link:hover,
     &__link:focus {
         color: $accent-color;
+    }
+    &__item {
+        margin-bottom: 0;
     }
 }
 </style>

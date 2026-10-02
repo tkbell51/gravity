@@ -1,19 +1,19 @@
 <template>
   <div class="page">
     <div class="overlay"></div>
-    <Header class="blog" />
-    <nuxt class="main-content" />
-    <Footer />
+    <SiteHeader class="blog" />
+    <div class="main-content"><slot /></div>
+    <SiteFooter />
   </div>
 </template>
 
 <script>
-import Header from '@/components/header'
-import Footer from '@/components/footer'
+import SiteHeader from '@/components/header.vue'
+import SiteFooter from '@/components/footer.vue'
 export default {
   components: {
-    Header,
-    Footer,
+    SiteHeader,
+    SiteFooter,
   },
 }
 </script>

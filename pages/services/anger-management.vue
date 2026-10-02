@@ -43,9 +43,9 @@
 </template>
 
 <script>
-import PageHeader from '@/components/PageHeader'
-import SimplePractice from '@/components/SimplePractice'
-import ServiceLinks from '@/components/ServiceLinks'
+import PageHeader from '@/components/PageHeader.vue'
+import SimplePractice from '@/components/SimplePractice.vue'
+import ServiceLinks from '@/components/ServiceLinks.vue'
 
 export default {
     components: {
@@ -53,30 +53,14 @@ export default {
         ServiceLinks,
         SimplePractice,
     },
-    head() {
-        return this.$seo({
-            title: 'Anger Management',
-        })
+    setup() {
+        usePageSeo({ title: 'Anger Management' })
     },
 }
 </script>
 
 <style lang="scss">
 .section__content {
-    p {
-        margin-bottom: 2rem;
-    }
-    .grid {
-        display: grid;
-        grid-template-columns: 30rem 1fr;
-        grid-gap: 4rem;
-        @include respond(small-tab) {
-            grid-template-columns: 1fr;
-            .services-links {
-                display: none;
-            }
-        }
-    }
     .anger-management {
         &__img {
             margin-bottom: 2rem;

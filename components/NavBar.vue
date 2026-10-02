@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import DropDown from '@/components/DropdownMenu'
-import SimplePractice from '@/components/SimplePractice'
+import DropDown from '@/components/DropdownMenu.vue'
+import SimplePractice from '@/components/SimplePractice.vue'
 export default {
   components: {
     SimplePractice,

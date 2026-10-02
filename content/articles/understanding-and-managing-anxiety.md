@@ -4,6 +4,7 @@ img: managinganxiety.jpg
 alt: man holding head
 description: We all need therapy to assess, address, and connect our emotional, psychological, and social well-being.
 category: Therapy
+date: 2021-10-28
 author:
     name: Kervin K. Searles, LPC
     img: kervin-searles.png

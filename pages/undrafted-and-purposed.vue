@@ -6,7 +6,7 @@
         <div class="two-columns">
           <div class="two-columns__img">
             <img
-              src="../static/img/book-1.png"
+              src="/img/book-1.png"
               alt="Undrafted and Purposed book"
             />
           </div>
@@ -106,7 +106,7 @@
         <div class="two-columns">
           <div class="two-columns__img">
             <img
-              src="../static/img/book-1.png"
+              src="/img/book-1.png"
               alt="Undrafted and Purposed book"
               width="600"
             />
@@ -147,7 +147,7 @@
         <div class="two-columns">
           <div class="two-columns__img">
             <img
-              src="../static/img/book-profile.jpg"
+              src="/img/book-profile.jpg"
               alt="Kervin Searles"
               width="500"
             />
@@ -196,15 +196,13 @@
 </template>
 
 <script>
-import PageHeader from '@/components/PageHeader'
+import PageHeader from '@/components/PageHeader.vue'
 export default {
   components: {
     PageHeader,
   },
-  head() {
-    return this.$seo({
-      title: 'Undrafted and Purposed',
-    })
+  setup() {
+    usePageSeo({ title: 'Undrafted and Purposed' })
   },
 }
 </script>

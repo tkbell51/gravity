@@ -1,24 +1,24 @@
 <template>
-    <div class="dropdown" @click="toggleDropdown">
-        <button class="nav__btn">SERVICES <Fas class="nav__icon" i="caret-down" /></button>
+    <div ref="dropdown" class="dropdown" @click="toggleDropdown">
+        <button class="nav__btn">SERVICES <Fas class="nav__icon" :class="{ open: isVisible }" i="caret-down" /></button>
         <transition name="dropdown-fade">
-            <ul v-if="isVisible" ref="dropdown" v-on-clickaway="hideDropdown" class="dropdown__menu">
-                <li class="dropdown__item" @click="closeMenu">
+            <ul v-if="isVisible" class="dropdown__menu">
+                <li class="dropdown__item" @click="emit('navigate')">
                     <nuxt-link class="dropdown__link" to="/services/individual-therapy">Individual Therapy</nuxt-link>
                 </li>
-                <li class="dropdown__item" @click="closeMenu">
+                <li class="dropdown__item" @click="emit('navigate')">
                     <nuxt-link class="dropdown__link" to="/services/couples-therapy">Couples Therapy</nuxt-link>
                 </li>
-                <li class="dropdown__item" @click="closeMenu">
+                <li class="dropdown__item" @click="emit('navigate')">
                     <nuxt-link class="dropdown__link" to="/services/teletherapy">Teletherapy</nuxt-link>
                 </li>
-                <li class="dropdown__item" @click="closeMenu">
+                <li class="dropdown__item" @click="emit('navigate')">
                     <nuxt-link class="dropdown__link" to="/services/anger-management">Anger Management</nuxt-link>
                 </li>
-                <li class="dropdown__item" @click="closeMenu">
+                <li class="dropdown__item" @click="emit('navigate')">
                     <nuxt-link class="dropdown__link" to="/services/support-groups">Support Groups</nuxt-link>
                 </li>
-                <li class="dropdown__item" @click="closeMenu">
+                <li class="dropdown__item" @click="emit('navigate')">
                     <nuxt-link class="dropdown__link" to="/services/workshops-presentations"
                     >Workshops &amp; Presentations</nuxt-link
                     >
@@ -28,37 +28,26 @@
     </div>
 </template>
 
-<script>
-import { mixin as clickaway } from 'vue-clickaway'
-import Fas from '@/components/Fas'
-export default {
-    components: {
-        Fas,
-    },
-    mixins: [clickaway],
-    data() {
-        return {
-            isVisible: false,
-        }
-    },
-    methods: {
-        toggleDropdown() {
-            this.isVisible = !this.isVisible
-            const icon = document.querySelector('.nav__icon')
-            icon.classList.toggle('open')
-        },
-        hideDropdown() {
-            this.isVisible = false
-            const icon = document.querySelector('.nav__icon')
-            icon.classList.remove('open')
-        },
-        closeMenu() {
-            if (this.$parent.showNav === true) {
-                this.$parent.closeMenu()
-            }
-        },
-    },
+<script setup>
+import Fas from '@/components/Fas.vue'
+
+const emit = defineEmits(['navigate'])
+
+const isVisible = ref(false)
+const dropdown = ref(null)
+
+const toggleDropdown = () => {
+    isVisible.value = !isVisible.value
 }
+
+const hideOnClickOutside = (event) => {
+    if (!dropdown.value?.contains(event.target)) {
+        isVisible.value = false
+    }
+}
+
+onMounted(() => document.addEventListener('click', hideOnClickOutside))
+onBeforeUnmount(() => document.removeEventListener('click', hideOnClickOutside))
 </script>
 
 <style lang="scss" scope>
@@ -129,6 +118,10 @@ export default {
         }
     }
 
+    &__item {
+        margin: 0;
+    }
+
     &__link {
         &,
         &:link,
@@ -159,7 +152,7 @@ export default {
 .dropdown-fade-leave-active {
     transition: all 0.1s ease-in-out;
 }
-.dropdown-fade-enter,
+.dropdown-fade-enter-from,
 .dropdown-fade-leave-to {
     opacity: 0;
     transform: translateY(-12px);

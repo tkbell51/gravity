@@ -10,17 +10,15 @@
 </template>
 
 <script>
-import PageHeader from '@/components/PageHeader'
-import ServicesGrid from '@/components/ServicesGrid'
+import PageHeader from '@/components/PageHeader.vue'
+import ServicesGrid from '@/components/ServicesGrid.vue'
 export default {
     components: {
         PageHeader,
         ServicesGrid,
     },
-    head() {
-        return this.$seo({
-            title: 'Services',
-        })
+    setup() {
+        usePageSeo({ title: 'Services' })
     },
 }
 </script>
