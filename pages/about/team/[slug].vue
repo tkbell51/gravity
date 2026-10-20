@@ -16,7 +16,9 @@
               {{ member.name
               }}<span v-if="member.credentials">, {{ member.credentials }}</span>
             </h2>
-            <p class="profile__role">{{ member.role }}</p>
+            <p class="profile__role">
+              {{ member.profileRole || member.role }}
+            </p>
             <p v-if="member.location" class="profile__location">
               <Fas i="map-marker-alt" /> {{ member.location }}
             </p>

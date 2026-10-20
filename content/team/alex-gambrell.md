@@ -3,6 +3,7 @@ title: Alex Gambrell
 description: Clinical Mental Health Counseling Intern supporting youth, adults, and families with anxiety, stress, coping skills, self-esteem, and life transitions.
 name: Alex Gambrell
 role: Mental Health Professional
+profileRole: Clinical Mental Health Counseling Intern
 tier: intern
 order: 2
 img: /img/team/alex-gambrell.jpg

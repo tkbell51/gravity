@@ -3,6 +3,7 @@ title: Sherika Anderson
 description: Marriage, Family, & Couple Therapist Intern supporting individuals, couples, and families with relational concerns, couples counseling, and life transitions.
 name: Sherika Anderson
 role: Mental Health Professional
+profileRole: Marriage, Family, & Couple Therapist Intern
 tier: intern
 order: 1
 img: /img/team/sherika-anderson.jpg

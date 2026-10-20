@@ -20,8 +20,8 @@
           </div>
           <div class="welcome__img">
             <img
-              src="~/assets/img/gcg-online.jpg"
-              alt="Person typing on a laptop"
+              src="~/assets/img/welcome-books.jpg"
+              alt="A stack of books often used in therapy, including works by Alfred Adler and W. E. B. Du Bois"
             />
           </div>
         </div>
@@ -169,8 +169,14 @@ const pillars = [
       color: $accent-color;
     }
 
+    &__img {
+      justify-self: center;
+    }
+
+    // Portrait photo, so cap the width to keep it from towering over the text
     &__img img {
       width: 100%;
+      max-width: 32rem;
       border-radius: $border-radius;
       box-shadow: $shadow;
     }

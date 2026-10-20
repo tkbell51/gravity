@@ -22,7 +22,10 @@ export default defineContentConfig({
       schema: z.object({
         name: z.string(),
         credentials: z.string().optional(),
+        // Shown on the team card
         role: z.string(),
+        // Shown on the profile page instead of role, e.g. a full intern title
+        profileRole: z.string().optional(),
         // licensed | pre-licensed | intern (see TEAM_TIERS in utils/team.js)
         tier: z.enum(['licensed', 'pre-licensed', 'intern']),
         // Sort order within a tier (lower first)
